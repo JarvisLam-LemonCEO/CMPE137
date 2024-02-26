@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'role.dart'; // Import the Role page
+import 'signingup.dart'; // Import the SigningUpPage
+
 
 class CustomerRegisterPage extends StatelessWidget {
   const CustomerRegisterPage({Key? key}) : super(key: key);
@@ -86,8 +87,12 @@ class CustomerRegisterPage extends StatelessWidget {
             // Sign Up button
             ElevatedButton(
               onPressed: () {
-                // Handle sign up button press
-              },
+                // Navigate to the SigningUpPage
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SigningUpPage()),
+                  );
+                },
               child: Text(
                 'Sign Up',
                 style: TextStyle(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'splash_screen.dart'; // Import your splash screen widget
-import 'hello.dart';
+// import 'hello.dart';
 import 'role.dart';
 
 void main() {
