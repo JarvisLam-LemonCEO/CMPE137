@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'vendorSigningUp.dart'; // Import the SigningUpPage
 
 class VendorRegisterPage extends StatelessWidget {
   const VendorRegisterPage({Key? key}) : super(key: key);
@@ -86,6 +87,10 @@ class VendorRegisterPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Handle sign up button press
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => VendorSigningUpPage()),
+                  );
               },
               child: Text(
                 'Sign Up',
