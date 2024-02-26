@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
-
-import 'auth_screen.dart';
+import 'splash_screen.dart'; // Import your splash screen widget
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home:  AuthScreen()
+    return MaterialApp(
+      home: SplashScreen(),
     );
   }
 }

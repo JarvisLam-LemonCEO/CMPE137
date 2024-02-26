@@ -5,7 +5,7 @@ import 'package:local_auth/local_auth.dart';
 import 'home.dart';
 
 class AuthScreen extends StatefulWidget {
-  const AuthScreen({super.key});
+  const AuthScreen({Key? key}) : super(key: key);
 
   @override
   State<AuthScreen> createState() => _AuthScreenState();
@@ -88,38 +88,61 @@ class _AuthScreenState extends State<AuthScreen> {
         title: const Text('Login'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              supportState == SupportState.supported
-                  ? 'Biometric authentication is supported on this device'
-                  : supportState == SupportState.unSupported
-                      ? 'Biometric authentication is not supported on this device'
-                      : 'Checking biometric support...',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: supportState == SupportState.supported
-                    ? Colors.green
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                supportState == SupportState.supported
+                    ? 'Biometric authentication is supported on this device'
                     : supportState == SupportState.unSupported
-                        ? Colors.red
-                        : Colors.grey,
+                        ? 'Biometric authentication is not supported on this device'
+                        : 'Checking biometric support...',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: supportState == SupportState.supported
+                      ? Colors.green
+                      : supportState == SupportState.unSupported
+                          ? Colors.red
+                          : Colors.grey,
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-
-                const SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: authenticateWithBiometrics,
-                  child: const Text("Login with Face ID"),
-                )
-              ],
-            )
-          ],
+              const SizedBox(height: 20),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Username',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  contentPadding: EdgeInsets.all(15),
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  contentPadding: EdgeInsets.all(15),
+                ),
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  // Handle login button press
+                },
+                child: Text("Login"),
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: authenticateWithBiometrics,
+                child: const Text("Login with Face ID"),
+              )
+            ],
+          ),
         ),
       ),
     );
