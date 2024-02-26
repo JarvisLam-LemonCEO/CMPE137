@@ -89,6 +89,7 @@ class _AuthScreenState extends State<AuthScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
+        iconTheme: IconThemeData(color: Color.fromARGB(255, 14, 122, 254)), // Set back arrow button color
       ),
       body: Center(
         child: Padding(
