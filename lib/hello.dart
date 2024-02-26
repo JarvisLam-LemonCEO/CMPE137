@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tut/auth_screen.dart';
-import 'auth_screen.dart'; // Import the Login page
 
 class HelloPage extends StatelessWidget {
   const HelloPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+    final double buttonWidth = screenSize.width * 0.7;
+
     return Scaffold(
       body: Stack(
         children: [
           Positioned(
             left: 20,
-            top: 50,
+            top: 80,
             child: Text(
               'Hello',
               style: TextStyle(
@@ -22,33 +24,33 @@ class HelloPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 37,
-            top: 691,
+            left: screenSize.width * 0.15,
+            bottom: 150,
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AuthScreen()), // Navigate to the Login page
+                  MaterialPageRoute(builder: (context) => AuthScreen()),
                 );
               },
               child: Text(
                 'Login',
                 style: TextStyle(
-                  color: Colors.white, // Text color to white
+                  color: Colors.white,
                 ),
               ),
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
                 ),
-                minimumSize: Size(350, 46),
-                primary: Color.fromARGB(255, 14, 122, 254), // Button color to RGB: 14, 122, 254
+                minimumSize: Size(buttonWidth, 46),
+                primary: Color.fromARGB(255, 14, 122, 254),
               ),
             ),
           ),
           Positioned(
-            left: 37,
-            top: 747,
+            left: screenSize.width * 0.15,
+            bottom: 100,
             child: ElevatedButton(
               onPressed: () {
                 // Navigate to the sign up page
@@ -56,15 +58,15 @@ class HelloPage extends StatelessWidget {
               child: Text(
                 'Sign Up',
                 style: TextStyle(
-                  color: Colors.white, // Text color to white
+                  color: Colors.white,
                 ),
               ),
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
                 ),
-                minimumSize: Size(350, 46),
-                primary: Color.fromARGB(255, 14, 122, 254), // Button color to RGB: 14, 122, 254
+                minimumSize: Size(buttonWidth, 46),
+                primary: Color.fromARGB(255, 14, 122, 254),
               ),
             ),
           ),

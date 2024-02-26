@@ -83,6 +83,9 @@ class _AuthScreenState extends State<AuthScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+    final double buttonWidth = screenSize.width * 0.7;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
@@ -111,8 +114,8 @@ class _AuthScreenState extends State<AuthScreen> {
               const SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
-                  filled: true, // Set filled to true
-                  fillColor: Colors.white, // Set fillColor to white
+                  filled: true,
+                  fillColor: Colors.white,
                   hintText: 'Username',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -124,8 +127,8 @@ class _AuthScreenState extends State<AuthScreen> {
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  filled: true, // Set filled to true
-                  fillColor: Colors.white, // Set fillColor to white
+                  filled: true,
+                  fillColor: Colors.white,
                   hintText: 'Password',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -141,12 +144,12 @@ class _AuthScreenState extends State<AuthScreen> {
                 child: Text(
                   "Login",
                   style: TextStyle(
-                    color: Colors.white, // Text color to white
+                    color: Colors.white,
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 14, 122, 254), // Button color to RGB: 14, 122, 254
-                  minimumSize: Size(250, 46), // Button width and height
+                  primary: Color.fromARGB(255, 14, 122, 254),
+                  minimumSize: Size(buttonWidth, 46),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
@@ -158,12 +161,12 @@ class _AuthScreenState extends State<AuthScreen> {
                 child: const Text(
                   "Login with Face ID",
                   style: TextStyle(
-                    color: Colors.white, // Text color to white
+                    color: Colors.white,
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 14, 122, 254), // Button color to RGB: 14, 122, 254
-                  minimumSize: Size(250, 46), // Button width and height
+                  primary: Color.fromARGB(255, 14, 122, 254),
+                  minimumSize: Size(buttonWidth, 46),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
