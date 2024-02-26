@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'auth_screen.dart';
+import 'hello.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => AuthScreen()),
+        MaterialPageRoute(builder: (context) => HelloPage()),
       );
     });
   }

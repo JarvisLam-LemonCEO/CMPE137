@@ -111,6 +111,8 @@ class _AuthScreenState extends State<AuthScreen> {
               const SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
+                  filled: true, // Set filled to true
+                  fillColor: Colors.white, // Set fillColor to white
                   hintText: 'Username',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -122,6 +124,8 @@ class _AuthScreenState extends State<AuthScreen> {
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
+                  filled: true, // Set filled to true
+                  fillColor: Colors.white, // Set fillColor to white
                   hintText: 'Password',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -134,12 +138,36 @@ class _AuthScreenState extends State<AuthScreen> {
                 onPressed: () {
                   // Handle login button press
                 },
-                child: Text("Login"),
+                child: Text(
+                  "Login",
+                  style: TextStyle(
+                    color: Colors.white, // Text color to white
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 14, 122, 254), // Button color to RGB: 14, 122, 254
+                  minimumSize: Size(250, 46), // Button width and height
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                ),
               ),
               const SizedBox(height: 10),
               ElevatedButton(
                 onPressed: authenticateWithBiometrics,
-                child: const Text("Login with Face ID"),
+                child: const Text(
+                  "Login with Face ID",
+                  style: TextStyle(
+                    color: Colors.white, // Text color to white
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 14, 122, 254), // Button color to RGB: 14, 122, 254
+                  minimumSize: Size(250, 46), // Button width and height
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                ),
               )
             ],
           ),
