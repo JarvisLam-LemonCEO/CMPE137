@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tut/auth_screen.dart';
+import 'role.dart'; // Import the Role page
 
 class HelloPage extends StatelessWidget {
   const HelloPage({Key? key}) : super(key: key);
@@ -33,6 +34,7 @@ class HelloPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => AuthScreen()),
                 );
               },
+
               child: Text(
                 'Login',
                 style: TextStyle(
@@ -53,7 +55,10 @@ class HelloPage extends StatelessWidget {
             bottom: 100,
             child: ElevatedButton(
               onPressed: () {
-                // Navigate to the sign up page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Role()), // Navigate to the Role page
+                );
               },
               child: Text(
                 'Sign Up',
