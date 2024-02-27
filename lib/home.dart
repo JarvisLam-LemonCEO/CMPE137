@@ -10,12 +10,19 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
+  final List<String> _tabTitles = [
+    'Home',
+    'Inventory',
+    'Order',
+    'Profile',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false, // Remove the back button
-        title: const Text('Home'),
+        title: Text(_tabTitles[_selectedIndex]),
       ),
      
       bottomNavigationBar: BottomNavigationBar(
