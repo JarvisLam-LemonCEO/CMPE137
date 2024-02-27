@@ -22,8 +22,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: CircularProgressIndicator(),
+      resizeToAvoidBottomInset: false, // Add this line
+      body: SingleChildScrollView( // Wrap the Column widget in a SingleChildScrollView
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/Welcome.png'), // Display the Welcome.png image
+              SizedBox(height: 16), // Add some space
+              CircularProgressIndicator(),
+            ],
+          ),
+        ),
       ),
     );
   }
