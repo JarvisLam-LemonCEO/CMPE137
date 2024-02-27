@@ -11,7 +11,7 @@ class VendorSigningUpPage extends StatelessWidget {
       // Navigate to the SignUpCompletePage
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => VendorSignUpComplete()),
+        MaterialPageRoute(builder: (context) => VendorSignUpCompletePage()),
       );
     });
 

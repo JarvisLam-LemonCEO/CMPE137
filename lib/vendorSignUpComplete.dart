@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'vendorStoreSetUp.dart';
 
-class VendorSignUpComplete extends StatelessWidget {
-  const VendorSignUpComplete({Key? key}) : super(key: key);
+class VendorSignUpCompletePage extends StatelessWidget {
+  const VendorSignUpCompletePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // Simulate a delay of 2 seconds
+    Future.delayed(Duration(seconds: 2), () {
+      // Navigate to the VendorStoreSetUpPage
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => VendorStoreSetUpPage()),
+      );
+    });
+
     return Scaffold(
       body: SafeArea(
         child: Center(
