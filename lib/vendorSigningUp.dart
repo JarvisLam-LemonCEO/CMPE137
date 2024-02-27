@@ -21,7 +21,11 @@ class VendorSigningUpPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircularProgressIndicator(), // Display the loading indicator
+              CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  Color.fromARGB(255, 14, 122, 254),
+                ),
+              ), // Display the loading indicator
               SizedBox(height: 16), // Add some space
               Text(
                 'Signing Up...',

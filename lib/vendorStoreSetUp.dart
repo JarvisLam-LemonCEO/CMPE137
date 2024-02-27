@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'storeSetUpLoad.dart';
 
 class VendorStoreSetUpPage extends StatelessWidget {
   const VendorStoreSetUpPage({Key? key}) : super(key: key);
@@ -106,6 +107,10 @@ class VendorStoreSetUpPage extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     // Handle Done button press
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => StoreSetUpLoad()),
+                    );
                   },
                   child: Text(
                     'Done',

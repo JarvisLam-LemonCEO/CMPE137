@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
-import 'customerHome.dart'; // Import your customerHome.dart file
+import 'home.dart'; // Import your customerHome.dart file
 
-class SignUpCompletePage extends StatefulWidget {
-  const SignUpCompletePage({Key? key}) : super(key: key);
+
+class StoreSetUpComplete extends StatefulWidget {
+  const StoreSetUpComplete({Key? key}) : super(key: key);
 
   @override
-  _SignUpCompletePageState createState() => _SignUpCompletePageState();
+  _StoreSetUpCompleteState createState() => _StoreSetUpCompleteState();
 }
 
-class _SignUpCompletePageState extends State<SignUpCompletePage> {
+class _StoreSetUpCompleteState extends State<StoreSetUpComplete> {
   @override
   void initState() {
     super.initState();
     
-    // Delay the navigation to the CustomerHome page by 2 seconds
+    // Delay the navigation to the SignUpCompletePage by 2 seconds
     Future.delayed(Duration(seconds: 1), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => CustomerHome()),
+        MaterialPageRoute(builder: (context) => Home()),
       );
     });
   }
@@ -37,7 +38,7 @@ class _SignUpCompletePageState extends State<SignUpCompletePage> {
               ),
               SizedBox(height: 16), // Add some space
               Text(
-                'Complete', // Display the text "Complete"
+                'Store Setup Complete', // Display the text "Store Setup Complete"
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 14, 122, 254)),
               ),
             ],
