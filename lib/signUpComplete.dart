@@ -1,7 +1,26 @@
 import 'package:flutter/material.dart';
+import 'customerHome.dart'; // Import your customerHome.dart file
 
-class SignUpCompletePage extends StatelessWidget {
+class SignUpCompletePage extends StatefulWidget {
   const SignUpCompletePage({Key? key}) : super(key: key);
+
+  @override
+  _SignUpCompletePageState createState() => _SignUpCompletePageState();
+}
+
+class _SignUpCompletePageState extends State<SignUpCompletePage> {
+  @override
+  void initState() {
+    super.initState();
+    
+    // Delay the navigation to the CustomerHome page by 2 seconds
+    Future.delayed(Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => CustomerHome()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
