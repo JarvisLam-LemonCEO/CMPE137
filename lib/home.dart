@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'hello.dart'; // Import your hello.dart file
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -17,6 +18,8 @@ class _HomeState extends State<Home> {
     'Profile',
   ];
 
+  bool _isLogoutVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +27,15 @@ class _HomeState extends State<Home> {
         automaticallyImplyLeading: false, // Remove the back button
         title: Text(_tabTitles[_selectedIndex]),
       ),
-     
+      body: _selectedIndex == 3 // Check if the profile tab is selected
+          ? Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // Add your profile tab's content here
+              ],
+            )
+          : Container(), // If another tab is selected, show an empty container
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
@@ -49,12 +60,44 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
+      floatingActionButton: _selectedIndex == 3 // Only show the button on the Profile tab
+          ? AnimatedOpacity(
+              opacity: _isLogoutVisible ? 1.0 : 0.0,
+              duration: Duration(milliseconds: 500),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Spacer(),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HelloPage()),
+                      );
+                    },
+                    child: Text(
+                      'Log out',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.red,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                ],
+              ),
+            )
+          : null, // If another tab is selected, hide the button
     );
   }
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      _isLogoutVisible = index == 3;
     });
   }
 }
