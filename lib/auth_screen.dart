@@ -94,86 +94,103 @@ class _AuthScreenState extends State<AuthScreen> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                supportState == SupportState.supported
-                    ? 'Biometric authentication is supported on this device'
-                    : supportState == SupportState.unSupported
-                        ? 'Biometric authentication is not supported on this device'
-                        : 'Checking biometric support...',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: supportState == SupportState.supported
-                      ? Colors.green
+          child: Form(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  supportState == SupportState.supported
+                      ? 'Biometric authentication is supported on this device'
                       : supportState == SupportState.unSupported
-                          ? Colors.red
-                          : Colors.grey,
-                ),
-              ),
-              const SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: 'Username',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  contentPadding: EdgeInsets.all(15),
-                ),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: 'Password',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  contentPadding: EdgeInsets.all(15),
-                ),
-              ),
-              const SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle login button press
-                },
-                child: Text(
-                  "Login",
+                          ? 'Biometric authentication is not supported on this device'
+                          : 'Checking biometric support...',
                   style: TextStyle(
-                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    color: supportState == SupportState.supported
+                        ? Colors.green
+                        : supportState == SupportState.unSupported
+                            ? Colors.red
+                            : Colors.grey,
                   ),
                 ),
-                style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 14, 122, 254),
-                  minimumSize: Size(buttonWidth, 46),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+                const SizedBox(height: 20),
+                TextFormField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: 'Username',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    contentPadding: EdgeInsets.all(15),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your username';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 10),
+                TextFormField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: 'Password',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    contentPadding: EdgeInsets.all(15),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    // Validate the form
+                    if (Form.of(context)!.validate()) {
+                      // Handle login button press
+                    }
+                  },
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 14, 122, 254),
+                    minimumSize: Size(buttonWidth, 46),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: authenticateWithBiometrics,
-                child: const Text(
-                  "Login with Face ID",
-                  style: TextStyle(
-                    color: Colors.white,
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: authenticateWithBiometrics,
+                  child: const Text(
+                    "Login with Face ID",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 14, 122, 254),
-                  minimumSize: Size(buttonWidth, 46),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 14, 122, 254),
+                    minimumSize: Size(buttonWidth, 46),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),
