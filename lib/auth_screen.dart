@@ -94,7 +94,7 @@ class _AuthScreenState extends State<AuthScreen> {
     final vendorUsername = 'vendor';
     final vendorPassword = '1234';
 
-    // Check if the entered username and password match the customer credentials
+    // Check if the username and password match the customer credentials previously entered
     if (username == customerUsername && password == customerPassword) {
       Navigator.pushReplacement(
         context,
