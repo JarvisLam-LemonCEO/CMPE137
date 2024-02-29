@@ -86,21 +86,13 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 
   void login(String username, String password) {
-    // Customer credentials
-    final customerUsername = 'customer';
-    final customerPassword = '1234';
-
-    // Vendor credentials
-    final vendorUsername = 'vendor';
-    final vendorPassword = '1234';
-
     // Check if the entered username and password match the customer credentials
-    if (username == customerUsername && password == customerPassword) {
+    if (username == 'customer' && password == '1234') {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const CustomerHome()), // Navigate to CustomerHome.dart
       );
-    } else if (username == vendorUsername && password == vendorPassword) {
+    } else if (username == 'vendor' && password == '1234') {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const Home()), // Navigate to Home.dart
