@@ -28,7 +28,7 @@ class _CustomerHomeState extends State<CustomerHome> {
         title: Text(_tabTitles[_selectedIndex]),
       ),
       body: _selectedIndex == 3 // Check if the profile tab is selected
-          ? Column(
+          ? const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -39,7 +39,7 @@ class _CustomerHomeState extends State<CustomerHome> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Color.fromARGB(255, 0, 122, 252), // Light blue color for selected item
+        selectedItemColor: const Color.fromARGB(255, 0, 122, 252), // Light blue color for selected item
         unselectedItemColor: Colors.grey, // Gray color for unselected item
         items: const [
           BottomNavigationBarItem(
@@ -63,30 +63,30 @@ class _CustomerHomeState extends State<CustomerHome> {
       floatingActionButton: _selectedIndex == 3 // Only show the button on the Profile tab
           ? AnimatedOpacity(
               opacity: _isLogoutVisible ? 1.0 : 0.0,
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Spacer(),
+                  const Spacer(),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HelloPage()),
+                        MaterialPageRoute(builder: (context) => const HelloPage()),
                       );
                     },
-                    child: Text(
-                      'Log out',
-                      style: TextStyle(color: Colors.white),
-                    ),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.red,
+                      backgroundColor: Colors.red,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
                     ),
+                    child: const Text(
+                      'Log out',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                 ],
               ),
             )
