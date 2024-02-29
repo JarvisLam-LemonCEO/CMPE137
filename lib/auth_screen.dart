@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
 
 import 'home.dart';
+import 'customerHome.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -21,6 +22,9 @@ class _AuthScreenState extends State<AuthScreen> {
   final LocalAuthentication auth = LocalAuthentication();
   SupportState supportState = SupportState.unknown;
   List<BiometricType>? availableBiometrics;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   void initState() {
@@ -81,6 +85,37 @@ class _AuthScreenState extends State<AuthScreen> {
     }
   }
 
+  void login(String username, String password) {
+    // Customer credentials
+    final customerUsername = 'customer';
+    final customerPassword = '1234';
+
+    // Vendor credentials
+    final vendorUsername = 'vendor';
+    final vendorPassword = '1234';
+
+    // Check if the entered username and password match the customer credentials
+    if (username == customerUsername && password == customerPassword) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const CustomerHome()), // Navigate to CustomerHome.dart
+      );
+    } else if (username == vendorUsername && password == vendorPassword) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const Home()), // Navigate to Home.dart
+      );
+    } else {
+      // Show an error message if the credentials are incorrect
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Invalid username or password'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -95,6 +130,7 @@ class _AuthScreenState extends State<AuthScreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Form(
+            key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -115,6 +151,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
+                  controller: usernameController,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
@@ -133,6 +170,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
                 const SizedBox(height: 10),
                 TextFormField(
+                  controller: passwordController,
                   obscureText: true,
                   decoration: InputDecoration(
                     filled: true,
@@ -154,8 +192,11 @@ class _AuthScreenState extends State<AuthScreen> {
                 ElevatedButton(
                   onPressed: () {
                     // Validate the form
-                    if (Form.of(context)!.validate()) {
+                    if (_formKey.currentState!.validate()) {
                       // Handle login button press
+                      final enteredUsername = usernameController.text;
+                      final enteredPassword = passwordController.text;
+                      login(enteredUsername, enteredPassword);
                     }
                   },
                   child: Text(
