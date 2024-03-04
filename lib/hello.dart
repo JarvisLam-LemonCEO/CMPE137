@@ -11,71 +11,93 @@ class HelloPage extends StatelessWidget {
     final double buttonWidth = screenSize.width * 0.7;
 
     return Scaffold(
-      body: Stack(
-        children: [
-          Positioned(
-            left: 20,
-            top: 80,
-            child: Text(
-              'Hello',
-              style: TextStyle(
-                fontSize: 70,
-                fontWeight: FontWeight.bold,
+      body: Container(
+        color: Color(0xFFDEAD00), // Set the background color to DEAD00
+        child: Stack(
+          children: [
+            Positioned(
+              left: 20,
+              top: 80,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Hello',
+                    style: TextStyle(
+                      fontSize: 70,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Welcome to StreetEats',
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ),
-          Positioned(
-            left: screenSize.width * 0.15,
-            bottom: 150,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AuthScreen()),
-                );
-              },
+            Center(
+              child: Image.asset(
+                'assets/streetLogo.png',
+              ),
+            ),
+            Positioned(
+              left: screenSize.width * 0.15,
+              bottom: 150,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AuthScreen()),
+                  );
+                },
 
-              child: Text(
-                'Login',
-                style: TextStyle(
-                  color: Colors.white,
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  minimumSize: Size(buttonWidth, 46),
+                  primary: Color.fromARGB(255, 14, 122, 254),
                 ),
-                minimumSize: Size(buttonWidth, 46),
-                primary: Color.fromARGB(255, 14, 122, 254),
               ),
             ),
-          ),
-          Positioned(
-            left: screenSize.width * 0.15,
-            bottom: 100,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Role()), // Navigate to the Role page
-                );
-              },
-              child: Text(
-                'Sign Up',
-                style: TextStyle(
-                  color: Colors.white,
+            Positioned(
+              left: screenSize.width * 0.15,
+              bottom: 100,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Role()), // Navigate to the Role page
+                  );
+                },
+                child: Text(
+                  'Sign Up',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  minimumSize: Size(buttonWidth, 46),
+                  primary: Color.fromARGB(255, 14, 122, 254),
                 ),
-                minimumSize: Size(buttonWidth, 46),
-                primary: Color.fromARGB(255, 14, 122, 254),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

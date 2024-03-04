@@ -10,6 +10,7 @@ class Role extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(
@@ -21,15 +22,15 @@ class Role extends StatelessWidget {
           },
         ),
         title: Text(
-          'Welcome to [our APP]',
+          'Welcome to StreetEats',
           style: TextStyle(
-            fontSize: 30,
+            fontSize: 25,
             fontWeight: FontWeight.bold,
-            color: Colors.black, // Title text color
+            color: Colors.white, // Title text color
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.white, // App bar background color
+        backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
         elevation: 0, // Remove app bar shadow
       ),
       body: Padding(
@@ -41,7 +42,7 @@ class Role extends StatelessWidget {
               'Join our vibrant community of street vendors and customers. Whether you\'re looking to sell your unique creations or discover local treasures, choose your role below and start your journey today!',
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.black, // Description text color
+                color: Colors.white, // Description text color
               ),
             ),
             const SizedBox(height: 10),
@@ -84,7 +85,7 @@ class Role extends StatelessWidget {
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 3, 216, 88), // Button color
+                primary: Color.(0x03D85), // Button color
                 minimumSize: Size(screenSize.width * 0.85, 200), // Button width and height
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30), // Button border radius
