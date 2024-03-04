@@ -114,8 +114,13 @@ class _AuthScreenState extends State<AuthScreen> {
     final double buttonWidth = screenSize.width * 0.7;
 
     return Scaffold(
+      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('Login',
+        style: TextStyle(
+          color: Colors.white,
+          ),),
+        backgroundColor: Color(0xFFDEAD00),
         iconTheme: IconThemeData(color: Color.fromARGB(255, 14, 122, 254)), // Set back arrow button color
       ),
       body: Center(
@@ -135,7 +140,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: supportState == SupportState.supported
-                        ? Colors.green
+                        ? Color.fromARGB(255, 0, 255, 110) 
                         : supportState == SupportState.unSupported
                             ? Colors.red
                             : Colors.grey,

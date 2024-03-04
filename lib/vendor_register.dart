@@ -9,6 +9,7 @@ class VendorRegisterPage extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(
@@ -19,7 +20,11 @@ class VendorRegisterPage extends StatelessWidget {
             Navigator.pop(context); // Navigate back to the previous page (HelloPage)
           },
         ),
-        title: Text('Join as a Vendor'),
+        title: Text('Join as a Vendor',
+        style: TextStyle(
+                      color: Colors.white,
+                    ),),
+        backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
       ),
       body: SingleChildScrollView( // Wrap the Scaffold in a SingleChildScrollView
         child: Padding(

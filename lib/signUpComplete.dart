@@ -25,6 +25,7 @@ class _SignUpCompletePageState extends State<SignUpCompletePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
       body: SafeArea(
         child: Center(
           child: Column(

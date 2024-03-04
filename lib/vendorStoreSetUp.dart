@@ -9,8 +9,13 @@ class VendorStoreSetUpPage extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
       appBar: AppBar(
-        title: Text('Vendor Store Setup'),
+        title: Text('Vendor Store Setup',
+        style: TextStyle(
+                      color: Colors.white,
+                    ),),
+        backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
       ),
       body: SafeArea(
         child: SingleChildScrollView(

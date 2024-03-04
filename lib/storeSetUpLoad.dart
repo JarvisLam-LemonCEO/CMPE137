@@ -24,6 +24,7 @@ class _StoreSetUpLoadState extends State<StoreSetUpLoad> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
