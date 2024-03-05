@@ -26,23 +26,15 @@
 		</data>
 		<key>flutter_assets/assets/.DS_Store</key>
 		<data>
-		PqwQLnCTLnv5fUt4NP9i7Z5GU9g=
+		0ugh0ptLdbeH6LtzTMuty3FcSgc=
 		</data>
 		<key>flutter_assets/assets/Welcome.png</key>
 		<data>
 		1gps8AuIm7lzG3LK01QpDcNRUtQ=
 		</data>
-		<key>flutter_assets/assets/face_id.png</key>
-		<data>
-		ol/iC+fLAuZDwYLmkn175EIrYC4=
-		</data>
 		<key>flutter_assets/assets/streetLogo.png</key>
 		<data>
 		0b7Lbsh8ABrdiOZi/8OuB6o+V3k=
-		</data>
-		<key>flutter_assets/assets/streetLogo2.png</key>
-		<data>
-		w6mx1ZLxdhqYJWw6isMMnxOSVNs=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -106,25 +98,11 @@
 			5WC3vUfZh+SaAet1fpmSiyiawxjEyzs2aSZEkbBdvBQ=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/face_id.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			VqDQ5fh7FIzI4Rcn2vbQWIhK3BOgNYb+cSiF2zZ3WbU=
-			</data>
-		</dict>
 		<key>flutter_assets/assets/streetLogo.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			FcUsxQ02xQWGdoy5b0NfSS2044yF667GPi3MiNIiWqs=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/streetLogo2.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			d5RZiXIKS6ihTBYncVbBNxlqOgv42WF48hvXG+qg4Vs=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
