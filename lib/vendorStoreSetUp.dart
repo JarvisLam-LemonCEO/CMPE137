@@ -122,7 +122,7 @@ class VendorStoreSetUpPage extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 14, 122, 254),
+                    backgroundColor: Color.fromARGB(255, 14, 122, 254),
                     minimumSize: Size(screenSize.width * 0.85, 46),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),

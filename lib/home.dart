@@ -45,7 +45,7 @@ class _HomeState extends State<Home> {
                         onPressed: () {},
                         child: Text('Manage Account'),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFC6F4BA),
+                          backgroundColor: Color(0xFFC6F4BA),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
                         onPressed: () {},
                         child: Text('Payment Information'),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFC6F4BA),
+                          backgroundColor: Color(0xFFC6F4BA),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
@@ -69,7 +69,7 @@ class _HomeState extends State<Home> {
                         onPressed: () {},
                         child: Text('Notifications'),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFC6F4BA),
+                          backgroundColor: Color(0xFFC6F4BA),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
                         onPressed: () {},
                         child: Text('Privacy'),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFC6F4BA),
+                          backgroundColor: Color(0xFFC6F4BA),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
@@ -137,7 +137,7 @@ class _HomeState extends State<Home> {
                         style: TextStyle(color: Colors.white),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.red,
+                        backgroundColor: Colors.red,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),

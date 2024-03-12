@@ -65,9 +65,8 @@ class HelloPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
-                  ),
+                  ), backgroundColor: Color.fromARGB(255, 14, 122, 254),
                   minimumSize: Size(buttonWidth, 46),
-                  primary: Color.fromARGB(255, 14, 122, 254),
                 ),
               ),
             ),
@@ -92,7 +91,7 @@ class HelloPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                   ),
                   minimumSize: Size(buttonWidth, 46),
-                  primary: Color.fromARGB(255, 14, 122, 254),
+                  backgroundColor: Color.fromARGB(255, 14, 122, 254),
                 ),
               ),
             ),
