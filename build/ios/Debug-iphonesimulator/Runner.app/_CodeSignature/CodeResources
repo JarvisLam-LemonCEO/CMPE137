@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		43Pg4azdn/8gNvMxsqAwgoF3gRk=
+		dsohbQiAn8wNS0S2yltNvxrneQ0=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		EQv3jAdQF3BeDpoDU08QcG1xK64=
+		191dMB9jizuLL7lojLMQV2XzJOI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		BbWqk+Taq08jIf0mz3HAlrFcDgw=
+		jCz4P3Yk8PfOEWBnN33RY8EEj1I=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		O+h1f/PbsQ8gXFwGNK+98g/pAz8=
+		tLuYNTwnpZjlFwFN4HLl6OgDi6A=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -195,6 +195,30 @@
 		<key>Frameworks/Flutter.framework/icudtl.dat</key>
 		<data>
 		Ubat0LvE4LUgCwHeyl0Anx2vnzk=
+		</data>
+		<key>Frameworks/Reachability.framework/Info.plist</key>
+		<data>
+		8QEKj7HDjQNa0J2z2NtNMcelmo8=
+		</data>
+		<key>Frameworks/Reachability.framework/Reachability</key>
+		<data>
+		caJT4aYCy28vMwA7cHYMXlotj9o=
+		</data>
+		<key>Frameworks/Reachability.framework/_CodeSignature/CodeResources</key>
+		<data>
+		AJPPwbsMEVjRWDvIKrtBGoxxLrI=
+		</data>
+		<key>Frameworks/connectivity_plus.framework/Info.plist</key>
+		<data>
+		ba4Ecy2vPrHU0xwXqJxeO43OKkA=
+		</data>
+		<key>Frameworks/connectivity_plus.framework/_CodeSignature/CodeResources</key>
+		<data>
+		GrJ1ZmmIuFacKZ6bMp/huv+rYU0=
+		</data>
+		<key>Frameworks/connectivity_plus.framework/connectivity_plus</key>
+		<data>
+		qEUJZYQ1B6w7kMkaA/7tPH1qRPs=
 		</data>
 		<key>Frameworks/local_auth_darwin.framework/Info.plist</key>
 		<data>
@@ -301,7 +325,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9akY8/WhIQuZOmCUcn5wxhfSpjUzjVgK6eUZ+CzLO6c=
+			vWfCQgrACbFWmFvRVzE/lr4Vi96B543A9m/ebTKbySo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -315,7 +339,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yxMKySiJsdSztSX8t9gk7Ca21a4Nio0fs7EIM4ov8Io=
+			Kf32kNNWTJfmlCV5CRiVtWrggvtxE7SxExc3VXGy+Go=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -343,7 +367,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nDydo63gszwnvZYdBI7TttzPqNlWAmofmUe+aR2jL5Y=
+			5OrdWhHVd3GmNSPz7m97bmZ8blKRKKSRB18DJpUUeQc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
@@ -385,7 +409,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oR0wpnBupUDLhDQNLXWNt6y8lgeATR7ZhwgS59BFmks=
+			z9SOx0aPCAUoGlvMCw/p1byeHXvviksE870YPGIR0PA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -561,6 +585,48 @@
 			<key>hash2</key>
 			<data>
 			ZepykIMSjfzhwAcmupMrkaqvXkhza1ZE3TdHjl8odaw=
+			</data>
+		</dict>
+		<key>Frameworks/Reachability.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UE0oYwGpB1X1ZbkLSVnfkb4/DMqs7FUtkjcFr9kB5M8=
+			</data>
+		</dict>
+		<key>Frameworks/Reachability.framework/Reachability</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			u3IhF+m1oCVr/hkNPUh4EEluM90U9Ggq0sxNOwWT3fw=
+			</data>
+		</dict>
+		<key>Frameworks/Reachability.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wzIuzy7RkE5dnPnlqQnFoakQrRihcIVJVgL80aKPcTg=
+			</data>
+		</dict>
+		<key>Frameworks/connectivity_plus.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hDRwBg+dr+X+yvdhJdMz1wrftXV2X7qYnFApcm8Fc2k=
+			</data>
+		</dict>
+		<key>Frameworks/connectivity_plus.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			doeBAHxrNkGb4PAlIcSaRbmiUSimCJXu8WUfmnWdsO0=
+			</data>
+		</dict>
+		<key>Frameworks/connectivity_plus.framework/connectivity_plus</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ico7UKvkMHTEUlRMe/zC6l7cvSlB4cn63FKvmsqcHDA=
 			</data>
 		</dict>
 		<key>Frameworks/local_auth_darwin.framework/Info.plist</key>
