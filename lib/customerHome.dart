@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'hello.dart'; // Import your hello.dart file
+import 'vendorRadar.dart'; // Import your VendorRadar.dart file
 
 class CustomerHome extends StatefulWidget {
   const CustomerHome({Key? key}) : super(key: key);
@@ -36,14 +37,8 @@ class _CustomerHomeState extends State<CustomerHome> {
         ),
         body: Container(
           color: const Color(0xFFDEAD00), // Set the background color of the body
-          child: _selectedIndex == 4 
-              ? const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    // Add your profile tab's content here
-                  ],
-                )
+          child: _selectedIndex == 1 // Check if the "Vendor Radar" tab is selected
+              ? VendorRadar() // Show the VendorRadar widget
               : Container(), // If another tab is selected, show an empty container
         ),
         bottomNavigationBar: BottomNavigationBar(

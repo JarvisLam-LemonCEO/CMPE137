@@ -6,7 +6,9 @@
 // @dart = 3.1
 
 import 'dart:io'; // flutter_ignore: dart_io_import.
+import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
 import 'package:local_auth_android/local_auth_android.dart';
+import 'package:google_maps_flutter_ios/google_maps_flutter_ios.dart';
 import 'package:local_auth_darwin/local_auth_darwin.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:local_auth_windows/local_auth_windows.dart';
@@ -18,6 +20,15 @@ class _PluginRegistrant {
   static void register() {
     if (Platform.isAndroid) {
       try {
+        GoogleMapsFlutterAndroid.registerWith();
+      } catch (err) {
+        print(
+          '`google_maps_flutter_android` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
+      try {
         LocalAuthAndroid.registerWith();
       } catch (err) {
         print(
@@ -27,6 +38,15 @@ class _PluginRegistrant {
       }
 
     } else if (Platform.isIOS) {
+      try {
+        GoogleMapsFlutterIOS.registerWith();
+      } catch (err) {
+        print(
+          '`google_maps_flutter_ios` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
       try {
         LocalAuthDarwin.registerWith();
       } catch (err) {
