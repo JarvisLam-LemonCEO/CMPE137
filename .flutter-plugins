@@ -1,5 +1,10 @@
 # This is a generated file; do not edit or check into version control.
+connectivity_plus=/Users/jarvislam/.pub-cache/hosted/pub.dev/connectivity_plus-5.0.2/
 flutter_plugin_android_lifecycle=/Users/jarvislam/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.17/
+google_maps_flutter=/Users/jarvislam/.pub-cache/hosted/pub.dev/google_maps_flutter-2.6.0/
+google_maps_flutter_android=/Users/jarvislam/.pub-cache/hosted/pub.dev/google_maps_flutter_android-2.7.0/
+google_maps_flutter_ios=/Users/jarvislam/.pub-cache/hosted/pub.dev/google_maps_flutter_ios-2.5.0/
+google_maps_flutter_web=/Users/jarvislam/.pub-cache/hosted/pub.dev/google_maps_flutter_web-0.5.6+2/
 local_auth=/Users/jarvislam/.pub-cache/hosted/pub.dev/local_auth-2.2.0/
 local_auth_android=/Users/jarvislam/.pub-cache/hosted/pub.dev/local_auth_android-1.0.37/
 local_auth_darwin=/Users/jarvislam/.pub-cache/hosted/pub.dev/local_auth_darwin-1.2.2/
