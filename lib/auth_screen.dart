@@ -203,7 +203,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 14, 122, 254),
+                    backgroundColor: Color.fromARGB(255, 14, 122, 254),
                     minimumSize: Size(buttonWidth, 46),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),
@@ -220,7 +220,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 14, 122, 254),
+                    backgroundColor: Color.fromARGB(255, 14, 122, 254),
                     minimumSize: Size(buttonWidth, 46),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),

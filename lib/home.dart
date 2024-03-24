@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'hello.dart'; // Import your hello.dart file
 
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -32,10 +33,10 @@ class _HomeState extends State<Home> {
         appBar: AppBar(
           automaticallyImplyLeading: false, // Remove the back button
           title: Text(_tabTitles[_selectedIndex]),
-          backgroundColor: Color(0xFF00B812), // Set the background color of the app bar
+          backgroundColor: Color(0xFF0F8B7C), // Set the background color of the app bar
         ),
         body: Container(
-          color: Color(0xFF00B812), // Set the background color of the body
+          color: Color(0xFF0F8B7C), // Set the background color of the body
           child: _selectedIndex == 3 // Check if the profile tab is selected
               ? Center(
                   child: Column(
@@ -43,9 +44,9 @@ class _HomeState extends State<Home> {
                     children: [
                       ElevatedButton(
                         onPressed: () {},
-                        child: Text('Manage Account'),
+                        child: Text('Manage Account',style: TextStyle(color: Colors.black),),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFC6F4BA),
+                          backgroundColor: Color(0xFF0BC2AC),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
@@ -55,9 +56,9 @@ class _HomeState extends State<Home> {
                       SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () {},
-                        child: Text('Payment Information'),
+                        child: Text('Payment Information',style: TextStyle(color: Colors.black),),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFC6F4BA),
+                          backgroundColor: Color(0xFF0BC2AC),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
@@ -67,9 +68,9 @@ class _HomeState extends State<Home> {
                       SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () {},
-                        child: Text('Notifications'),
+                        child: Text('Notifications',style: TextStyle(color: Colors.black),),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFC6F4BA),
+                          backgroundColor: Color(0xFF0BC2AC),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
@@ -79,9 +80,9 @@ class _HomeState extends State<Home> {
                       SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () {},
-                        child: Text('Privacy'),
+                        child: Text('Privacy',style: TextStyle(color: Colors.black),),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFFC6F4BA),
+                          backgroundColor: Color(0xFF0BC2AC),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
@@ -137,7 +138,7 @@ class _HomeState extends State<Home> {
                         style: TextStyle(color: Colors.white),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.red,
+                        backgroundColor: Colors.red,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),

@@ -62,7 +62,7 @@ class Role extends StatelessWidget {
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 14, 122, 254), // Button color
+                backgroundColor: Color.fromARGB(255, 14, 122, 254), // Button color
                 minimumSize: Size(screenSize.width * 0.85, 200), // Button width and height
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30), // Button border radius
@@ -85,7 +85,7 @@ class Role extends StatelessWidget {
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 0, 255, 102), // Button color
+                backgroundColor: Color.fromARGB(255, 0, 255, 102), // Button color
                 minimumSize: Size(screenSize.width * 0.85, 200), // Button width and height
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30), // Button border radius
