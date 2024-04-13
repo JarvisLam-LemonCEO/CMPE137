@@ -9,3 +9,5 @@ local_auth=/Users/jarvislam/.pub-cache/hosted/pub.dev/local_auth-2.2.0/
 local_auth_android=/Users/jarvislam/.pub-cache/hosted/pub.dev/local_auth_android-1.0.37/
 local_auth_darwin=/Users/jarvislam/.pub-cache/hosted/pub.dev/local_auth_darwin-1.2.2/
 local_auth_windows=/Users/jarvislam/.pub-cache/hosted/pub.dev/local_auth_windows-1.0.10/
+location=/Users/jarvislam/.pub-cache/hosted/pub.dev/location-6.0.1/
+location_web=/Users/jarvislam/.pub-cache/hosted/pub.dev/location_web-5.0.1/

@@ -10,7 +10,7 @@ void main() {
   checkConnectivity();
 }
 
-
+// check connectivity
 void checkConnectivity() async {
   var connectivityResult = await Connectivity().checkConnectivity();
   if (connectivityResult == ConnectivityResult.mobile) {
