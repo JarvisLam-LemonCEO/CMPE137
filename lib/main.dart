@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'splash_screen.dart'; // Import your splash screen widget
-// import 'hello.dart';
+import 'splash_screen.dart';
 import 'role.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
