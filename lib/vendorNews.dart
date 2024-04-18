@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// vendoe new on home page
 class VendorNewsPage extends StatelessWidget {
   final String title;
   final String details;
