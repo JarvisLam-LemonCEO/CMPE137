@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'hello.dart';
-import 'vendorRadar.dart';
+import 'vendorNews.dart';
 
 class CustomerHome extends StatefulWidget {
   const CustomerHome({Key? key}) : super(key: key);
@@ -26,15 +26,39 @@ class _CustomerHomeState extends State<CustomerHome> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text(_tabTitles[_selectedIndex]),
         backgroundColor: const Color(0xFFDEAD00),
+        title: Text(
+          _tabTitles[_selectedIndex],
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
-      body: Container(
-        color: const Color(0xFFDEAD00),
-        child: _selectedIndex == 1
-            ? Container() // Empty container since navigation to VendorRadar.dart is erased
-            : Container(),
-      ),
+      body: _selectedIndex == 0
+          ? HomeListView(onVendorNewsClicked: (title, details) {
+              // Navigate to VendorNewsPage when a vendor news item is clicked
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => VendorNewsPage(title: title, details: details),
+                ),
+              );
+            })
+          : _selectedIndex == 1 // Check if Vendor Radar tab is active
+              ? Container(
+                  color: const Color(0xFFDEAD00), // Set background color for Vendor Radar page
+                )
+              : Container(
+                  color: const Color(0xFFDEAD00),
+                  child: Center(
+                    child: Text(
+                      '', // Remove the text for Order and Profile pages
+                      style: TextStyle(color: Colors.white, fontSize: 24),
+                    ),
+                  ),
+                ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
@@ -94,18 +118,59 @@ class _CustomerHomeState extends State<CustomerHome> {
   }
 
   void _onItemTapped(int index) {
-  setState(() {
-    _selectedIndex = index;
-    _isLogoutVisible = index == 3;
-  });
-
-  if (index == 1) {
-    // Navigate to VendorRadar screen
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => VendorRadar()),
-    );
+    setState(() {
+      _selectedIndex = index;
+      _isLogoutVisible = index == 3;
+    });
   }
 }
 
+class HomeListView extends StatelessWidget {
+  final Function(String title, String details) onVendorNewsClicked;
+
+  const HomeListView({Key? key, required this.onVendorNewsClicked}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color(0xFFDEAD00),
+      padding: EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Search',
+                prefixIcon: Icon(Icons.search),
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+              ),
+            ),
+          ),
+          SizedBox(height: 16),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 10, // Replace 10 with the actual number of items
+              itemBuilder: (context, index) {
+                final title = 'Vendor News ${index + 1}';
+                final details = 'Details about Vendor News ${index + 1}';
+                return ListTile(
+                  title: Text(title),
+                  subtitle: Text(details),
+                  onTap: () {
+                    onVendorNewsClicked(title, details);
+                  },
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

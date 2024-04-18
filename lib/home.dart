@@ -102,7 +102,7 @@ class _HomeState extends State<Home> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'Home',
+              label: 'Street Eats',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.inventory),
