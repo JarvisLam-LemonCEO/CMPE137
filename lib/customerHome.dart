@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'hello.dart';
 import 'vendorNews.dart';
+import 'manageAccount.dart';
+import 'paymentInfo.dart';
+import 'notifications.dart';
+import 'privacy.dart';
 
 class CustomerHome extends StatefulWidget {
   const CustomerHome({Key? key}) : super(key: key);
@@ -50,15 +54,89 @@ class _CustomerHomeState extends State<CustomerHome> {
               ? Container(
                   color: const Color(0xFFDEAD00), // Set background color for Vendor Radar page
                 )
-              : Container(
-                  color: const Color(0xFFDEAD00),
-                  child: Center(
-                    child: Text(
-                      '', // Remove the text for Order and Profile pages
-                      style: TextStyle(color: Colors.white, fontSize: 24),
-                    ),
-                  ),
-                ),
+              : _selectedIndex == 2 // Check if Order tab is active
+                  ? Container(
+                      color: const Color(0xFFDEAD00), // Set background color for Order page
+                    )
+                  : _selectedIndex == 3 // Check if Profile tab is active
+                      ? Container(
+                          color: Color(0xFFDEAD00), // Set the background color of the body
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => ManageAccountPage()),
+                                    );
+                                  },
+                                  child: Text('Manage Account', style: TextStyle(color: Colors.black)),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFFFFFF00),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    minimumSize: Size(200, 50),
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => PaymentInformationPage()),
+                                    );
+                                  },
+                                  child: Text('Payment Information', style: TextStyle(color: Colors.black)),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFFFFFF00),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    minimumSize: Size(200, 50),
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => NotificationsPage()),
+                                    );
+                                  },
+                                  child: Text('Notifications', style: TextStyle(color: Colors.black)),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFFFFFF00),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    minimumSize: Size(200, 50),
+                                  ),
+                                ),
+                                SizedBox(height: 20),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => PrivacyPage()),
+                                    );
+                                  },
+                                  child: Text('Privacy', style: TextStyle(color: Colors.black)),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFFFFFF00),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    minimumSize: Size(200, 50),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      : Container(), // If another tab is selected, show an empty container
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,

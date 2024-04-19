@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'hello.dart'; // Import your hello.dart file
+import 'vendorManageAccount.dart';
+import 'vendorPaymentInfo.dart';
+import 'vendorNotifications.dart';
+import 'vendorPrivacy.dart';
+
 
 
 class Home extends StatefulWidget {
@@ -42,8 +47,14 @@ class _HomeState extends State<Home> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      // Manage account button
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => ManageAccountPage()),
+                                    );
+                        },
                         child: Text('Manage Account',style: TextStyle(color: Colors.black),),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFF0BC2AC),
@@ -53,9 +64,15 @@ class _HomeState extends State<Home> {
                           minimumSize: Size(200, 50),
                         ),
                       ),
+                      // payment information button
                       SizedBox(height: 20),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => PaymentInformationPage()),
+                                    );
+                        },
                         child: Text('Payment Information',style: TextStyle(color: Colors.black),),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFF0BC2AC),
@@ -65,9 +82,16 @@ class _HomeState extends State<Home> {
                           minimumSize: Size(200, 50),
                         ),
                       ),
+
+                      // notifications button
                       SizedBox(height: 20),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => NotificationsPage()),
+                                    );
+                        },
                         child: Text('Notifications',style: TextStyle(color: Colors.black),),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFF0BC2AC),
@@ -77,9 +101,15 @@ class _HomeState extends State<Home> {
                           minimumSize: Size(200, 50),
                         ),
                       ),
+                      // privacy buttons
                       SizedBox(height: 20),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                            Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => PrivacyPage()),
+                                    );
+                        },
                         child: Text('Privacy',style: TextStyle(color: Colors.black),),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFF0BC2AC),
@@ -102,7 +132,7 @@ class _HomeState extends State<Home> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'Street Eats',
+              label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.inventory),

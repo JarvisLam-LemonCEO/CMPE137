@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		diWnjhZ4l13hMAf+6R/tXm3D1xU=
+		XlMmlSn5ND3GPSJ6e/Kb/fP9nWA=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		fooHeoWUT5CxoExKdcb+BQgDFHs=
+		OQCZ4VtYLyer0jtlqIPadkhd4uk=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		FWu/GB3QshHCMif2LrcKSDQzylY=
+		HzjJHa7v9aTfkfsgiIv2aKDc8bI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		UbJkkHoroacKMQXRgcnGFvRe43U=
+		hmjY5cdOqtE5Rxan4Tu4d0rQNB4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		70DOMOY7/L6YbOLh+hlSbXU3EAs=
+		fiCl5r8x2gWQwlOlQkkW3XUcbT8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
 		<data>
@@ -79,6 +79,14 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/Welcome.png</key>
 		<data>
 		1gps8AuIm7lzG3LK01QpDcNRUtQ=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/business_image.jpg</key>
+		<data>
+		VorZi6K4qSp45r0/aHRvl7rd8pI=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/profile_image.jpg</key>
+		<data>
+		9wX5zWokC5ZVt2DYbZDr3s84USw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/streetLogo.png</key>
 		<data>
@@ -94,7 +102,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		lSamq1TY1xMC1/HfiboSQW6bAdk=
+		YjqiGSgoCIgp3DooX+6O4zPr07Y=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -223,6 +231,26 @@
 		<key>Frameworks/connectivity_plus.framework/connectivity_plus</key>
 		<data>
 		7dIhn8zBxuDgy5RZJ4a7VrHWZOs=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
+		<data>
+		PQVfZMZHcYSY6t81n1R6lkw3Ff8=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/_CodeSignature/CodeResources</key>
+		<data>
+		fRAAELeyfu2m6tL5oDKHOOCPOIg=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios</key>
+		<data>
+		ll7mYuQ9EQNrHCB337sDThtH3do=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios_privacy.bundle/Info.plist</key>
+		<data>
+		WUF+71aUFc+ThO4RqhWmiz0tYSQ=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		/LX0ZlwxwIAIhjZaDB8EiH5KpXA=
 		</data>
 		<key>Frameworks/local_auth_darwin.framework/Info.plist</key>
 		<data>
@@ -1059,7 +1087,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BHIwKnnhWKZ34098Y8Pfr9jR0c8=
+		Lp0sOE6NLjiaS8TApwXyJbRMfQQ=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -1150,7 +1178,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OcPdK+odyvVL4cqbN4wXe6ex4OMPsZ0DNwcUAt1NGZw=
+			NTUGcqXuc5HdT4qEK+EAop0Bf4yCZqX40826GmhmbF4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1164,21 +1192,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v0js3ZsHXFL+LA30EoadVFbxbKSQTuye58IIs6VQPTU=
+			WRqzPZKeOpCK6bPWYPgagm5C4D9mYOT21tkiXnx91j4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rB0zltiHTOu3Vz+uWxZMZCCJ6e6IlTOf4wmGJvW+qzA=
+			/+YFJzAraDpvcyc5iQgds7omOx0goZljbg+ubrK+Ij0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dg9dkvSQmzXYZfDwkUZ8lu4H32K0WA5nckkAP5r+2+I=
+			glf6+JvdUPnAxno8Y8CaM3AbSYLM58kvwRcabWdy7Xo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -1192,7 +1220,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2njOHxTctc0JwMpiCsCJfleOZfzbDJtuv+o39C9phHs=
+			hS7MbW7z2b+cK6KY+pXkGpsFaVDfrCZg1fl1CT4j7bs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
@@ -1207,6 +1235,20 @@
 			<key>hash2</key>
 			<data>
 			5WC3vUfZh+SaAet1fpmSiyiawxjEyzs2aSZEkbBdvBQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/business_image.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nweqW4ofKOaIMRhDzQv1jQhZKm2i5Ebmc9Hzq+IOh08=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/profile_image.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8XmgL+KkJpdNTz6xO7ND74uWIQBYLam/H584XGG1H6w=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/streetLogo.png</key>
@@ -1234,7 +1276,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			colI0snNdSkCHp5MhZvzhm7BMHZ6Ktm2lMDSLa0rnJE=
+			FkFjYsrtulTSwIZdMJzlOQUJjZjmJqS32Aa0tTn+t7U=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1459,6 +1501,41 @@
 			<key>hash2</key>
 			<data>
 			McCtqd5XM2gCzZK0LQdRxcN1F0Jf4yT4LKHyNDNs+9M=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vrYEbk3V/lFvdGQpTt4fcmYOD9YvSouCdJ7OtQEe8ik=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1CXOtu+Zgelb/7k3nhBb4hKj0LZWq0mSSYa7l2faruo=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+F8mpdXN2a3pxkw94/DVk+OeszbUFwgH4SiU4uKGpsI=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			A6XApsZI1Sf3AWQfSrqfhaCF5JgsU0rmkDWFmlBZQ2Y=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bS2g2NkwIn1CjB2TY7CtbjoS4sm2jFzilxWKdBL8jDE=
 			</data>
 		</dict>
 		<key>Frameworks/local_auth_darwin.framework/Info.plist</key>
