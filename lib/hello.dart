@@ -41,8 +41,7 @@ class HelloPage extends StatelessWidget {
               ),
             ),
             Center(
-              child: Image.asset(
-                'assets/streetLogo.png',
+              child: Image.asset('assets/streetLogo.png',
               ),
             ),
             Positioned(

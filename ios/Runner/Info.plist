@@ -14,7 +14,11 @@
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Your location is needed to show your current position on the map</string>
 
-	
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow access to photo library</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow access to camera</string>
+
 
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

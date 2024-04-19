@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		diWnjhZ4l13hMAf+6R/tXm3D1xU=
+		Ybm2n4JyBx+ITXbDw5RInMQ5YBM=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		fooHeoWUT5CxoExKdcb+BQgDFHs=
+		qZUPbyBvv+p7djJm+veAF6C7gLU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		FWu/GB3QshHCMif2LrcKSDQzylY=
+		HzjJHa7v9aTfkfsgiIv2aKDc8bI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		UbJkkHoroacKMQXRgcnGFvRe43U=
+		hmjY5cdOqtE5Rxan4Tu4d0rQNB4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		70DOMOY7/L6YbOLh+hlSbXU3EAs=
+		DykNkLhrIVDE1huYrELdyk9/7J0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
 		<data>
@@ -79,6 +79,14 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/Welcome.png</key>
 		<data>
 		1gps8AuIm7lzG3LK01QpDcNRUtQ=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/business_image.jpg</key>
+		<data>
+		VorZi6K4qSp45r0/aHRvl7rd8pI=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/profile_image.jpg</key>
+		<data>
+		9wX5zWokC5ZVt2DYbZDr3s84USw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/streetLogo.png</key>
 		<data>
@@ -94,7 +102,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		lSamq1TY1xMC1/HfiboSQW6bAdk=
+		TZcz7O4XUu4wYq5+TPeP0jmvnSI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -224,6 +232,26 @@
 		<data>
 		7dIhn8zBxuDgy5RZJ4a7VrHWZOs=
 		</data>
+		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
+		<data>
+		PQVfZMZHcYSY6t81n1R6lkw3Ff8=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/_CodeSignature/CodeResources</key>
+		<data>
+		fRAAELeyfu2m6tL5oDKHOOCPOIg=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios</key>
+		<data>
+		ll7mYuQ9EQNrHCB337sDThtH3do=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios_privacy.bundle/Info.plist</key>
+		<data>
+		WUF+71aUFc+ThO4RqhWmiz0tYSQ=
+		</data>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		/LX0ZlwxwIAIhjZaDB8EiH5KpXA=
+		</data>
 		<key>Frameworks/local_auth_darwin.framework/Info.plist</key>
 		<data>
 		5d1GWN+eie6JXp2KiXDLgrsUGHc=
@@ -255,6 +283,26 @@
 		<key>Frameworks/location.framework/location</key>
 		<data>
 		isFSpX0jVA4cFSy6AL0+vIhvZl0=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/Info.plist</key>
+		<data>
+		urhFbnhIcPtSgp6XTQDdbL2oCSU=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/_CodeSignature/CodeResources</key>
+		<data>
+		yZrNrGA+8p5K1RdHbwn5VH8LoyI=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation</key>
+		<data>
+		36j5WUIuWGPxXyX6JCRJcVMgYqo=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/Info.plist</key>
+		<data>
+		5uqkDGJfUp8lWBPc3LBpKOMMQD4=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		6uLTlq7fgHHWA8emYDf4ImHC+AY=
 		</data>
 		<key>GoogleMaps.bundle/Assets.car</key>
 		<data>
@@ -1059,7 +1107,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BHIwKnnhWKZ34098Y8Pfr9jR0c8=
+		Lp0sOE6NLjiaS8TApwXyJbRMfQQ=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -1150,7 +1198,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OcPdK+odyvVL4cqbN4wXe6ex4OMPsZ0DNwcUAt1NGZw=
+			a952YC+EfnkYJOHLTsV4ErkF4U42j00T8O/UHKbYh88=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1164,21 +1212,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v0js3ZsHXFL+LA30EoadVFbxbKSQTuye58IIs6VQPTU=
+			JHgWmDcYWNHnlk8lk0iBf0tpWR2djmDKyI2Meq1XJQQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rB0zltiHTOu3Vz+uWxZMZCCJ6e6IlTOf4wmGJvW+qzA=
+			/+YFJzAraDpvcyc5iQgds7omOx0goZljbg+ubrK+Ij0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dg9dkvSQmzXYZfDwkUZ8lu4H32K0WA5nckkAP5r+2+I=
+			glf6+JvdUPnAxno8Y8CaM3AbSYLM58kvwRcabWdy7Xo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -1192,7 +1240,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2njOHxTctc0JwMpiCsCJfleOZfzbDJtuv+o39C9phHs=
+			g92RyZ54MrU2lWiljn4pJYwkx1fV626CRHOC5ziZIQg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
@@ -1207,6 +1255,20 @@
 			<key>hash2</key>
 			<data>
 			5WC3vUfZh+SaAet1fpmSiyiawxjEyzs2aSZEkbBdvBQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/business_image.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nweqW4ofKOaIMRhDzQv1jQhZKm2i5Ebmc9Hzq+IOh08=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/profile_image.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8XmgL+KkJpdNTz6xO7ND74uWIQBYLam/H584XGG1H6w=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/streetLogo.png</key>
@@ -1234,7 +1296,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			colI0snNdSkCHp5MhZvzhm7BMHZ6Ktm2lMDSLa0rnJE=
+			k0G3lqIUA/hk5//GWHVemu3++8qHRqzTy+5/ZYpqeg0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1461,6 +1523,41 @@
 			McCtqd5XM2gCzZK0LQdRxcN1F0Jf4yT4LKHyNDNs+9M=
 			</data>
 		</dict>
+		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vrYEbk3V/lFvdGQpTt4fcmYOD9YvSouCdJ7OtQEe8ik=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1CXOtu+Zgelb/7k3nhBb4hKj0LZWq0mSSYa7l2faruo=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+F8mpdXN2a3pxkw94/DVk+OeszbUFwgH4SiU4uKGpsI=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			A6XApsZI1Sf3AWQfSrqfhaCF5JgsU0rmkDWFmlBZQ2Y=
+			</data>
+		</dict>
+		<key>Frameworks/image_picker_ios.framework/image_picker_ios_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bS2g2NkwIn1CjB2TY7CtbjoS4sm2jFzilxWKdBL8jDE=
+			</data>
+		</dict>
 		<key>Frameworks/local_auth_darwin.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -1515,6 +1612,41 @@
 			<key>hash2</key>
 			<data>
 			1TQnG7pwIJ9Hu9lo2Q0lfrBndOyXlSAJ1F7z9pEQovQ=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1bEFlTn2dYUjncW+sMHZPh/I4QbTFE+aERjcV0xFWVs=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Os8oX7YlbzwiJBvVCPC+/9LY3h2SSqvQMr+2LWuCA8Y=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dbMQhkM6v6E9tEWgyUBUry8CuuamKY3ZQH7/6BkIRPo=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			g0MRq82c9KxjUNmvqm0pyBnOUdkurwR4esPY/qlT04Q=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BWQouTi9VwGKYAGdFcPB7i+nJ/I2h1mLu9k0hIsYCxo=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/Assets.car</key>
