@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		XlMmlSn5ND3GPSJ6e/Kb/fP9nWA=
+		FgG9Kn+a4Fs5upV00/Odp1luWHg=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		OQCZ4VtYLyer0jtlqIPadkhd4uk=
+		ycncXD6NaFHWwmeO+MvjO9ta9QU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		fiCl5r8x2gWQwlOlQkkW3XUcbT8=
+		DykNkLhrIVDE1huYrELdyk9/7J0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		YjqiGSgoCIgp3DooX+6O4zPr07Y=
+		XtXgjd6Hj0ZqjbOJ689SNBotaOE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -283,6 +283,26 @@
 		<key>Frameworks/location.framework/location</key>
 		<data>
 		isFSpX0jVA4cFSy6AL0+vIhvZl0=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/Info.plist</key>
+		<data>
+		urhFbnhIcPtSgp6XTQDdbL2oCSU=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/_CodeSignature/CodeResources</key>
+		<data>
+		yZrNrGA+8p5K1RdHbwn5VH8LoyI=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation</key>
+		<data>
+		36j5WUIuWGPxXyX6JCRJcVMgYqo=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/Info.plist</key>
+		<data>
+		5uqkDGJfUp8lWBPc3LBpKOMMQD4=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		6uLTlq7fgHHWA8emYDf4ImHC+AY=
 		</data>
 		<key>GoogleMaps.bundle/Assets.car</key>
 		<data>
@@ -1178,7 +1198,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NTUGcqXuc5HdT4qEK+EAop0Bf4yCZqX40826GmhmbF4=
+			eYT3G1pB7ZVzju7EtrVrSOq1Quk9knSn++cEkjxTGxM=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1192,7 +1212,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WRqzPZKeOpCK6bPWYPgagm5C4D9mYOT21tkiXnx91j4=
+			S+sanJ4ooi7mq9DGriWjw7cl7AwEbqByB1qsnE0we+g=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -1220,7 +1240,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hS7MbW7z2b+cK6KY+pXkGpsFaVDfrCZg1fl1CT4j7bs=
+			g92RyZ54MrU2lWiljn4pJYwkx1fV626CRHOC5ziZIQg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
@@ -1276,7 +1296,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FkFjYsrtulTSwIZdMJzlOQUJjZjmJqS32Aa0tTn+t7U=
+			pHecA8edUqzPmChTq7B5AB0PV2CQ+wi8Yw4gDkj5UHI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1592,6 +1612,41 @@
 			<key>hash2</key>
 			<data>
 			1TQnG7pwIJ9Hu9lo2Q0lfrBndOyXlSAJ1F7z9pEQovQ=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1bEFlTn2dYUjncW+sMHZPh/I4QbTFE+aERjcV0xFWVs=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Os8oX7YlbzwiJBvVCPC+/9LY3h2SSqvQMr+2LWuCA8Y=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dbMQhkM6v6E9tEWgyUBUry8CuuamKY3ZQH7/6BkIRPo=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			g0MRq82c9KxjUNmvqm0pyBnOUdkurwR4esPY/qlT04Q=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BWQouTi9VwGKYAGdFcPB7i+nJ/I2h1mLu9k0hIsYCxo=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/Assets.car</key>
