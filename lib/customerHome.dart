@@ -203,51 +203,93 @@ class _CustomerHomeState extends State<CustomerHome> {
   }
 }
 
-class HomeListView extends StatelessWidget {
+class HomeListView extends StatefulWidget {
   final Function(String title, String details) onVendorNewsClicked;
 
   const HomeListView({Key? key, required this.onVendorNewsClicked}) : super(key: key);
 
   @override
+  _HomeListViewState createState() => _HomeListViewState();
+}
+
+class _HomeListViewState extends State<HomeListView> {
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_onScroll);
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_onScroll);
+    super.dispose();
+  }
+
+  Future<void> _onRefresh() async {
+    // Implement your refresh logic here
+    // For example, fetch new data from the server
+  }
+
+  void _onScroll() {
+    if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
+      // You have reached the bottom of the list view
+      // Implement any additional logic if needed
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      color: const Color(0xFFDEAD00),
-      padding: EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Search',
-                prefixIcon: Icon(Icons.search),
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+    return RefreshIndicator(
+      onRefresh: _onRefresh,
+      child: Container(
+        color: const Color(0xFFDEAD00),
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search',
+                  prefixIcon: Icon(Icons.search),
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 16),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 10, // Replace 10 with the actual number of items
-              itemBuilder: (context, index) {
-                final title = 'Vendor News ${index + 1}';
-                final details = 'Details about Vendor News ${index + 1}';
-                return ListTile(
-                  title: Text(title),
-                  subtitle: Text(details),
-                  onTap: () {
-                    onVendorNewsClicked(title, details);
-                  },
-                );
-              },
+            SizedBox(height: 16),
+            Expanded(
+              child: ListView.builder(
+                controller: _scrollController,
+                itemCount: 10, // Replace 10 with the actual number of items
+                itemBuilder: (context, index) {
+                  final title = 'Vendor News ${index + 1}';
+                  final details = 'Details about Vendor News ${index + 1}';
+                  return ListTile(
+                    title: Text(
+                      title,
+                      style: TextStyle(color: Colors.white), // Set text color to white
+                      ),
+                      subtitle: Text(
+                        details,
+                        style: TextStyle(color: Colors.white), // Set text color to white
+                        ),
+                        onTap: () {
+                          widget.onVendorNewsClicked(title, details);
+                          },
+                          );
+                          },
+                          ),
+
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
