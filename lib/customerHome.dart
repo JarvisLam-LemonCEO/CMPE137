@@ -271,22 +271,27 @@ class _HomeListViewState extends State<HomeListView> {
                 itemBuilder: (context, index) {
                   final title = 'Vendor News ${index + 1}';
                   final details = 'Details about Vendor News ${index + 1}';
-                  return ListTile(
-                    title: Text(
-                      title,
-                      style: TextStyle(color: Colors.white), // Set text color to white
-                      ),
-                      subtitle: Text(
-                        details,
-                        style: TextStyle(color: Colors.white), // Set text color to white
+                  return GestureDetector(
+                    onTap: () {
+                      widget.onVendorNewsClicked(title, details);
+                    },
+                    child: Card(
+                      color: Colors.white,
+                      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                      child: ListTile(
+                        title: Text(
+                          title,
+                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                         ),
-                        onTap: () {
-                          widget.onVendorNewsClicked(title, details);
-                          },
-                          );
-                          },
-                          ),
-
+                        subtitle: Text(
+                          details,
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),

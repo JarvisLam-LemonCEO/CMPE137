@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		OKJgnS7VuVY2LB0Nw+UAnWem8Wo=
+		JdaT0w27qhuO3j2WIw8HtRiKMAY=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		+hqpfc1kr7rcyEhRBqTUaFKIchk=
+		o6HQUm6J74h3bV92p2fXdOgv1/0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		DykNkLhrIVDE1huYrELdyk9/7J0=
+		U2bdzPQI4JE/KTZswZXfbqyw0j0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		57ZtxIEi/WP49H7jiAwiC1UTCUw=
+		CFPo71YemzOg5ixmhQiY5Qlt8WA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -231,6 +231,26 @@
 		<key>Frameworks/connectivity_plus.framework/connectivity_plus</key>
 		<data>
 		7dIhn8zBxuDgy5RZJ4a7VrHWZOs=
+		</data>
+		<key>Frameworks/geolocator_apple.framework/Info.plist</key>
+		<data>
+		VEWFtah7Hioq7JjqRJOx+IE69BQ=
+		</data>
+		<key>Frameworks/geolocator_apple.framework/_CodeSignature/CodeResources</key>
+		<data>
+		4V51CEmEjoBISVfmzY14sOJQwpg=
+		</data>
+		<key>Frameworks/geolocator_apple.framework/geolocator_apple</key>
+		<data>
+		g7fH28cCkM97lr/hXKOQTXIUkWU=
+		</data>
+		<key>Frameworks/geolocator_apple.framework/geolocator_apple_privacy.bundle/Info.plist</key>
+		<data>
+		7UvBlNaxVxtfGU0lqDl/JfPQzok=
+		</data>
+		<key>Frameworks/geolocator_apple.framework/geolocator_apple_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		KFiVi4mWKmBFkTjfe3H4jsOvLNM=
 		</data>
 		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
 		<data>
@@ -1198,7 +1218,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Fn6y23s+XpVg4C4AAMQxmZoJGqVaFJkXlMk9+kKcvow=
+			YyBbyK/eIYrwJfCJnzM6OSgNinGejP03yRDhB8Tb8hs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1212,7 +1232,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DaswqdMzWTmHBS/lD5pbshid7ztklz4LSRPZILc/duI=
+			vRtapM75EPkWErLCoVJCe6EOiKbk+CJkmCe87B6mxnA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -1240,7 +1260,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			g92RyZ54MrU2lWiljn4pJYwkx1fV626CRHOC5ziZIQg=
+			su4wxmW5PqM1AYJGSH9FBvfRVMRoJVlqDGcA8+7ichw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
@@ -1296,7 +1316,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			A6k+uqya8GYub5pSv1xf5dIvzHFIWERUvIMv4peUZjE=
+			VxwfBU/dylwd2j6kyM9G/vDKBQlhIELxKdZtZv/kH34=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1521,6 +1541,41 @@
 			<key>hash2</key>
 			<data>
 			McCtqd5XM2gCzZK0LQdRxcN1F0Jf4yT4LKHyNDNs+9M=
+			</data>
+		</dict>
+		<key>Frameworks/geolocator_apple.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EfnRhMGfyn2coiVD+hEQpz4N3Z6mv+Oj1BR0QlinE0U=
+			</data>
+		</dict>
+		<key>Frameworks/geolocator_apple.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			H7mz8VJR47YHjE5gUb1mCf8V1wDuJPevJRy43VsxmCE=
+			</data>
+		</dict>
+		<key>Frameworks/geolocator_apple.framework/geolocator_apple</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ARvrpd5RxkGYKseNrGHRGAqsjwHDk3hdjw4bmNXKgJA=
+			</data>
+		</dict>
+		<key>Frameworks/geolocator_apple.framework/geolocator_apple_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IDaZLKu9ilKMGXeK+4R9H8UDrZ1yeo5BP6nATDXEdp0=
+			</data>
+		</dict>
+		<key>Frameworks/geolocator_apple.framework/geolocator_apple_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			p+c+xOFN/pYr5bFknUH/y01YGEb8+JJchzbtJ60mdTI=
 			</data>
 		</dict>
 		<key>Frameworks/image_picker_ios.framework/Info.plist</key>
