@@ -142,6 +142,7 @@ class _CustomerHomeState extends State<CustomerHome> {
         onTap: _onItemTapped,
         selectedItemColor: const Color.fromARGB(255, 0, 122, 252),
         unselectedItemColor: Colors.grey,
+        
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
