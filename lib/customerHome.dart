@@ -72,9 +72,9 @@ class _CustomerHomeState extends State<CustomerHome> {
                                       MaterialPageRoute(builder: (context) => ManageAccountPage()),
                                     );
                                   },
-                                  child: Text('Manage Account', style: TextStyle(color: Colors.black)),
+                                  child: Text('Manage Account', style: TextStyle(color: Colors.white)),
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFFFFFF00),
+                                    backgroundColor: Color(0xFFFFB200),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30),
                                     ),
@@ -89,9 +89,9 @@ class _CustomerHomeState extends State<CustomerHome> {
                                       MaterialPageRoute(builder: (context) => PaymentInformationPage()),
                                     );
                                   },
-                                  child: Text('Payment Information', style: TextStyle(color: Colors.black)),
+                                  child: Text('Payment Information', style: TextStyle(color: Colors.white)),
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFFFFFF00),
+                                    backgroundColor: Color(0xFFFFB200),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30),
                                     ),
@@ -106,9 +106,9 @@ class _CustomerHomeState extends State<CustomerHome> {
                                       MaterialPageRoute(builder: (context) => NotificationsPage()),
                                     );
                                   },
-                                  child: Text('Notifications', style: TextStyle(color: Colors.black)),
+                                  child: Text('Notifications', style: TextStyle(color: Colors.white)),
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFFFFFF00),
+                                    backgroundColor: Color(0xFFFFB200),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30),
                                     ),
@@ -123,9 +123,9 @@ class _CustomerHomeState extends State<CustomerHome> {
                                       MaterialPageRoute(builder: (context) => PrivacyPage()),
                                     );
                                   },
-                                  child: Text('Privacy', style: TextStyle(color: Colors.black)),
+                                  child: Text('Privacy', style: TextStyle(color: Colors.white)),
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFFFFFF00),
+                                    backgroundColor: Color(0xFFFFB200),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(30),
                                     ),

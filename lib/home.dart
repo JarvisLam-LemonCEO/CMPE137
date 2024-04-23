@@ -135,7 +135,7 @@ class _HomeState extends State<Home> {
                                         },
                                         child: Text(
                                           'Manage Account',
-                                          style: TextStyle(color: Colors.black),
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                         style: ElevatedButton.styleFrom(
                                           backgroundColor: Color(0xFF0BC2AC),
@@ -156,7 +156,7 @@ class _HomeState extends State<Home> {
                                         },
                                         child: Text(
                                           'Payment Information',
-                                          style: TextStyle(color: Colors.black),
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                         style: ElevatedButton.styleFrom(
                                           backgroundColor: Color(0xFF0BC2AC),
@@ -178,7 +178,7 @@ class _HomeState extends State<Home> {
                                         },
                                         child: Text(
                                           'Notifications',
-                                          style: TextStyle(color: Colors.black),
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                         style: ElevatedButton.styleFrom(
                                           backgroundColor: Color(0xFF0BC2AC),
@@ -199,7 +199,7 @@ class _HomeState extends State<Home> {
                                         },
                                         child: Text(
                                           'Privacy',
-                                          style: TextStyle(color: Colors.black),
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                         style: ElevatedButton.styleFrom(
                                           backgroundColor: Color(0xFF0BC2AC),

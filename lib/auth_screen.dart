@@ -131,21 +131,21 @@ class _AuthScreenState extends State<AuthScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  supportState == SupportState.supported
-                      ? 'Biometric authentication is supported on this device'
-                      : supportState == SupportState.unSupported
-                          ? 'Biometric authentication is not supported on this device'
-                          : 'Checking biometric support...',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: supportState == SupportState.supported
-                        ? Color.fromARGB(255, 0, 255, 110) 
-                        : supportState == SupportState.unSupported
-                            ? Colors.red
-                            : Colors.grey,
-                  ),
-                ),
+                // Text(
+                //   supportState == SupportState.supported
+                //       ? 'Biometric authentication is supported on this device'
+                //       : supportState == SupportState.unSupported
+                //           ? 'Biometric authentication is not supported on this device'
+                //           : 'Checking biometric support...',
+                //   style: TextStyle(
+                //     fontWeight: FontWeight.bold,
+                //     color: supportState == SupportState.supported
+                //         ? Color.fromARGB(255, 0, 255, 110) 
+                //         : supportState == SupportState.unSupported
+                //             ? Colors.red
+                //             : Colors.grey,
+                //   ),
+                // ),
                 const SizedBox(height: 20),
                 TextFormField(
                   controller: usernameController,
