@@ -22,7 +22,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
+<<<<<<< HEAD
 		xIVEPVX05COfuKMJtENwjuDGN78=
+=======
+		5d1GWN+eie6JXp2KiXDLgrsUGHc=
+>>>>>>> f05fb346f76b290ee441fdc0fedbfea460ec3f2f
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -30,7 +34,11 @@
 		</data>
 		<key>local_auth_darwin_privacy.bundle/Info.plist</key>
 		<data>
+<<<<<<< HEAD
 		YPAQpMr2yTQB9PMKlDI3SEJdZy8=
+=======
+		gZcWnCz4NYHDXkOU/SR4OwGl/ps=
+>>>>>>> f05fb346f76b290ee441fdc0fedbfea460ec3f2f
 		</data>
 		<key>local_auth_darwin_privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -78,7 +86,11 @@
 		<dict>
 			<key>hash2</key>
 			<data>
+<<<<<<< HEAD
 			1aOqF5QZ6zlc8wgXYNPky5VVduTeyrfK9E8daEUiPbY=
+=======
+			c/8j7LpbcvJQx5AQO44E/4+ajlRe7sP3Jkorjapmf8g=
+>>>>>>> f05fb346f76b290ee441fdc0fedbfea460ec3f2f
 			</data>
 		</dict>
 		<key>local_auth_darwin_privacy.bundle/PrivacyInfo.xcprivacy</key>
