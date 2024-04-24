@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-<<<<<<< HEAD
-=======
 import 'package:location/location.dart';
->>>>>>> f05fb346f76b290ee441fdc0fedbfea460ec3f2f
 
 class VendorRadar extends StatefulWidget {
   const VendorRadar({Key? key}) : super(key: key);
@@ -13,10 +10,6 @@ class VendorRadar extends StatefulWidget {
 }
 
 class _VendorRadarState extends State<VendorRadar> {
-<<<<<<< HEAD
-  late GoogleMapController _controller;
-  final LatLng _center = const LatLng(37.7749, -122.4194); // Initial map center coordinates
-=======
   late GoogleMapController mapController;
   late LatLng _initialLocation;
   LocationData? _currentPosition;
@@ -54,32 +47,10 @@ class _VendorRadarState extends State<VendorRadar> {
       _initialLocation = LatLng(_currentPosition!.latitude!, _currentPosition!.longitude!);
     });
   }
->>>>>>> f05fb346f76b290ee441fdc0fedbfea460ec3f2f
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
-      body: GoogleMap(
-        onMapCreated: (GoogleMapController controller) {
-          _controller = controller;
-        },
-        initialCameraPosition: CameraPosition(
-          target: _center,
-          zoom: 12.0, // Initial zoom level
-        ),
-        markers: {
-          Marker(
-            markerId: MarkerId('vendor_marker'),
-            position: _center,
-            infoWindow: InfoWindow(
-              title: 'Vendor Name', // Vendor's name or information
-              snippet: 'Vendor Address', // Vendor's address or additional details
-            ),
-          ),
-        },
-      ),
-=======
       appBar: AppBar(
         title: Text('Vendor Radar'),
       ),
@@ -109,7 +80,6 @@ class _VendorRadarState extends State<VendorRadar> {
           : Center(
               child: CircularProgressIndicator(),
             ),
->>>>>>> f05fb346f76b290ee441fdc0fedbfea460ec3f2f
     );
   }
 }

@@ -9,11 +9,7 @@ void main() {
   checkConnectivity();
 }
 
-<<<<<<< HEAD
-
-=======
 // check connectivity
->>>>>>> f05fb346f76b290ee441fdc0fedbfea460ec3f2f
 void checkConnectivity() async {
   var connectivityResult = await Connectivity().checkConnectivity();
   if (connectivityResult == ConnectivityResult.mobile) {
@@ -26,11 +22,7 @@ void checkConnectivity() async {
 }
 
 
-<<<<<<< HEAD
-class MyApp extends StatelessWidget {
-=======
 class MyApp extends StatelessWidget { 
->>>>>>> f05fb346f76b290ee441fdc0fedbfea460ec3f2f
   const MyApp({Key? key}) : super(key: key);
 
   @override

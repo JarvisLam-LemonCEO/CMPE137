@@ -38,69 +38,6 @@ class _HomeState extends State<Home> {
       home: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false, // Remove the back button
-<<<<<<< HEAD
-          title: Text(_tabTitles[_selectedIndex]),
-          backgroundColor: Color(0xFF0F8B7C), // Set the background color of the app bar
-        ),
-        body: Container(
-          color: Color(0xFF0F8B7C), // Set the background color of the body
-          child: _selectedIndex == 3 // Check if the profile tab is selected
-              ? Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text('Manage Account',style: TextStyle(color: Colors.black),),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF0BC2AC),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          minimumSize: Size(200, 50),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text('Payment Information',style: TextStyle(color: Colors.black),),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF0BC2AC),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          minimumSize: Size(200, 50),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text('Notifications',style: TextStyle(color: Colors.black),),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF0BC2AC),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          minimumSize: Size(200, 50),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text('Privacy',style: TextStyle(color: Colors.black),),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF0BC2AC),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          minimumSize: Size(200, 50),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              : Container(), // If another tab is selected, show an empty container
-=======
           title: Center(
             child: Text(_tabTitles[_selectedIndex]), // Title text
           ),
@@ -211,7 +148,6 @@ class _HomeState extends State<Home> {
                       : Container(), // If another tab is selected, show an empty container
             ),
           ],
->>>>>>> f05fb346f76b290ee441fdc0fedbfea460ec3f2f
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,
