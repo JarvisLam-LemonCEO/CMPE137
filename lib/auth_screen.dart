@@ -85,6 +85,7 @@ class _AuthScreenState extends State<AuthScreen> {
     }
   }
 
+// should have to chnage to connect with firebase authentication
   void login(String username, String password) {
     // Check if the entered username and password match the customer credentials
     if (username == 'customer' && password == '1234') {
