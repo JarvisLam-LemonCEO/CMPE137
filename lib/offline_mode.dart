@@ -18,7 +18,7 @@ class _OfflineDetectorState extends State<OfflineDetector> {
   void initState() {
     super.initState();
     _connectivity = Connectivity();
-    _connectivity.onConnectivityChanged.listen(_updateConnectionStatus as void Function(ConnectivityResult event)?);
+    _connectivity.onConnectivityChanged.listen(_updateConnectionStatus as void Function(List<ConnectivityResult> event)?);
     _updateConnectionStatus();
   }
 

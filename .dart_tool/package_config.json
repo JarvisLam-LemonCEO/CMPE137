@@ -39,15 +39,15 @@
     },
     {
       "name": "connectivity_plus",
-      "rootUri": "file:///Users/jarvislam/.pub-cache/hosted/pub.dev/connectivity_plus-5.0.2",
+      "rootUri": "file:///Users/jarvislam/.pub-cache/hosted/pub.dev/connectivity_plus-6.0.3",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.2"
     },
     {
       "name": "connectivity_plus_platform_interface",
-      "rootUri": "file:///Users/jarvislam/.pub-cache/hosted/pub.dev/connectivity_plus_platform_interface-1.2.4",
+      "rootUri": "file:///Users/jarvislam/.pub-cache/hosted/pub.dev/connectivity_plus_platform_interface-2.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.18"
     },
     {
       "name": "cross_file",
@@ -674,7 +674,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-04-22T00:28:39.390750Z",
+  "generated": "2024-04-25T05:56:20.849232Z",
   "generator": "pub",
   "generatorVersion": "3.3.1"
 }
