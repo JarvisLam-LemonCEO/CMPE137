@@ -95,7 +95,7 @@ class CustomerRegisterPage extends StatelessWidget {
                   // Handle sign up button press
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SigningUpPage()),
+                    MaterialPageRoute(builder: (context) => LoginPage()),
                   );
                 },
                 child: Text(
