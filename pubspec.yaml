@@ -44,6 +44,10 @@ dependencies:
   shared_preferences: ^2.2.3
   geolocator: ^11.0.0
   weather: ^3.1.1
+  firebase_core: ^1.10.0
+  firebase_auth: ^3.1.0
+  cloud_firestore: ^2.5.0
+  firebase_storage: ^10.2.0
 
 dev_dependencies:
   flutter_test:
