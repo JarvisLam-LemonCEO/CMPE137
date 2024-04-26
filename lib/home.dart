@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tut/auth_screen.dart';
 import 'hello.dart'; // Import your hello.dart file
 import 'vendorManageAccount.dart';
 import 'vendorPaymentInfo.dart';
@@ -6,6 +7,8 @@ import 'vendorNotifications.dart';
 import 'vendorPrivacy.dart';
 import 'newsUpdatesView.dart'; // Import the NewsUpdatesViewPage
 import 'addNewsUpdate.dart'; // Import the AddNewsUpdates
+import 'package:firebase_auth/firebase_auth.dart';
+import 'auth_screen.dart';
 
 
 class Home extends StatefulWidget {
@@ -13,6 +16,49 @@ class Home extends StatefulWidget {
 
   @override
   State<Home> createState() => _HomeState();
+}
+class home extends StatelessWidget {
+  home({Key? key}) : super(key: key);
+
+  final User? user = Auth().currentUser;
+
+  Future<void> signOut() async {
+    await Auth().signOut();
+  }
+
+  Widget _title() {
+    return const Text('Firebase Auth');
+  }
+
+  Widget _userUID() {
+    return Text(user?.email ?? 'User email');
+  }
+
+  Widget _signOutButton() {
+    return ElevatedButton(onPressed: signOut, child: const Text('Sign Out'),);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: _title(),
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _userUID(),
+            _signOutButton(),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class _HomeState extends State<Home> {

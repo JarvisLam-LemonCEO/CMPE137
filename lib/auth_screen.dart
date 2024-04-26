@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'home.dart';
 import 'customerHome.dart';
 
@@ -77,7 +77,7 @@ class _AuthScreenState extends State<AuthScreen> {
       }
 
       if (authenticated) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
       }
     } on PlatformException catch (e) {
       print(e);
@@ -95,7 +95,7 @@ class _AuthScreenState extends State<AuthScreen> {
     } else if (username == 'vendor' && password == '1234') {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const Home()), // Navigate to Home.dart
+        MaterialPageRoute(builder: (context) => Home()), // Navigate to Home.dart
       );
     } else {
       // Show an error message if the credentials are incorrect
@@ -233,5 +233,31 @@ class _AuthScreenState extends State<AuthScreen> {
         ),
       ),
     );
+  }
+}
+
+class Auth {
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+  User? get currentUser => _firebaseAuth.currentUser;
+
+  Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
+
+  Future<void> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+  }
+
+  Future<void> createUserWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+  }
+
+  Future<void> signOut() async {
+    await _firebaseAuth.signOut();
   }
 }
