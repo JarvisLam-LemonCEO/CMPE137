@@ -7,7 +7,8 @@ import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    );
 
   // Check network connectivity when the app starts
   await checkConnectivity();
