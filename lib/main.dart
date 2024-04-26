@@ -2,15 +2,21 @@ import 'package:flutter/material.dart';
 import 'splash_screen.dart';
 import 'role.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'widget_tree.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  runApp(MyApp());
-   // Check network connectivity when the app starts
-  checkConnectivity();
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  // Check network connectivity when the app starts
+  await checkConnectivity();
+
+  runApp(const MyApp());
 }
 
 // check connectivity
-void checkConnectivity() async {
+Future<void> checkConnectivity() async {
   var connectivityResult = await Connectivity().checkConnectivity();
   if (connectivityResult == ConnectivityResult.mobile) {
     print('Mobile data connection available');
@@ -32,11 +38,11 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SplashScreen(),
         '/role': (context) => Role(),
-
       },
       theme: ThemeData(
         fontFamily: 'SF Pro Display', // Set the default font family to SF Pro Display
       ),
+      home: const WidgetTree(),
     );
   }
 }
