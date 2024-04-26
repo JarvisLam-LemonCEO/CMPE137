@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'home.dart';
 import 'customerHome.dart';
 
@@ -77,7 +77,7 @@ class _AuthScreenState extends State<AuthScreen> {
       }
 
       if (authenticated) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
       }
     } on PlatformException catch (e) {
       print(e);
@@ -85,7 +85,6 @@ class _AuthScreenState extends State<AuthScreen> {
     }
   }
 
-// should have to chnage to connect with firebase authentication
   void login(String username, String password) {
     // Check if the entered username and password match the customer credentials
     if (username == 'customer' && password == '1234') {
@@ -96,7 +95,7 @@ class _AuthScreenState extends State<AuthScreen> {
     } else if (username == 'vendor' && password == '1234') {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const Home()), // Navigate to Home.dart
+        MaterialPageRoute(builder: (context) => Home()), // Navigate to Home.dart
       );
     } else {
       // Show an error message if the credentials are incorrect
@@ -132,21 +131,21 @@ class _AuthScreenState extends State<AuthScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Text(
-                //   supportState == SupportState.supported
-                //       ? 'Biometric authentication is supported on this device'
-                //       : supportState == SupportState.unSupported
-                //           ? 'Biometric authentication is not supported on this device'
-                //           : 'Checking biometric support...',
-                //   style: TextStyle(
-                //     fontWeight: FontWeight.bold,
-                //     color: supportState == SupportState.supported
-                //         ? Color.fromARGB(255, 0, 255, 110) 
-                //         : supportState == SupportState.unSupported
-                //             ? Colors.red
-                //             : Colors.grey,
-                //   ),
-                // ),
+                Text(
+                  supportState == SupportState.supported
+                      ? 'Biometric authentication is supported on this device'
+                      : supportState == SupportState.unSupported
+                          ? 'Biometric authentication is not supported on this device'
+                          : 'Checking biometric support...',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: supportState == SupportState.supported
+                        ? Color.fromARGB(255, 0, 255, 110) 
+                        : supportState == SupportState.unSupported
+                            ? Colors.red
+                            : Colors.grey,
+                  ),
+                ),
                 const SizedBox(height: 20),
                 TextFormField(
                   controller: usernameController,
@@ -234,5 +233,31 @@ class _AuthScreenState extends State<AuthScreen> {
         ),
       ),
     );
+  }
+}
+
+class Auth {
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+  User? get currentUser => _firebaseAuth.currentUser;
+
+  Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
+
+  Future<void> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+  }
+
+  Future<void> createUserWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+  }
+
+  Future<void> signOut() async {
+    await _firebaseAuth.signOut();
   }
 }
