@@ -54,9 +54,9 @@ class ChangePasswordPage extends StatelessWidget {
               onPressed: () {
                 // Implement logic to change password
               },
-              child: Text('Submit', style: TextStyle(color: Colors.black)),
+              child: Text('Submit', style: TextStyle(color: Colors.white)),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFFFFF00), // Set button background color to match app bar
+                backgroundColor: const Color(0xFFFFB200), // Set button background color to match app bar
               ),
             ),
           ],

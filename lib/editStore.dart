@@ -115,14 +115,16 @@ class _EditStorePageState extends State<EditStorePage> {
               style: TextStyle(color: Colors.white),
             ),
             SizedBox(height: 20),
-            // Save Changes Button
-            ElevatedButton(
-              onPressed: () {
-                // Handle saving changes
-              },
-              child: Text('Save Changes', style: TextStyle(color: Colors.black)),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF0BC2AC), // Set button background color
+            // Center the Save Changes Button
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  // Handle saving changes
+                },
+                child: Text('Save Changes', style: TextStyle(color: Colors.white)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF0BC2AC), // Set button background color
+                ),
               ),
             ),
           ],
