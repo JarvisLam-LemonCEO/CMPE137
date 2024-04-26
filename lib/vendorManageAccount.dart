@@ -84,7 +84,7 @@ class ManageAccountPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => ChangePasswordPage()),
                     );
                   },
-                  child: Text('Change Password', style: TextStyle(color: Colors.black)),
+                  child: Text('Change Password', style: TextStyle(color: Colors.white)),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF0BC2AC), // Set button background color
                   ),
@@ -101,7 +101,7 @@ class ManageAccountPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => EditProfilePage()),
                     );
                   },
-                  child: Text('Edit Profile', style: TextStyle(color: Colors.black)),
+                  child: Text('Edit Profile', style: TextStyle(color: Colors.white)),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF0BC2AC), // Set button background color
                   ),
@@ -118,7 +118,7 @@ class ManageAccountPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => EditStorePage()),
                     );
                   },
-                  child: Text('Edit Store', style: TextStyle(color: Colors.black)),
+                  child: Text('Edit Store', style: TextStyle(color: Colors.white)),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF0BC2AC), // Set button background color
                   ),

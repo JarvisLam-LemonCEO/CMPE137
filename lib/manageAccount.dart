@@ -49,9 +49,9 @@ class ManageAccountPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => ChangePasswordPage()),
                     );
                   },
-                  child: Text('Change Password', style: TextStyle(color: Colors.black)),
+                  child: Text('Change Password', style: TextStyle(color: Colors.white)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFFFF00), // Set button background color to match app bar
+                    backgroundColor: const Color(0xFFFFB200), // Set button background color to match app bar
                   ),
                 ),
               ),
@@ -66,9 +66,9 @@ class ManageAccountPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => EditProfilePage()),
                     );
                   },
-                  child: Text('Change Profile Details', style: TextStyle(color: Colors.black)),
+                  child: Text('Change Profile Details', style: TextStyle(color: Colors.white)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFFFF00), // Set button background color to match app bar
+                    backgroundColor: const Color(0xFFFFB200), // Set button background color to match app bar
                   ),
                 ),
               ),

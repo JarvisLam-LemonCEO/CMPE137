@@ -94,9 +94,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
               onPressed: () {
                 // Save changes
               },
-              child: Text('Save Changes', style: TextStyle(color: Colors.black)),
+              child: Text('Save Changes', style: TextStyle(color: Colors.white)),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFFFFF00),
+                backgroundColor: const Color(0xFFFFB200),
               ),
             ),
           ],
