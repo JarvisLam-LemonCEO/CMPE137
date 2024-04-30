@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'vendor_register.dart'; // Import VendorRegisterPage
 import 'customer_register.dart'; // Import CustomerRegisterPage
@@ -7,33 +9,40 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class Role extends StatelessWidget {
   const Role({Key? key}) : super(key: key);
 
-  Future<void> _registerVendor(BuildContext context) async {
-    try {
-      // Assuming you have obtained the user's role during registration
-      String userRole = 'vendor'; // Set user role as 'vendor'
+Future<void> _registerVendor(BuildContext context) async {
+  try {
+    // Generate a unique vendorID
+    String vendorID = _generateID();
 
-      // Get the current user
-      User? user = FirebaseAuth.instance.currentUser;
+    // Assuming you have obtained the user's role during registration
+    String userRole = 'vendor'; // Set user role as 'vendor'
 
-      // Update user data in Firestore
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc(user?.uid)
-          .set({'role': userRole}, SetOptions(merge: true)); // Merge with existing data if any
+    // Get the current user
+    User? user = FirebaseAuth.instance.currentUser;
 
-      // Navigate to the vendor registration page
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => VendorRegisterPage()), // Navigate to VendorRegisterPage
-      );
-    } catch (e) {
-      // Handle registration errors
-      print('Error registering vendor: $e');
-    }
+    // Update user data in Firestore
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(user?.uid)
+        .set({'role': userRole, 'vendorID': vendorID}, SetOptions(merge: true)); // Merge with existing data if any
+
+    // Navigate to the vendor registration page and pass the vendorID
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => VendorRegisterPage(vendorID: vendorID)), // Pass vendorID
+    );
+  } catch (e) {
+    // Handle registration errors
+    print('Error registering vendor: $e');
   }
+}
+
 
   Future<void> _registerCustomer(BuildContext context) async {
     try {
+      // Generate a unique customerID
+      String customerID = _generateID();
+
       // Assuming you have obtained the user's role during registration
       String userRole = 'customer'; // Set user role as 'customer'
 
@@ -44,7 +53,7 @@ class Role extends StatelessWidget {
       await FirebaseFirestore.instance
           .collection('users')
           .doc(user?.uid)
-          .set({'role': userRole}, SetOptions(merge: true)); // Merge with existing data if any
+          .set({'role': userRole, 'customerID': customerID}, SetOptions(merge: true)); // Merge with existing data if any
 
       // Navigate to the customer registration page
       Navigator.push(
@@ -55,6 +64,13 @@ class Role extends StatelessWidget {
       // Handle registration errors
       print('Error registering customer: $e');
     }
+  }
+
+  String _generateID() {
+    // Generate a unique ID using a combination of timestamp and random number
+    String timestamp = DateTime.now().millisecondsSinceEpoch.toString();
+    String randomNumber = Random().nextInt(1000000).toString();
+    return timestamp + randomNumber;
   }
 
   @override
@@ -78,15 +94,15 @@ class Role extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            Text(
-              'Join our vibrant community of street vendors and customers. Whether you\'re looking to sell your unique creations or discover local treasures, choose your role below and start your journey today!',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white, // Description text color
+              Text(
+                'Join our vibrant community of street vendors and customers. Whether you\'re looking to sell your unique creations or discover local treasures, choose your role below and start your journey today!',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white, // Description text color
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            const SizedBox(height: 20),
+              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               SizedBox(height: 20), // Adjust the height between description and buttons
               Expanded(
                 child: Column(
@@ -101,14 +117,13 @@ class Role extends StatelessWidget {
                           color: Colors.white, // Button text color
                         ),
                       ),
-                      
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 14, 122, 254), // Button color
-                minimumSize: Size(screenSize.width * 0.85, 200), // Button width and height
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30), // Button border radius
-                ),
-              ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 14, 122, 254), // Button color
+                        minimumSize: Size(screenSize.width * 0.85, 200), // Button width and height
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30), // Button border radius
+                        ),
+                      ),
                     ),
                     SizedBox(height: 20), // Adjust the height between buttons
                     ElevatedButton(
@@ -120,13 +135,13 @@ class Role extends StatelessWidget {
                           color: Colors.white, // Button text color
                         ),
                       ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 6, 230, 96), // Button color
-                minimumSize: Size(screenSize.width * 0.85, 200), // Button width and height
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30), // Button border radius
-                ),
-              ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 6, 230, 96), // Button color
+                        minimumSize: Size(screenSize.width * 0.85, 200), // Button width and height
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30), // Button border radius
+                        ),
+                      ),
                     ),
                   ],
                 ),

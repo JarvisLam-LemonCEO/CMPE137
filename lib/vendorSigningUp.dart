@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'vendorSignUpComplete.dart'; // Import the SignUpCompletePage
 
 class VendorSigningUpPage extends StatelessWidget {
-  const VendorSigningUpPage({Key? key}) : super(key: key);
+    final String vendorID; // Vendor ID passed from the previous page
+
+  const VendorSigningUpPage({Key? key, required this.vendorID}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class VendorSigningUpPage extends StatelessWidget {
       // Navigate to the SignUpCompletePage
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => VendorSignUpCompletePage()),
+        MaterialPageRoute(builder: (context) => VendorSignUpCompletePage(vendorID: vendorID)),
       );
     });
 

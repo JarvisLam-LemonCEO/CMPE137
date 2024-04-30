@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
-import 'vendorSigningUp.dart'; // Import the SigningUpPage
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_tut/vendorSigningUp.dart';
 
 class VendorRegisterPage extends StatelessWidget {
-  const VendorRegisterPage({Key? key}) : super(key: key);
+  final String vendorID; // Vendor ID passed from Role.dart
+
+  const VendorRegisterPage({Key? key, required this.vendorID}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController nameController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
     final Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -20,19 +26,20 @@ class VendorRegisterPage extends StatelessWidget {
             Navigator.pop(context); // Navigate back to the previous page (HelloPage)
           },
         ),
-        title: Text('Join as a Vendor',
-        style: TextStyle(
-                      color: Colors.white,
-                    ),),
+        title: Text(
+          'Join as a Vendor',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
       ),
-      body: SingleChildScrollView( // Wrap the Scaffold in a SingleChildScrollView
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Upload profile photo section
               Container(
                 width: screenSize.width * 0.5,
                 height: screenSize.width * 0.5,
@@ -43,8 +50,8 @@ class VendorRegisterPage extends StatelessWidget {
                 child: Icon(Icons.person, size: 50),
               ),
               SizedBox(height: 20),
-              // Name text field
               TextField(
+                controller: nameController,
                 decoration: InputDecoration(
                   hintText: 'Name',
                   border: OutlineInputBorder(
@@ -54,8 +61,8 @@ class VendorRegisterPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              // Email text field
               TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   hintText: 'Email',
                   border: OutlineInputBorder(
@@ -65,8 +72,8 @@ class VendorRegisterPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              // Password text field
               TextField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Password',
@@ -77,7 +84,6 @@ class VendorRegisterPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              // Confirm Password text field
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
@@ -89,14 +95,45 @@ class VendorRegisterPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              // Sign Up button
               ElevatedButton(
-                onPressed: () {
-                  // Handle sign up button press
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => VendorSigningUpPage()),
-                  );
+                onPressed: () async {
+                  // Check if all input fields are filled
+                  if (nameController.text.isEmpty ||
+                      emailController.text.isEmpty ||
+                      passwordController.text.isEmpty) {
+                    // Show a red error message
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Please fill in all fields',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ),
+                    );
+                  } else {
+                    // Get text field values
+                    String name = nameController.text;
+                    String email = emailController.text;
+                    String password = passwordController.text;
+
+                    // Add user data to Firestore
+                    try {
+                      await FirebaseFirestore.instance.collection('vendors').doc(vendorID).set({
+                        'name': name,
+                        'email': email,
+                        // Add more fields as needed
+                      });
+
+                      // Navigate to the VendorSigningUpPage
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => VendorSigningUpPage(vendorID:vendorID)),
+                      );
+                    } catch (e) {
+                      // Handle errors
+                      print('Error adding user data to Firestore: $e');
+                    }
+                  }
                 },
                 child: Text(
                   'Sign Up',
