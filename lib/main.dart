@@ -3,8 +3,23 @@ import 'splash_screen.dart';
 import 'role.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+
+  WidgetsFlutterBinding.ensureInitialized()
+  if(kIsWeb){
+    await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyCZb7ZjqVeM9aYDQMTwV-Mm0MTX7Ck1uZg",
+  authDomain: "streeteats-6ddb2.firebaseapp.com",
+  projectId: "streeteats-6ddb2",
+  storageBucket: "streeteats-6ddb2.appspot.com",
+  messagingSenderId: "462044370321",
+  appId: "1:462044370321:web:a90b7de0b70b15cb8fb630"));
+  } else {
+    await Firebase.initializeApp();
+  }
+
+  runApp(const MyApp());
    // Check network connectivity when the app starts
   checkConnectivity();
 }
