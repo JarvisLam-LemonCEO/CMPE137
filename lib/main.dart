@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'splash_screen.dart'; // Import your splash screen widget
-// import 'hello.dart';
 import 'role.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'dependencyInjection.dart';
 
 void main() {
   runApp(MyApp());
    // Check network connectivity when the app starts
   checkConnectivity();
+  DependencyInjection.init();
 }
 
 
