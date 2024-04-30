@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
+//class to create a vendor location
+class VendorLocation{
+  final String name;
+  final LatLng location;
+
+  VendorLocation({
+    required this.name,
+    required this.location,
+  });
+}
+
 class VendorRadar extends StatefulWidget {
   const VendorRadar({Key? key}) : super(key: key);
 
@@ -13,6 +24,7 @@ class _VendorRadarState extends State<VendorRadar> {
   late GoogleMapController mapController;
   late LatLng _initialLocation;
   LocationData? _currentPosition;
+  List<VendorLocation> vendors = []; //list of vendor locations
 
   @override
   void initState() {
@@ -45,6 +57,12 @@ class _VendorRadarState extends State<VendorRadar> {
     _currentPosition = await location.getLocation();
     setState(() {
       _initialLocation = LatLng(_currentPosition!.latitude!, _currentPosition!.longitude!);
+
+      //add vendor to the list to be used on customer map
+      vendors.add(VendorLocation(
+        name: 'local food',
+        location: _initialLocation,
+         ));
     });
   }
 

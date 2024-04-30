@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'splash_screen.dart';
-import 'role.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'widget_tree.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    );
+ WidgetsFlutterBinding.ensureInitialized();
+ await Firebase.initializeApp(
+   options: DefaultFirebaseOptions.currentPlatform,
+ );
 
   // Check network connectivity when the app starts
   await checkConnectivity();
@@ -28,22 +28,22 @@ Future<void> checkConnectivity() async {
   }
 }
 
-
 class MyApp extends StatelessWidget { 
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
+      initialRoute: '/splash', // Set initialRoute to point to the splash screen
       routes: {
-        '/': (context) => SplashScreen(),
-        '/role': (context) => Role(),
+        // '/': (context) => WidgetTree(), // Your default route
+        // '/role': (context) => Role(),
+        '/splash': (context) => SplashScreen(), // Route for the splash screen
       },
       theme: ThemeData(
         fontFamily: 'SF Pro Display', // Set the default font family to SF Pro Display
       ),
-      home: const WidgetTree(),
     );
   }
 }
+

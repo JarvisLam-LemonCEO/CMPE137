@@ -1,9 +1,61 @@
 import 'package:flutter/material.dart';
 import 'vendor_register.dart'; // Import VendorRegisterPage
 import 'customer_register.dart'; // Import CustomerRegisterPage
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Role extends StatelessWidget {
   const Role({Key? key}) : super(key: key);
+
+  Future<void> _registerVendor(BuildContext context) async {
+    try {
+      // Assuming you have obtained the user's role during registration
+      String userRole = 'vendor'; // Set user role as 'vendor'
+
+      // Get the current user
+      User? user = FirebaseAuth.instance.currentUser;
+
+      // Update user data in Firestore
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user?.uid)
+          .set({'role': userRole}, SetOptions(merge: true)); // Merge with existing data if any
+
+      // Navigate to the vendor registration page
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => VendorRegisterPage()), // Navigate to VendorRegisterPage
+      );
+    } catch (e) {
+      // Handle registration errors
+      print('Error registering vendor: $e');
+    }
+  }
+
+  Future<void> _registerCustomer(BuildContext context) async {
+    try {
+      // Assuming you have obtained the user's role during registration
+      String userRole = 'customer'; // Set user role as 'customer'
+
+      // Get the current user
+      User? user = FirebaseAuth.instance.currentUser;
+
+      // Update user data in Firestore
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user?.uid)
+          .set({'role': userRole}, SetOptions(merge: true)); // Merge with existing data if any
+
+      // Navigate to the customer registration page
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => CustomerRegisterPage()), // Navigate to CustomerRegisterPage
+      );
+    } catch (e) {
+      // Handle registration errors
+      print('Error registering customer: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,32 +64,20 @@ class Role extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Color.fromARGB(255, 14, 122, 254), // Back arrow color
-          ),
-          onPressed: () {
-            Navigator.pop(context); // Navigate back to the previous page (HelloPage)
-          },
-        ),
         title: Text(
-          'Welcome to StreetEats',
+          'Select Role',
           style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
             color: Colors.white, // Title text color
           ),
         ),
-        centerTitle: true,
         backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
-        elevation: 0, // Remove app bar shadow
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
             Text(
               'Join our vibrant community of street vendors and customers. Whether you\'re looking to sell your unique creations or discover local treasures, choose your role below and start your journey today!',
               style: TextStyle(
@@ -47,20 +87,21 @@ class Role extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => VendorRegisterPage()), // Navigate to the VendorRegisterPage
-                );
-              },
-              child: Text(
-                'Join as a Vendor',
-                style: TextStyle(
-                  fontSize: 30, // Set font size to 30
-                  color: Colors.white, // Button text color
-                ),
-              ),
+              SizedBox(height: 20), // Adjust the height between description and buttons
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () => _registerVendor(context),
+                      child: Text(
+                        'Register as Vendor',
+                        style: TextStyle(
+                          fontSize: 30, // Set font size to 20
+                          color: Colors.white, // Button text color
+                        ),
+                      ),
+                      
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 14, 122, 254), // Button color
                 minimumSize: Size(screenSize.width * 0.85, 200), // Button width and height
@@ -68,31 +109,30 @@ class Role extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30), // Button border radius
                 ),
               ),
-            ),
-            const SizedBox(height: 50),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => CustomerRegisterPage()), // Navigate to the CustomerRegisterPage
-                );
-              },
-              child: Text(
-                'Explore as a Customer',
-                style: TextStyle(
-                  fontSize: 30, // Set font size to 30
-                  color: Colors.white, // Button text color
-                ),
-              ),
+                    ),
+                    SizedBox(height: 20), // Adjust the height between buttons
+                    ElevatedButton(
+                      onPressed: () => _registerCustomer(context),
+                      child: Text(
+                        'Register as Customer',
+                        style: TextStyle(
+                          fontSize: 30, // Set font size to 20
+                          color: Colors.white, // Button text color
+                        ),
+                      ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 0, 255, 102), // Button color
+                backgroundColor: Color.fromARGB(255, 6, 230, 96), // Button color
                 minimumSize: Size(screenSize.width * 0.85, 200), // Button width and height
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30), // Button border radius
                 ),
               ),
-            ),
-          ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

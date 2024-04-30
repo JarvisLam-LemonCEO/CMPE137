@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		BpmSrY9Ma8yP4wADQNvaCJrjNtg=
+		3yLb2oUVxlb0+rwSGZJJ3LkMrEw=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		H3wxgxH0pkZ1pZH9ai0hvIkbR30=
+		zKAafL/PhHZbf2DNloHknHCuNN4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		JguSaaeO4p7YyljcsPnA0a4Nb/A=
+		iw479cXq2OCUujgr5lDuE0UcoxM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		NhQkSd9a0tbHDr+CosWcPvpwtsA=
+		A+VvLj/l1JKG/cIA9SHB7oLzFeA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -1529,6 +1529,10 @@
 		<data>
 		6Xf2/X7O6OK+/Rim4AHs2r9UbWU=
 		</data>
+		<key>GoogleService-Info.plist</key>
+		<data>
+		oScLtwl3FQFs9ZZvOXHg1eXnjIk=
+		</data>
 		<key>Info.plist</key>
 		<data>
 		Lp0sOE6NLjiaS8TApwXyJbRMfQQ=
@@ -1622,7 +1626,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gwOB0ZRHcWFdVyM0SjJ9onjjmTT9nyy3wWQh05u0obE=
+			nzIsHqGE0YK0JzvIXT24AnhONJnP6r6FSABqfCAWFJ0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1636,7 +1640,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ggN/ba61QVw4bnGRG27IIlXWPkZSc9wFW2DVfLv0/kk=
+			sX2WQ+N2up8CIMz/ru26tGJiV6/PeU6Vw+xmePGL8/E=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -1664,7 +1668,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yd896sta98t6mo4/bLG0l+AlPJmqam544/wnRlytLqU=
+			8tb4rRMNI5U2+hI2Jfk1Kc7l35QlxB0+eEsu0j5OSDc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/App_icon.png</key>
@@ -1790,7 +1794,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			W2+tTIDr92FvyIqh2QxuUUKCeAUF8da0vs2Zcwkli4o=
+			b1RA6Po0oolw39Jc4Kj4mAHRG2BlyYmpo7YG1UBQAVs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -3884,6 +3888,13 @@
 			<key>hash2</key>
 			<data>
 			4NEfWIMETFd+ykNEcy7FuCpm8sbBvp/v1Znta+pSp2o=
+			</data>
+		</dict>
+		<key>GoogleService-Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			T6KNPVYu6mG/T7QRoBl/gmujq8Gd+VKrl/lZ3RqQAD4=
 			</data>
 		</dict>
 		<key>google_maps_flutter_ios_privacy.bundle/Info.plist</key>

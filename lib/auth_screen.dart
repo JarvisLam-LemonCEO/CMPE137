@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'home.dart';
 import 'customerHome.dart';
 
+
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key? key}) : super(key: key);
 
@@ -152,7 +153,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
-                    hintText: 'Username',
+                    hintText: 'Email',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
@@ -160,7 +161,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your username';
+                      return 'Please enter your Email';
                     }
                     return null;
                   },

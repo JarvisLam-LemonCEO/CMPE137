@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "462044370321",
+    "project_id": "streeteats-6ddb2",
+    "storage_bucket": "streeteats-6ddb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462044370321:android:c9112ed65bd767ec8fb630",
+        "android_client_info": {
+          "package_name": "com.example.flutter_tut"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462044370321-je0lu7agilub0lehb5ia4vc5htcm2m1c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpRiPOcDTDE4pwFsKjMsq-EE0ehNWn8ao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462044370321-je0lu7agilub0lehb5ia4vc5htcm2m1c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "462044370321-rv8breep3k47ojc8qtvjbh198sget25n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterTut"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
