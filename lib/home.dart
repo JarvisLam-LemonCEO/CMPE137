@@ -5,7 +5,7 @@ import 'vendorPaymentInfo.dart';
 import 'vendorNotifications.dart';
 import 'vendorPrivacy.dart';
 import 'newsUpdatesView.dart'; // Import the NewsUpdatesViewPage
-import 'addNewsUpdate.dart'; // Import the AddNewsUpdates
+//import 'addNewsUpdate.dart'; // Import the AddNewsUpdates
 import 'itemListView.dart'; // Import the itemListView.dart file
 import 'addItem.dart'; // Import the AddItemPage
 

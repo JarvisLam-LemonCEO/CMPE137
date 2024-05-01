@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'vendor_register.dart'; // Import VendorRegisterPage
 import 'customer_register.dart'; // Import CustomerRegisterPage
@@ -54,10 +53,10 @@ class Role extends StatelessWidget {
           .doc(user?.uid)
           .set({'role': userRole, 'customerID': customerID}, SetOptions(merge: true)); // Merge with existing data if any
 
-      // Navigate to the customer registration page
+      // Navigate to the customer registration page and pass the customerID
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => CustomerRegisterPage()), // Navigate to CustomerRegisterPage
+        MaterialPageRoute(builder: (context) => CustomerRegisterPage(customerID: customerID)), // Navigate to CustomerRegisterPage
       );
     } catch (e) {
       // Handle registration errors
