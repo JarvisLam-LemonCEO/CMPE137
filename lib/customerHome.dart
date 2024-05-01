@@ -5,6 +5,7 @@ import 'manageAccount.dart';
 import 'paymentInfo.dart';
 import 'notifications.dart';
 import 'privacy.dart';
+import 'vendorRadar.dart';
 
 class CustomerHome extends StatefulWidget {
   const CustomerHome({Key? key}) : super(key: key);
@@ -196,12 +197,21 @@ class _CustomerHomeState extends State<CustomerHome> {
     );
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      _isLogoutVisible = index == 3;
-    });
+void _onItemTapped(int index) {
+  setState(() {
+    _selectedIndex = index;
+    _isLogoutVisible = index == 3;
+  });
+
+  if (index == 1) {
+    // Navigate to Vendor Radar page
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => VendorRadar()),
+    );
   }
+}
+
 }
 
 class HomeListView extends StatefulWidget {
