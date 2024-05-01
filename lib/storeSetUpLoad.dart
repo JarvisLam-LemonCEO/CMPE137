@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'storeSetUpComplete.dart';
 
 class StoreSetUpLoad extends StatefulWidget {
-  
   const StoreSetUpLoad({Key? key}) : super(key: key);
 
   @override

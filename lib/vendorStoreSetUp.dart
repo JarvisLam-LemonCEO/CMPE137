@@ -1,11 +1,10 @@
-
 import 'package:flutter/material.dart';
+import 'storeSetUpLoad.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class VendorStoreSetUpPage extends StatelessWidget {
-  final String vendorID; // Vendor ID passed from VendorRegisterPage
-
-  const VendorStoreSetUpPage({Key? key, required this.vendorID}) : super(key: key);
+  const VendorStoreSetUpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -219,9 +218,9 @@ class VendorStoreSetUpPage extends StatelessWidget {
     String idProof,
     String paymentMethod,
   ) async {
-    // Add business data to Firestore with the same vendorID
+    // Add business data to Firestore
     try {
-      await FirebaseFirestore.instance.collection('vendors').doc(vendorID).set({
+      await FirebaseFirestore.instance.collection('vendors').add({
         'businessName': businessName,
         'businessAddress': businessAddress,
         'businessType': businessType,
@@ -240,83 +239,5 @@ class VendorStoreSetUpPage extends StatelessWidget {
       // Handle errors
       print('Error adding business data to Firestore: $e');
     }
-  }
-}
-
-class StoreSetUpLoad extends StatefulWidget {
-  
-  const StoreSetUpLoad({Key? key}) : super(key: key);
-
-  @override
-  _StoreSetUpLoadState createState() => _StoreSetUpLoadState();
-}
-
-class _StoreSetUpLoadState extends State<StoreSetUpLoad> {
-  @override
-  void initState() {
-    super.initState();
-    // Delay the navigation to the home page by 2 seconds
-    Future.delayed(Duration(seconds: 2), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => StoreSetUpComplete()),
-      );
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(
-                Color.fromARGB(255, 14, 122, 254),
-              ),
-            ),
-            SizedBox(height: 16),
-            Text(
-              'Setting Up...',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 14, 122, 254),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class StoreSetUpComplete extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.check_circle, // Display the check mark icon
-                color: Colors.green, // Set the color of the icon
-                size: 100, // Set the size of the icon
-              ),
-              SizedBox(height: 16), // Add some space
-              Text(
-                'Setup Complete', // Display the text "Setup Complete"
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 14, 122, 254)),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 }
