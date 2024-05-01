@@ -4,7 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class VendorStoreSetUpPage extends StatelessWidget {
-  const VendorStoreSetUpPage({Key? key}) : super(key: key);
+  final String vendorID;
+  const VendorStoreSetUpPage({Key? key, required this.vendorID}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -209,35 +211,32 @@ class VendorStoreSetUpPage extends StatelessWidget {
   }
 
   void _sendDataToFirestore(
-    BuildContext context,
-    String businessName,
-    String businessAddress,
-    String businessType,
-    String businessDescription,
-    String socialMediaLink,
-    String idProof,
-    String paymentMethod,
-  ) async {
-    // Add business data to Firestore
-    try {
-      await FirebaseFirestore.instance.collection('vendors').add({
-        'businessName': businessName,
-        'businessAddress': businessAddress,
-        'businessType': businessType,
-        'businessDescription': businessDescription,
-        'socialMediaLink': socialMediaLink,
-        'idProof': idProof,
-        'paymentMethod': paymentMethod,
-      });
+  BuildContext context,
+  String businessName,
+  String businessAddress,
+  String businessType,
+  String businessDescription,
+  String socialMediaLink,
+  String idProof,
+  String paymentMethod,
+) async {
+  try {
+    await FirebaseFirestore.instance.collection('vendors').doc(vendorID).set({
+      'businessName': businessName,
+      'businessAddress': businessAddress,
+      'businessType': businessType,
+      'businessDescription': businessDescription,
+      'socialMediaLink': socialMediaLink,
+      'idProof': idProof,
+      'paymentMethod': paymentMethod,
+    });
 
-      // Navigate to the next page or show success message
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => StoreSetUpLoad()),
-      );
-    } catch (e) {
-      // Handle errors
-      print('Error adding business data to Firestore: $e');
-    }
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => StoreSetUpLoad()),
+    );
+  } catch (e) {
+    print('Error adding business data to Firestore: $e');
   }
+}
 }

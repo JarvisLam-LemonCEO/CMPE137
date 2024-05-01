@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'vendorSignUpComplete.dart'; // Import the SignUpCompletePage
+import 'vendorSignUpComplete.dart';
 
 class VendorSigningUpPage extends StatelessWidget {
-  const VendorSigningUpPage({Key? key}) : super(key: key);
+  final String vendorID; // Add vendorID field
+
+  const VendorSigningUpPage({Key? key, required this.vendorID}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // Simulate a delay of 2 seconds
     Future.delayed(Duration(seconds: 2), () {
-      // Navigate to the SignUpCompletePage
+      // Navigate to the SignUpCompletePage and pass vendorID
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => VendorSignUpCompletePage()),
+        MaterialPageRoute(builder: (context) => VendorSignUpCompletePage(vendorID: vendorID)), // Pass vendorID
       );
     });
 

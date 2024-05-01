@@ -127,7 +127,7 @@ class VendorRegisterPage extends StatelessWidget {
                       // Navigate to the VendorSigningUpPage
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => VendorSigningUpPage()),
+                        MaterialPageRoute(builder: (context) => VendorSigningUpPage(vendorID: vendorID,)),
                       );
                     } catch (e) {
                       // Handle errors
