@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'home.dart';
 import 'customerHome.dart';
-
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -86,26 +86,58 @@ class _AuthScreenState extends State<AuthScreen> {
     }
   }
 
-  void login(String username, String password) {
-    // Check if the entered username and password match the customer credentials
-    if (username == 'customer' && password == '1234') {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const CustomerHome()), // Navigate to CustomerHome.dart
-      );
-    } else if (username == 'vendor' && password == '1234') {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => Home()), // Navigate to Home.dart
-      );
-    } else {
-      // Show an error message if the credentials are incorrect
+  void login(String username, String password) async {
+    try {
+      // Retrieve the user document from Firestore based on the entered username (email)
+      DocumentSnapshot userSnapshot = await FirebaseFirestore.instance.collection('users').doc(username).get();
+      
+      // Check if the user exists and validate the role, email, and password
+      if (userSnapshot.exists) {
+        // Extract user data from the document
+        String role = userSnapshot.get('role');
+        String email = userSnapshot.get('email');
+        String storedPassword = userSnapshot.get('password');
+        
+        // Validate the role, email, and password
+        if (password == storedPassword) {
+          if (role == 'vendor') {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => Home()), // Navigate to vendor home
+            );
+          } else if (role == 'customer') {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const CustomerHome()), // Navigate to customer home
+            );
+          }
+        } else {
+          // Show an error message if the password is incorrect
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Invalid password'),
+              backgroundColor: Colors.red,
+            ),
+          );
+        }
+      } else {
+        // Show an error message if the user does not exist
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('User does not exist'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } catch (e) {
+      // Show an error message if an error occurs
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Invalid username or password'),
+          content: Text('An error occurred. Please try again.'),
           backgroundColor: Colors.red,
         ),
       );
+      print('Error: $e');
     }
   }
 
@@ -117,12 +149,14 @@ class _AuthScreenState extends State<AuthScreen> {
     return Scaffold(
       backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
       appBar: AppBar(
-        title: const Text('Login',
-        style: TextStyle(
-          color: Colors.white,
-          ),),
+        title: const Text(
+          'Login',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: Color(0xFFDEAD00),
-        iconTheme: IconThemeData(color: Color.fromARGB(255, 14, 122, 254)), // Set back arrow button color
+        iconTheme: const IconThemeData(color: Color.fromARGB(255, 14, 122, 254)), // Set back arrow button color
       ),
       body: Center(
         child: Padding(
