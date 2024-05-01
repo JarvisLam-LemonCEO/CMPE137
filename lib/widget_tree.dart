@@ -14,14 +14,14 @@ class _WidgetTreeState extends State<WidgetTree> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-        stream: Auth().authStateChanges,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Home();
-          } else {
-            return const LoginPage();
-          }
-        },
+      stream: Auth().authStateChanges, // Accessing Auth class from auth_screen.dart
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Home();
+        } else {
+          return const LoginPage();
+        }
+      },
     );
   }
 }

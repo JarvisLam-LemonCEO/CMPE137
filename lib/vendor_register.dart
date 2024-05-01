@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_tut/vendorSigningUp.dart';
+import 'auth_screen.dart'; // Import the Auth class for Firebase authentication
 
 class VendorRegisterPage extends StatelessWidget {
   final String vendorID; // Vendor ID passed from Role.dart
+  final Auth auth = Auth(); // Initialize the Auth class
 
-  const VendorRegisterPage({Key? key, required this.vendorID}) : super(key: key);
+  VendorRegisterPage({Key? key, required this.vendorID}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -116,8 +118,11 @@ class VendorRegisterPage extends StatelessWidget {
                     String email = emailController.text;
                     String password = passwordController.text;
 
-                    // Add user data to Firestore
+                    // Create user account with Firebase authentication
                     try {
+                      await auth.createUserWithEmailAndPassword(email: email, password: password);
+
+                      // Add user data to Firestore
                       await FirebaseFirestore.instance.collection('vendors').doc(vendorID).set({
                         'name': name,
                         'email': email,
@@ -127,11 +132,11 @@ class VendorRegisterPage extends StatelessWidget {
                       // Navigate to the VendorSigningUpPage
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => VendorSigningUpPage(vendorID: vendorID,)),
+                        MaterialPageRoute(builder: (context) => VendorSigningUpPage(vendorID: vendorID)),
                       );
                     } catch (e) {
                       // Handle errors
-                      print('Error adding user data to Firestore: $e');
+                      print('Error registering user: $e');
                     }
                   }
                 },
