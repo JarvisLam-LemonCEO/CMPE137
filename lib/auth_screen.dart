@@ -86,20 +86,23 @@ class _AuthScreenState extends State<AuthScreen> {
     }
   }
 
-  void login(String username, String password) async {
+  void login(String email, String password) async {
     try {
-      // Retrieve the user document from Firestore based on the entered username (email)
-      DocumentSnapshot userSnapshot = await FirebaseFirestore.instance.collection('users').doc(username).get();
+      // Retrieve the user document from Firestore based on the provided email
+      QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection('users').where('email', isEqualTo: email).get();
       
-      // Check if the user exists and validate the role, email, and password
-      if (userSnapshot.exists) {
+      // Check if the query returned any documents
+      if (querySnapshot.docs.isNotEmpty) {
+        // Extract the first document (assuming unique emails)
+        DocumentSnapshot userSnapshot = querySnapshot.docs.first;
+        
         // Extract user data from the document
-        String role = userSnapshot.get('role');
-        String email = userSnapshot.get('email');
         String storedPassword = userSnapshot.get('password');
         
-        // Validate the role, email, and password
+        // Validate the password
         if (password == storedPassword) {
+          // If password matches, proceed with role-based authentication
+          String role = userSnapshot.get('role');
           if (role == 'vendor') {
             Navigator.pushReplacement(
               context,
@@ -109,6 +112,14 @@ class _AuthScreenState extends State<AuthScreen> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => const CustomerHome()), // Navigate to customer home
+            );
+          } else {
+            // Show an error message if the role is not recognized
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Unknown user role'),
+                backgroundColor: Colors.red,
+              ),
             );
           }
         } else {
@@ -166,21 +177,21 @@ class _AuthScreenState extends State<AuthScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  supportState == SupportState.supported
-                      ? 'Biometric authentication is supported on this device'
-                      : supportState == SupportState.unSupported
-                          ? 'Biometric authentication is not supported on this device'
-                          : 'Checking biometric support...',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: supportState == SupportState.supported
-                        ? Color.fromARGB(255, 0, 255, 110) 
-                        : supportState == SupportState.unSupported
-                            ? Colors.red
-                            : Colors.grey,
-                  ),
-                ),
+                // Text(
+                //   supportState == SupportState.supported
+                //       ? 'Biometric authentication is supported on this device'
+                //       : supportState == SupportState.unSupported
+                //           ? 'Biometric authentication is not supported on this device'
+                //           : 'Checking biometric support...',
+                //   style: TextStyle(
+                //     fontWeight: FontWeight.bold,
+                //     color: supportState == SupportState.supported
+                //         ? Color.fromARGB(255, 0, 255, 110) 
+                //         : supportState == SupportState.unSupported
+                //             ? Colors.red
+                //             : Colors.grey,
+                //   ),
+                // ),
                 const SizedBox(height: 20),
                 TextFormField(
                   controller: usernameController,
@@ -226,9 +237,9 @@ class _AuthScreenState extends State<AuthScreen> {
                     // Validate the form
                     if (_formKey.currentState!.validate()) {
                       // Handle login button press
-                      final enteredUsername = usernameController.text;
+                      final enteredEmail = usernameController.text;
                       final enteredPassword = passwordController.text;
-                      login(enteredUsername, enteredPassword);
+                      login(enteredEmail, enteredPassword);
                     }
                   },
                   child: Text(

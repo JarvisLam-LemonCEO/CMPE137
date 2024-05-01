@@ -9,34 +9,33 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class Role extends StatelessWidget {
   const Role({Key? key}) : super(key: key);
 
-Future<void> _registerVendor(BuildContext context) async {
-  try {
-    // Generate a unique vendorID
-    String vendorID = _generateID();
+  Future<void> _registerVendor(BuildContext context) async {
+    try {
+      // Generate a unique vendorID
+      String vendorID = _generateID();
 
-    // Assuming you have obtained the user's role during registration
-    String userRole = 'vendor'; // Set user role as 'vendor'
+      // Assuming you have obtained the user's role during registration
+      String userRole = 'vendor'; // Set user role as 'vendor'
 
-    // Get the current user
-    User? user = FirebaseAuth.instance.currentUser;
+      // Get the current user
+      User? user = FirebaseAuth.instance.currentUser;
 
-    // Update user data in Firestore
-    await FirebaseFirestore.instance
-        .collection('users')
-        .doc(user?.uid)
-        .set({'role': userRole, 'vendorID': vendorID}, SetOptions(merge: true)); // Merge with existing data if any
+      // Update user data in Firestore
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user?.uid)
+          .set({'role': userRole, 'vendorID': vendorID}, SetOptions(merge: true)); // Merge with existing data if any
 
-    // Navigate to the vendor registration page and pass the vendorID
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => VendorRegisterPage(vendorID: vendorID)), // Pass vendorID
-    );
-  } catch (e) {
-    // Handle registration errors
-    print('Error registering vendor: $e');
+      // Navigate to the vendor registration page and pass the vendorID
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => VendorRegisterPage(vendorID: vendorID)), // Pass vendorID
+      );
+    } catch (e) {
+      // Handle registration errors
+      print('Error registering vendor: $e');
+    }
   }
-}
-
 
   Future<void> _registerCustomer(BuildContext context) async {
     try {
