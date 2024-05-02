@@ -18,13 +18,15 @@ class _OfflineDetectorState extends State<OfflineDetector> {
   void initState() {
     super.initState();
     _connectivity = Connectivity();
-    _connectivity.onConnectivityChanged.listen(_updateConnectionStatus as void Function(List<ConnectivityResult> event)?);
+    _connectivity.onConnectivityChanged.listen((ConnectivityResult result) {
+      _updateConnectionStatus(result);
+    });
     _updateConnectionStatus();
   }
 
   Future<void> _updateConnectionStatus([ConnectivityResult? result]) async {
     if (result == null) {
-      result = (await _connectivity.checkConnectivity()) as ConnectivityResult?;
+      result = await _connectivity.checkConnectivity();
     }
     setState(() {
       isOffline = result != ConnectivityResult.wifi && result != ConnectivityResult.mobile;
@@ -81,7 +83,7 @@ class _MyAppBody extends StatelessWidget {
   }
 
   Future<bool> _getIsOffline() async {
-    ConnectivityResult connectivityResult = (await (Connectivity().checkConnectivity())) as ConnectivityResult;
+    ConnectivityResult connectivityResult = await (Connectivity().checkConnectivity());
     return connectivityResult != ConnectivityResult.wifi && connectivityResult != ConnectivityResult.mobile;
   }
 }

@@ -8,14 +8,12 @@ class NetworkController extends GetxController {
   @override 
   void onInit() {
     super.onInit();
-    _connectivity.onConnectivityChanged.listen((List<ConnectivityResult> connectivityResultList) {
-      // Check the first item in the list, as it represents the current connectivity status
-      _updateConnectionStatus(connectivityResultList.first);
+    _connectivity.onConnectivityChanged.listen((ConnectivityResult connectivityResult) {
+      _updateConnectionStatus(connectivityResult);
     });
   }
 
   void _updateConnectionStatus(ConnectivityResult connectivityResult) {
-
       if (connectivityResult == ConnectivityResult.none) {
         Get.rawSnackbar(
           messageText: const Text(

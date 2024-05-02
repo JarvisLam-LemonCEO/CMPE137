@@ -8,7 +8,7 @@
 import 'dart:io'; // flutter_ignore: dart_io_import.
 import 'package:local_auth_android/local_auth_android.dart';
 import 'package:local_auth_darwin/local_auth_darwin.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:connectivity_plus_linux/connectivity_plus_linux.dart';
 import 'package:local_auth_windows/local_auth_windows.dart';
 
 @pragma('vm:entry-point')
@@ -38,10 +38,10 @@ class _PluginRegistrant {
 
     } else if (Platform.isLinux) {
       try {
-        ConnectivityPlusLinuxPlugin.registerWith();
+        ConnectivityLinux.registerWith();
       } catch (err) {
         print(
-          '`connectivity_plus` threw an error: $err. '
+          '`connectivity_plus_linux` threw an error: $err. '
           'The app may not function as expected until you remove this plugin from pubspec.yaml'
         );
       }

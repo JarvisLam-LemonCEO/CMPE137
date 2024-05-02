@@ -13,14 +13,14 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->C:\Users\jacob\CMPE137-2\android\app\src\debug\AndroidManifest.xml:6:5-66
-15-->C:\Users\jacob\CMPE137-2\android\app\src\debug\AndroidManifest.xml:6:22-64
+15-->C:\Users\jacob\CMPE_137\CMPE137-1\android\app\src\debug\AndroidManifest.xml:6:5-66
+15-->C:\Users\jacob\CMPE_137\CMPE137-1\android\app\src\debug\AndroidManifest.xml:6:22-64
 16    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-16-->C:\Users\jacob\CMPE137-2\android\app\src\main\AndroidManifest.xml:3:5-71
-16-->C:\Users\jacob\CMPE137-2\android\app\src\main\AndroidManifest.xml:3:22-69
+16-->C:\Users\jacob\CMPE_137\CMPE137-1\android\app\src\main\AndroidManifest.xml:3:5-71
+16-->C:\Users\jacob\CMPE_137\CMPE137-1\android\app\src\main\AndroidManifest.xml:3:22-69
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- suppress DeprecatedClassUsageInspection -->
-17-->[:connectivity_plus] C:\Users\jacob\CMPE137-2\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
-17-->[:connectivity_plus] C:\Users\jacob\CMPE137-2\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
+17-->[:connectivity_plus] C:\Users\jacob\CMPE_137\CMPE137-1\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
+17-->[:connectivity_plus] C:\Users\jacob\CMPE_137\CMPE137-1\build\connectivity_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
 18    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 18-->[androidx.biometric:biometric:1.1.0] C:\Users\jacob\.gradle\caches\transforms-3\29a53b35c072e5e16e15ef7c62078a12\transformed\biometric-1.1.0\AndroidManifest.xml:27:5-74
 18-->[androidx.biometric:biometric:1.1.0] C:\Users\jacob\.gradle\caches\transforms-3\29a53b35c072e5e16e15ef7c62078a12\transformed\biometric-1.1.0\AndroidManifest.xml:27:22-71
