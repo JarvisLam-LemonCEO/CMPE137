@@ -10,7 +10,6 @@ class EditProfilePage extends StatefulWidget {
 class _EditProfilePageState extends State<EditProfilePage> {
   late TextEditingController _nameController;
   late TextEditingController _emailController;
-  File? _image;
 
   @override
   void initState() {
@@ -31,7 +30,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
     final pickedFile = await imagePicker.pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       setState(() {
-        _image = File(pickedFile.path);
       });
     }
   }
