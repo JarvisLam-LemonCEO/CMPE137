@@ -10,53 +10,83 @@ class CustomerRegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
+    final TextEditingController nameController = TextEditingController();
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
+    final TextEditingController confirmPasswordController = TextEditingController();
 
     void signUp() async {
+      String name = nameController.text.trim();
       String email = emailController.text.trim();
-      String password = passwordController.text.trim();
+      String password = passwordController.text;
+      String confirmPassword = confirmPasswordController.text;
 
-      // Check if email and password are not empty
-      if (email.isEmpty || password.isEmpty) {
-        // Show popup if email or password is empty
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text('Error'),
-              content: Text('Please fill in all the fields.'),
-              actions: <Widget>[
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop(); // Close the dialog
-                  },
-                  child: Text('OK'),
-                ),
-              ],
-            );
-          },
+      // Check if name, email, and password are not empty
+      if (name.isEmpty || email.isEmpty || password.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Please fill in all the fields.'),
+            backgroundColor: Colors.red,
+          ),
         );
         return; // Exit the function early
       }
 
+      // Check if email is in valid format
+      if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(email)) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Invalid email format.'),
+            backgroundColor: Colors.red,
+          ),
+        );
+        return;
+      }
+
+      // Check if password and confirm password match
+      if (password != confirmPassword) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Passwords do not match.'),
+            backgroundColor: Colors.red,
+          ),
+        );
+        return;
+      }
+
+      // Check if password is at least 6 characters long
+      if (password.length < 6) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Password should have 6 characters or more.'),
+            backgroundColor: Colors.red,
+          ),
+        );
+        return;
+      }
+
+      // Check if email already exists in Firebase
       try {
-        // Create user with email and password
-        UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: email,
           password: password,
         );
-
-        // User successfully created, you can now navigate to the next page or perform any other actions
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => SigningUpPage()),
-        );
       } catch (e) {
-        // Handle sign up errors
-        print('Error signing up: $e');
-        // Show error message to the user if needed
+        print('Error creating user: $e');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Email already registered.'),
+            backgroundColor: Colors.red,
+          ),
+        );
+        return;
       }
+
+      // User successfully created, navigate to the next page
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SigningUpPage()),
+      );
     }
 
     return Scaffold(
@@ -98,6 +128,7 @@ class CustomerRegisterPage extends StatelessWidget {
               SizedBox(height: 20),
               // Name text field
               TextField(
+                controller: nameController,
                 decoration: InputDecoration(
                   hintText: 'Name',
                   border: OutlineInputBorder(
@@ -134,6 +165,7 @@ class CustomerRegisterPage extends StatelessWidget {
               SizedBox(height: 10),
               // Confirm Password text field
               TextField(
+                controller: confirmPasswordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Confirm Password',

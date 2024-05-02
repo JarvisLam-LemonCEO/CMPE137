@@ -14,6 +14,7 @@ class VendorRegisterPage extends StatelessWidget {
     final TextEditingController nameController = TextEditingController();
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
+    final TextEditingController confirmPasswordController = TextEditingController();
     final Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -87,6 +88,7 @@ class VendorRegisterPage extends StatelessWidget {
               ),
               SizedBox(height: 10),
               TextField(
+                controller: confirmPasswordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Confirm Password',
@@ -99,11 +101,13 @@ class VendorRegisterPage extends StatelessWidget {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {
+                  String name = nameController.text.trim();
+                  String email = emailController.text.trim();
+                  String password = passwordController.text;
+                  String confirmPassword = confirmPasswordController.text;
+
                   // Check if all input fields are filled
-                  if (nameController.text.isEmpty ||
-                      emailController.text.isEmpty ||
-                      passwordController.text.isEmpty) {
-                    // Show a red error message
+                  if (name.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
@@ -112,32 +116,89 @@ class VendorRegisterPage extends StatelessWidget {
                         ),
                       ),
                     );
-                  } else {
-                    // Get text field values
-                    String name = nameController.text;
-                    String email = emailController.text;
-                    String password = passwordController.text;
+                    return;
+                  }
 
+                  // Validate email format
+                  if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(email)) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Invalid email format',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ),
+                    );
+                    return;
+                  }
+
+                  // Check if password is at least 6 characters long
+                  if (password.length < 6) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Password must have 6 characters or more',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ),
+                    );
+                    return;
+                  }
+
+                  // Check if password and confirm password match
+                  if (password != confirmPassword) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Passwords do not match',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ),
+                    );
+                    return;
+                  }
+
+                  // Check if email has already been registered
+                  QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection('vendors').where('email', isEqualTo: email).get();
+                  if (querySnapshot.docs.isNotEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Email already registered',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ),
+                    );
+                    return;
+                  }
+
+                  try {
                     // Create user account with Firebase authentication
-                    try {
-                      await auth.createUserWithEmailAndPassword(email: email, password: password);
+                    await auth.createUserWithEmailAndPassword(email: email, password: password);
 
-                      // Add user data to Firestore
-                      await FirebaseFirestore.instance.collection('vendors').doc(vendorID).set({
-                        'name': name,
-                        'email': email,
-                        // Add more fields as needed
-                      });
+                    // Add user data to Firestore
+                    await FirebaseFirestore.instance.collection('vendors').doc(vendorID).set({
+                      'name': name,
+                      'email': email,
+                      // Add more fields as needed
+                    });
 
-                      // Navigate to the VendorSigningUpPage
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => VendorSigningUpPage(vendorID: vendorID)),
-                      );
-                    } catch (e) {
-                      // Handle errors
-                      print('Error registering user: $e');
-                    }
+                    // Navigate to the VendorSigningUpPage
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => VendorSigningUpPage(vendorID: vendorID)),
+                    );
+                  } catch (e) {
+                    // Handle errors
+                    print('Error registering user: $e');
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'The email has already registered. Try another email!',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ),
+                    );
                   }
                 },
                 child: Text(

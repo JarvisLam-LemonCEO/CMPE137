@@ -386,6 +386,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "internet_connection_checker",
+      "rootUri": "file:///Users/jarvislam/.pub-cache/hosted/pub.dev/internet_connection_checker-1.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "intl",
       "rootUri": "file:///Users/jarvislam/.pub-cache/hosted/pub.dev/intl-0.19.0",
       "packageUri": "lib/",
@@ -758,7 +764,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-05-01T00:56:03.216340Z",
+  "generated": "2024-05-02T01:50:58.270249Z",
   "generator": "pub",
   "generatorVersion": "3.3.1"
 }

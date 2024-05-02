@@ -36,8 +36,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/splash', // Set initialRoute to point to the splash screen
       routes: {
-        // '/': (context) => WidgetTree(), // Your default route
-        // '/role': (context) => Role(),
+
         '/splash': (context) => SplashScreen(), // Route for the splash screen
       },
       theme: ThemeData(
