@@ -16,4 +16,4 @@ Emulator: Xcode iPhone Simulator<br>
 7. Go to Settings --> General --> VPN & Device Management
 8. Verify the flutter app just installed
 9. Tap Trust
-10. Repear step 5 and 6 
+10. Repeat step 5 and 6 
