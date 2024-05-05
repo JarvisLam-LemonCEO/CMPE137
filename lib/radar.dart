@@ -3,7 +3,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'vendorInfo.dart';
 
 class Vardar extends StatefulWidget {
-  const Vardar({Key? key}) : super(key: key);
+  const Vardar({Key? key});
 
   @override
   _VardarState createState() => _VardarState();
@@ -21,10 +21,14 @@ class _VardarState extends State<Vardar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(222, 173, 0, 100),
-        centerTitle: true,
-        title: const Text('Vendor Locator'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(0), // Set appBar height to 0
+        child: AppBar(
+          automaticallyImplyLeading: false, // Set automaticallyImplyLeading to false
+          // backgroundColor: const Color.fromRGBO(222, 173, 0, 100),
+          // centerTitle: true,
+          // title: const Text('Vendor Locator'),
+        ),
       ),
       body: GoogleMap(
         onMapCreated: _onMapCreated,
@@ -37,8 +41,8 @@ class _VardarState extends State<Vardar> {
             markerId: MarkerId(vendors.name),
             position: vendors.location,
             infoWindow: InfoWindow(
-            title: vendors.name,
-            snippet: vendors.rating,
+              title: vendors.name,
+              snippet: vendors.rating,
             ),
           );
         }).toSet(),

@@ -291,7 +291,7 @@
     },
     {
       "name": "google_maps_flutter",
-      "rootUri": "file:///Users/jarvislam/.pub-cache/hosted/pub.dev/google_maps_flutter-2.6.0",
+      "rootUri": "file:///Users/jarvislam/.pub-cache/hosted/pub.dev/google_maps_flutter-2.6.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -764,7 +764,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-05-02T01:50:58.270249Z",
+  "generated": "2024-05-05T23:47:05.490129Z",
   "generator": "pub",
   "generatorVersion": "3.3.1"
 }

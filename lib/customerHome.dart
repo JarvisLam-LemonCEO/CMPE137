@@ -1,11 +1,13 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_tut/radar.dart';
 import 'hello.dart';
 import 'vendorNews.dart';
 import 'manageAccount.dart';
 import 'paymentInfo.dart';
 import 'notifications.dart';
 import 'privacy.dart';
-import 'radar.dart';
+import 'vendorInfo.dart';
 
 class CustomerHome extends StatefulWidget {
   const CustomerHome({Key? key}) : super(key: key);
@@ -16,6 +18,7 @@ class CustomerHome extends StatefulWidget {
 
 class _CustomerHomeState extends State<CustomerHome> {
   int _selectedIndex = 0;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final List<String> _tabTitles = [
     'Home',
@@ -28,192 +31,193 @@ class _CustomerHomeState extends State<CustomerHome> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: const Color(0xFFDEAD00),
-        title: Text(
-          _tabTitles[_selectedIndex],
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
+    return GestureDetector(
+      // Disable swipe gesture
+      onHorizontalDragUpdate: (_) {},
+      child: Scaffold(
+        key: _scaffoldKey,
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: const Color(0xFFDEAD00),
+          title: Text(
+            _tabTitles[_selectedIndex],
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
-      ),
-      body: _selectedIndex == 0
-          ? HomeListView(onVendorNewsClicked: (title, details) {
-              // Navigate to VendorNewsPage when a vendor news item is clicked
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => VendorNewsPage(title: title, details: details),
-                ),
-              );
-            })
-          : _selectedIndex == 1 // Check if Vendor Radar tab is active
-              ? Container(
-                  color: const Color(0xFFDEAD00), // Set background color for Vendor Radar page
-                )
-              : _selectedIndex == 2 // Check if Order tab is active
-                  ? Container(
-                      color: const Color(0xFFDEAD00), // Set background color for Order page
-                    )
-                  : _selectedIndex == 3 // Check if Profile tab is active
-                      ? Container(
-                          color: Color(0xFFDEAD00), // Set the background color of the body
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => ManageAccountPage()),
-                                    );
-                                  },
-                                  child: Text('Manage Account', style: TextStyle(color: Colors.white)),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFFFFB200),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
+        body: _selectedIndex == 0
+            ? HomeListView(onVendorNewsClicked: (title, details) {
+                // Navigate to VendorNewsPage when a vendor news item is clicked
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => VendorNewsPage(title: title, details: details),
+                  ),
+                );
+              })
+            : _selectedIndex == 1 // Check if Vendor Radar tab is active
+                ? Vardar() // Replace Container with Vardar widget
+                : _selectedIndex == 2 // Check if Order tab is active
+                    ? Container(
+                        color: const Color(0xFFDEAD00), // Set background color for Order page
+                      )
+                    : _selectedIndex == 3 // Check if Profile tab is active
+                        ? Container(
+                            color: Color(0xFFDEAD00), // Set the background color of the body
+                            child: Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => ManageAccountPage()),
+                                      );
+                                    },
+                                    child: Text('Manage Account', style: TextStyle(color: Colors.white)),
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Color(0xFFFFB200),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(30),
+                                      ),
+                                      minimumSize: Size(200, 50),
                                     ),
-                                    minimumSize: Size(200, 50),
                                   ),
-                                ),
-                                SizedBox(height: 20),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => PaymentInformationPage()),
-                                    );
-                                  },
-                                  child: Text('Payment Information', style: TextStyle(color: Colors.white)),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFFFFB200),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
+                                  SizedBox(height: 20),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => PaymentInformationPage()),
+                                      );
+                                    },
+                                    child: Text('Payment Information', style: TextStyle(color: Colors.white)),
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Color(0xFFFFB200),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(30),
+                                      ),
+                                      minimumSize: Size(200, 50),
                                     ),
-                                    minimumSize: Size(200, 50),
                                   ),
-                                ),
-                                SizedBox(height: 20),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => NotificationsPage()),
-                                    );
-                                  },
-                                  child: Text('Notifications', style: TextStyle(color: Colors.white)),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFFFFB200),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
+                                  SizedBox(height: 20),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => NotificationsPage()),
+                                      );
+                                    },
+                                    child: Text('Notifications', style: TextStyle(color: Colors.white)),
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Color(0xFFFFB200),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(30),
+                                      ),
+                                      minimumSize: Size(200, 50),
                                     ),
-                                    minimumSize: Size(200, 50),
                                   ),
-                                ),
-                                SizedBox(height: 20),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => PrivacyPage()),
-                                    );
-                                  },
-                                  child: Text('Privacy', style: TextStyle(color: Colors.white)),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFFFFB200),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
+                                  SizedBox(height: 20),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => PrivacyPage()),
+                                      );
+                                    },
+                                    child: Text('Privacy', style: TextStyle(color: Colors.white)),
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Color(0xFFFFB200),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(30),
+                                      ),
+                                      minimumSize: Size(200, 50),
                                     ),
-                                    minimumSize: Size(200, 50),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        )
-                      : Container(), // If another tab is selected, show an empty container
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: const Color.fromARGB(255, 0, 122, 252),
-        unselectedItemColor: Colors.grey,
-        
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.map),
-            label: 'Vendor Radar',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Order',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-      ),
-      floatingActionButton: _selectedIndex == 3
-          ? AnimatedOpacity(
-              opacity: _isLogoutVisible ? 1.0 : 0.0,
-              duration: const Duration(milliseconds: 500),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Spacer(),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const HelloPage()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                          )
+                        : Container(), // If another tab is selected, show an empty container
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          selectedItemColor: const Color.fromARGB(255, 0, 122, 252),
+          unselectedItemColor: Colors.grey,
+          
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map),
+              label: 'Vendor Radar',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart),
+              label: 'Order',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+          ],
+        ),
+        floatingActionButton: _selectedIndex == 3
+            ? AnimatedOpacity(
+                opacity: _isLogoutVisible ? 1.0 : 0.0,
+                duration: const Duration(milliseconds: 500),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Spacer(),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const HelloPage()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      child: const Text(
+                        'Log out',
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
-                    child: const Text(
-                      'Log out',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  const Spacer(),
-                ],
-              ),
-            )
-          : null,
+                    const Spacer(),
+                  ],
+                ),
+              )
+            : null,
+      ),
     );
   }
 
-void _onItemTapped(int index) {
-  setState(() {
-    _selectedIndex = index;
-    _isLogoutVisible = index == 3;
-  });
+  // Navigate to map page
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+      _isLogoutVisible = index == 3;
+    });
 
-  if (index == 1) {
-    // Navigate to Vendor Radar page
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Vardar()),
-    );
+    // if (index == 1) {
+    //   // Navigate to Vendor Radar page
+    //   Navigator.push(
+    //     context,
+    //     MaterialPageRoute(builder: (context) => Vardar()),
+    //   );
+    // }
   }
-}
-
-
-
 }
 
 class HomeListView extends StatefulWidget {
