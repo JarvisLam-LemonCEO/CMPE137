@@ -7,7 +7,7 @@ import 'manageAccount.dart';
 import 'paymentInfo.dart';
 import 'notifications.dart';
 import 'privacy.dart';
-import 'vendorInfo.dart';
+
 
 class CustomerHome extends StatefulWidget {
   const CustomerHome({Key? key}) : super(key: key);
