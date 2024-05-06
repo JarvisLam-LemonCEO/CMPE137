@@ -5,6 +5,10 @@ Platform: iOS APP<br>
 Cross-platform tool: flutter<br>
 IDE: Visucal Studio Code<br>
 Emulator: Xcode iPhone Simulator<br>
+Tester accounter: vendor: customer1@gmail.com<br>
+                  customer: test@gmail.com<br>
+                  password: 123456<br>
+
 
 # Install on physcial iphone
 1. Connect the iPhone on Mac and Open XCode
