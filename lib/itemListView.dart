@@ -132,6 +132,7 @@ class ItemListView extends StatelessWidget {
                                 TextButton(
                                   onPressed: () {
                                     // Implement delete functionality here
+                                    FirebaseFirestore.instance.collection('items').doc(item.id).delete();
                                     // Close dialog
                                     Navigator.of(context).pop();
                                   },
