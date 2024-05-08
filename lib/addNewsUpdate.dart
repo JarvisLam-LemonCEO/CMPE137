@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AddNewsUpdate extends StatelessWidget {
   final TextEditingController titleController = TextEditingController();
@@ -101,9 +102,33 @@ class AddNewsUpdate extends StatelessWidget {
     if (title.isNotEmpty && content.isNotEmpty) {
       // Create the new news update string
       String newNewsUpdate = '$title: $content';
-      
-      // Pass the new news update back to the previous screen
-      Navigator.pop(context, newNewsUpdate);
+
+      // Send data to Firebase Firestore
+      FirebaseFirestore.instance.collection('news_updates').add({
+        'title': title,
+        'content': content,
+        'timestamp': DateTime.now(), // You can add timestamp for sorting or other purposes
+      }).then((value) {
+        // Show success message if data is successfully added
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('News update added successfully!'),
+            backgroundColor: Colors.green,
+          ),
+        );
+
+        // Clear text fields after successful addition
+        titleController.clear();
+        contentController.clear();
+      }).catchError((error) {
+        // Show error message if data addition fails
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to add news update. Please try again.'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      });
     } else {
       // Display an error message if title or content is empty
       showDialog(

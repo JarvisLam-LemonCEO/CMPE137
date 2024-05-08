@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class NewsUpdatesView extends StatefulWidget {
   @override
@@ -6,15 +7,8 @@ class NewsUpdatesView extends StatefulWidget {
 }
 
 class _NewsUpdatesViewState extends State<NewsUpdatesView> {
-  List<String> newsUpdates = [
-    'News Update 1',
-    'News Update 2',
-    'News Update 3',
-    'News Update 4',
-    'News Update 5',
-    'News Update 6', // Duplicate entry for testing
-    'News Update 7', // Duplicate entry for testing
-  ];
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  List<String> newsUpdates = []; // Initialize an empty list
 
   @override
   Widget build(BuildContext context) {
@@ -50,10 +44,7 @@ class _NewsUpdatesViewState extends State<NewsUpdatesView> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => AddNewsUpdate()),
-          );
+          _navigateToAddNewsUpdate(context);
         },
         child: Icon(Icons.add),
       ),
@@ -100,6 +91,27 @@ class _NewsUpdatesViewState extends State<NewsUpdatesView> {
     setState(() {
       newsUpdates.remove(newsUpdate);
     });
+  }
+
+  void _navigateToAddNewsUpdate(BuildContext context) async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AddNewsUpdate()),
+    );
+
+    // If result is not null and is a Map containing title and content,
+    // add the news update to the list and store it in Firebase
+    if (result != null && result is Map<String, String>) {
+      setState(() {
+        newsUpdates.add('${result['title']}: ${result['content']}');
+      });
+
+      // Store the news update in Firebase
+      _firestore.collection('newsUpdates').add({
+        'title': result['title'],
+        'content': result['content'],
+      });
+    }
   }
 }
 
@@ -161,22 +173,6 @@ class AddNewsUpdate extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Center(
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  // Add functionality to upload picture
-                },
-                icon: Icon(Icons.upload),
-                label: Text('Upload Picture', style: TextStyle(color: Colors.black)),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF0BC2AC),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            Center(
               child: ElevatedButton(
                 onPressed: () {
                   saveNewsUpdate(context);
@@ -202,11 +198,8 @@ class AddNewsUpdate extends StatelessWidget {
 
     // Validate if title and content are not empty
     if (title.isNotEmpty && content.isNotEmpty) {
-      // Perform action to save news update (e.g., add to list or save to database)
-      print('Title: $title, Content: $content');
-
-      // Optionally, display a confirmation message or navigate back to previous screen
-      Navigator.pop(context); // Navigate back to the previous screen
+      // Return the new news update to the previous screen
+      Navigator.pop(context, {'title': title, 'content': content});
     } else {
       // Display an error message if title or content is empty
       showDialog(
@@ -239,7 +232,7 @@ class NewsUpdateDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('News Update Details'),
+        title: Text('News Update Details', style: TextStyle(color: Colors.white),),
         backgroundColor: Color(0xFF0F8B7C), // Set background color of the app bar
       ),
       body: Container(
@@ -247,9 +240,21 @@ class NewsUpdateDetailsPage extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Text(
-              newsUpdate,
-              style: TextStyle(fontSize: 20, color: Colors.white), // Change text color to white
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'News Title', // Replace with your news title if needed
+                  style: TextStyle(fontSize: 20, color: Colors.white), // Change text color to white
+                ),
+                SizedBox(height: 10), // Add some space between title and content
+                Text(
+                  newsUpdate,
+                  style: TextStyle(fontSize: 20, color: Colors.white), // Change text color to white
+                  textAlign: TextAlign.center, // Center align content text
+                ),
+              ],
             ),
           ),
         ),
