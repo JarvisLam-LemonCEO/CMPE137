@@ -33,181 +33,179 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-appBar: AppBar(
-  automaticallyImplyLeading: false,
-  title: Center(
-    child: Text(
-      _tabTitles[_selectedIndex],
-      style: TextStyle(
-        color: Colors.white, // Set the text color to white
-      ),
-    ),
-  ),
-  backgroundColor: Color(0xFF0F8B7C),
-),
-
-      backgroundColor: Color(0xFF0F8B7C),
-body: Stack(
-  children: [
-    Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        if (_selectedIndex == 0 && _items.isNotEmpty)
-          Padding(
-            padding: const EdgeInsets.only(top: 40),
-            child: Text(
-              'Item Availability',
-              style: TextStyle(color: Colors.white, fontSize: 24),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Center(
+          child: Text(
+            _tabTitles[_selectedIndex],
+            style: TextStyle(
+              color: Colors.white, // Set the text color to white
             ),
           ),
-        SizedBox(height: 10),
-        Expanded(
-          child: RefreshIndicator(
-            onRefresh: _fetchItems, // Call _fetchItems when refreshing
-            child: _selectedIndex == 0 && _items.isNotEmpty
-                ? ListView.builder(
-                    itemCount: _items.length,
-                    itemBuilder: (context, index) {
-                      final item = _items[index];
-                      final itemName = item['itemName'] ?? 'Item Name';
-                      final description = item['description'] ?? 'Item Description';
-                      return GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => ItemListView(item: item)),
-                          );
-                        },
-                        child: Container(
-                          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                itemName,
-                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                description,
-                                style: TextStyle(fontSize: 16),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  )
-                : _selectedIndex == 1
-                    ? Padding(
-                        padding: EdgeInsets.only(top: 40), // Add padding to the top of the list view
-                        child: NewsUpdatesView(), // Show the NewsUpdatesViewPage
-                      )
-                    : _selectedIndex == 3
-                        ? Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                // Manage account button
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => ManageAccountPage()),
-                                    );
-                                  },
-                                  child: Text(
-                                    'Manage Account',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFF0BC2AC),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    minimumSize: Size(200, 50),
-                                  ),
-                                ),
-                                // payment information button
-                                SizedBox(height: 20),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => PaymentInformationPage()),
-                                    );
-                                  },
-                                  child: Text(
-                                    'Payment Information',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFF0BC2AC),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    minimumSize: Size(200, 50),
-                                  ),
-                                ),
-
-                                // notifications button
-                                SizedBox(height: 20),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => NotificationsPage()),
-                                    );
-                                  },
-                                  child: Text(
-                                    'Notifications',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFF0BC2AC),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    minimumSize: Size(200, 50),
-                                  ),
-                                ),
-                                // privacy buttons
-                                SizedBox(height: 20),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => PrivacyPage()),
-                                    );
-                                  },
-                                  child: Text(
-                                    'Privacy',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xFF0BC2AC),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                    ),
-                                    minimumSize: Size(200, 50),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          )
-                        : Container(), // If another tab is selected, show an empty container
-          ),
         ),
-      ],
-    ),
-  ],
-),
+        backgroundColor: Color(0xFF0F8B7C),
+      ),
+      backgroundColor: Color(0xFF0F8B7C),
+      body: Stack(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              if (_selectedIndex == 0 && _items.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(top: 40),
+                  child: Text(
+                    'Item Availability',
+                    style: TextStyle(color: Colors.white, fontSize: 24),
+                  ),
+                ),
+              SizedBox(height: 10),
+              Expanded(
+                child: RefreshIndicator(
+                  onRefresh: _fetchItems, // Call _fetchItems when refreshing
+                  child: _selectedIndex == 0 && _items.isNotEmpty
+                      ? ListView.builder(
+                          itemCount: _items.length,
+                          itemBuilder: (context, index) {
+                            final item = _items[index];
+                            final itemName = item['itemName'] ?? 'Item Name';
+                            final description = item['description'] ?? 'Item Description';
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => ItemListView(item: item)),
+                                );
+                              },
+                              child: Container(
+                                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      itemName,
+                                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(height: 10),
+                                    Text(
+                                      description,
+                                      style: TextStyle(fontSize: 16),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        )
+                      : _selectedIndex == 1
+                          ? Padding(
+                              padding: EdgeInsets.only(top: 40), // Add padding to the top of the list view
+                              child: NewsUpdatesView(), // Show the NewsUpdatesViewPage
+                            )
+                          : _selectedIndex == 3
+                              ? Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      // Manage account button
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => ManageAccountPage()),
+                                          );
+                                        },
+                                        child: Text(
+                                          'Manage Account',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Color(0xFF0BC2AC),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(30),
+                                          ),
+                                          minimumSize: Size(200, 50),
+                                        ),
+                                      ),
+                                      // payment information button
+                                      SizedBox(height: 20),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => PaymentInformationPage()),
+                                          );
+                                        },
+                                        child: Text(
+                                          'Payment Information',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Color(0xFF0BC2AC),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(30),
+                                          ),
+                                          minimumSize: Size(200, 50),
+                                        ),
+                                      ),
 
+                                      // notifications button
+                                      SizedBox(height: 20),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => NotificationsPage()),
+                                          );
+                                        },
+                                        child: Text(
+                                          'Notifications',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Color(0xFF0BC2AC),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(30),
+                                          ),
+                                          minimumSize: Size(200, 50),
+                                        ),
+                                      ),
+                                      // privacy buttons
+                                      SizedBox(height: 20),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => PrivacyPage()),
+                                          );
+                                        },
+                                        child: Text(
+                                          'Privacy',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Color(0xFF0BC2AC),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(30),
+                                          ),
+                                          minimumSize: Size(200, 50),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              : Container(), // If another tab is selected, show an empty container
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
@@ -304,4 +302,3 @@ body: Stack(
     });
   }
 }
-

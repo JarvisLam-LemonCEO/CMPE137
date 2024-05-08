@@ -1,4 +1,3 @@
-
 // import 'package:flutter/material.dart';
 // import 'package:flutter_tut/radar.dart';
 // import 'hello.dart';
@@ -7,7 +6,7 @@
 // import 'paymentInfo.dart';
 // import 'notifications.dart';
 // import 'privacy.dart';
-
+// import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore package
 
 
 // class CustomerHome extends StatefulWidget {
@@ -49,107 +48,108 @@
 //             ),
 //           ),
 //         ),
-//         body: _selectedIndex == 0
-//             ? HomeListView(onVendorNewsClicked: (title, details) {
-//                 // Navigate to VendorNewsPage when a vendor news item is clicked
-//                 Navigator.push(
-//                   context,
-//                   MaterialPageRoute(
-//                     builder: (context) => VendorNewsPage(title: title, details: details),
-//                   ),
-//                 );
-//               })
-//             : _selectedIndex == 1 // Check if Vendor Radar tab is active
-//                 ? Vardar() // Replace Container with Vardar widget
-//                 : _selectedIndex == 2 // Check if Order tab is active
-//                     ? Container(
-//                         color: const Color(0xFFDEAD00), // Set background color for Order page
-//                       )
-//                     : _selectedIndex == 3 // Check if Profile tab is active
-//                         ? Container(
-//                             color: Color(0xFFDEAD00), // Set the background color of the body
-//                             child: Center(
-//                               child: Column(
-//                                 mainAxisAlignment: MainAxisAlignment.center,
-//                                 children: [
-//                                   ElevatedButton(
-//                                     onPressed: () {
-//                                       Navigator.push(
-//                                         context,
-//                                         MaterialPageRoute(builder: (context) => ManageAccountPage()),
-//                                       );
-//                                     },
-//                                     child: Text('Manage Account', style: TextStyle(color: Colors.white)),
-//                                     style: ElevatedButton.styleFrom(
-//                                       backgroundColor: Color(0xFFFFB200),
-//                                       shape: RoundedRectangleBorder(
-//                                         borderRadius: BorderRadius.circular(30),
+//         body: Container(
+//           color: Color(0xFFDEAD00),
+//           child: _selectedIndex == 0
+//               ? HomeListView(onVendorNewsClicked: (title, details) {
+//                   Navigator.push(
+//                     context,
+//                     MaterialPageRoute(
+//                       builder: (context) => VendorNewsPage(title: title, details: details),
+//                     ),
+//                   );
+//                 })
+//               : _selectedIndex == 1
+//                   ? Vardar()
+//                   : _selectedIndex == 2
+//                       ? Container(
+//                           color: const Color(0xFFDEAD00),
+//                         )
+//                       : _selectedIndex == 3
+//                           ? Container(
+//                               color: Color(0xFFDEAD00),
+//                               child: Center(
+//                                 child: Column(
+//                                   mainAxisAlignment: MainAxisAlignment.center,
+//                                   children: [
+//                                     ElevatedButton(
+//                                       onPressed: () {
+//                                         Navigator.push(
+//                                           context,
+//                                           MaterialPageRoute(builder: (context) => ManageAccountPage()),
+//                                         );
+//                                       },
+//                                       child: Text('Manage Account', style: TextStyle(color: Colors.white)),
+//                                       style: ElevatedButton.styleFrom(
+//                                         backgroundColor: Color(0xFFFFB200),
+//                                         shape: RoundedRectangleBorder(
+//                                           borderRadius: BorderRadius.circular(30),
+//                                         ),
+//                                         minimumSize: Size(200, 50),
 //                                       ),
-//                                       minimumSize: Size(200, 50),
 //                                     ),
-//                                   ),
-//                                   SizedBox(height: 20),
-//                                   ElevatedButton(
-//                                     onPressed: () {
-//                                       Navigator.push(
-//                                         context,
-//                                         MaterialPageRoute(builder: (context) => PaymentInformationPage()),
-//                                       );
-//                                     },
-//                                     child: Text('Payment Information', style: TextStyle(color: Colors.white)),
-//                                     style: ElevatedButton.styleFrom(
-//                                       backgroundColor: Color(0xFFFFB200),
-//                                       shape: RoundedRectangleBorder(
-//                                         borderRadius: BorderRadius.circular(30),
+//                                     SizedBox(height: 20),
+//                                     ElevatedButton(
+//                                       onPressed: () {
+//                                         Navigator.push(
+//                                           context,
+//                                           MaterialPageRoute(builder: (context) => PaymentInformationPage()),
+//                                         );
+//                                       },
+//                                       child: Text('Payment Information', style: TextStyle(color: Colors.white)),
+//                                       style: ElevatedButton.styleFrom(
+//                                         backgroundColor: Color(0xFFFFB200),
+//                                         shape: RoundedRectangleBorder(
+//                                           borderRadius: BorderRadius.circular(30),
+//                                         ),
+//                                         minimumSize: Size(200, 50),
 //                                       ),
-//                                       minimumSize: Size(200, 50),
 //                                     ),
-//                                   ),
-//                                   SizedBox(height: 20),
-//                                   ElevatedButton(
-//                                     onPressed: () {
-//                                       Navigator.push(
-//                                         context,
-//                                         MaterialPageRoute(builder: (context) => NotificationsPage()),
-//                                       );
-//                                     },
-//                                     child: Text('Notifications', style: TextStyle(color: Colors.white)),
-//                                     style: ElevatedButton.styleFrom(
-//                                       backgroundColor: Color(0xFFFFB200),
-//                                       shape: RoundedRectangleBorder(
-//                                         borderRadius: BorderRadius.circular(30),
+//                                     SizedBox(height: 20),
+//                                     ElevatedButton(
+//                                       onPressed: () {
+//                                         Navigator.push(
+//                                           context,
+//                                           MaterialPageRoute(builder: (context) => NotificationsPage()),
+//                                         );
+//                                       },
+//                                       child: Text('Notifications', style: TextStyle(color: Colors.white)),
+//                                       style: ElevatedButton.styleFrom(
+//                                         backgroundColor: Color(0xFFFFB200),
+//                                         shape: RoundedRectangleBorder(
+//                                           borderRadius: BorderRadius.circular(30),
+//                                         ),
+//                                         minimumSize: Size(200, 50),
 //                                       ),
-//                                       minimumSize: Size(200, 50),
 //                                     ),
-//                                   ),
-//                                   SizedBox(height: 20),
-//                                   ElevatedButton(
-//                                     onPressed: () {
-//                                       Navigator.push(
-//                                         context,
-//                                         MaterialPageRoute(builder: (context) => PrivacyPage()),
-//                                       );
-//                                     },
-//                                     child: Text('Privacy', style: TextStyle(color: Colors.white)),
-//                                     style: ElevatedButton.styleFrom(
-//                                       backgroundColor: Color(0xFFFFB200),
-//                                       shape: RoundedRectangleBorder(
-//                                         borderRadius: BorderRadius.circular(30),
+//                                     SizedBox(height: 20),
+//                                     ElevatedButton(
+//                                       onPressed: () {
+//                                         Navigator.push(
+//                                           context,
+//                                           MaterialPageRoute(builder: (context) => PrivacyPage()),
+//                                         );
+//                                       },
+//                                       child: Text('Privacy', style: TextStyle(color: Colors.white)),
+//                                       style: ElevatedButton.styleFrom(
+//                                         backgroundColor: Color(0xFFFFB200),
+//                                         shape: RoundedRectangleBorder(
+//                                           borderRadius: BorderRadius.circular(30),
+//                                         ),
+//                                         minimumSize: Size(200, 50),
 //                                       ),
-//                                       minimumSize: Size(200, 50),
 //                                     ),
-//                                   ),
-//                                 ],
+//                                   ],
+//                                 ),
 //                               ),
-//                             ),
-//                           )
-//                         : Container(), // If another tab is selected, show an empty container
+//                             )
+//                           : Container(),
+//         ),
 //         bottomNavigationBar: BottomNavigationBar(
 //           currentIndex: _selectedIndex,
 //           onTap: _onItemTapped,
 //           selectedItemColor: const Color.fromARGB(255, 0, 122, 252),
 //           unselectedItemColor: Colors.grey,
-          
 //           items: const [
 //             BottomNavigationBarItem(
 //               icon: Icon(Icons.home),
@@ -204,20 +204,11 @@
 //     );
 //   }
 
-//   // Navigate to map page
 //   void _onItemTapped(int index) {
 //     setState(() {
 //       _selectedIndex = index;
 //       _isLogoutVisible = index == 3;
 //     });
-
-//     // if (index == 1) {
-//     //   // Navigate to Vendor Radar page
-//     //   Navigator.push(
-//     //     context,
-//     //     MaterialPageRoute(builder: (context) => Vardar()),
-//     //   );
-//     // }
 //   }
 // }
 
@@ -234,86 +225,62 @@
 //   final ScrollController _scrollController = ScrollController();
 
 //   @override
-//   void initState() {
-//     super.initState();
-//     _scrollController.addListener(_onScroll);
-//   }
-
-//   @override
-//   void dispose() {
-//     _scrollController.removeListener(_onScroll);
-//     super.dispose();
-//   }
-
-//   Future<void> _onRefresh() async {
-//     // Implement your refresh logic here
-//     // For example, fetch new data from the server
-//   }
-
-//   void _onScroll() {
-//     if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
-//       // You have reached the bottom of the list view
-//       // Implement any additional logic if needed
-//     }
-//   }
-
-//   @override
 //   Widget build(BuildContext context) {
-//     return RefreshIndicator(
-//       onRefresh: _onRefresh,
-//       child: Container(
-//         color: const Color(0xFFDEAD00),
-//         padding: EdgeInsets.all(16),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.stretch,
-//           children: [
-//             Container(
-//               decoration: BoxDecoration(
-//                 color: Colors.white,
-//                 borderRadius: BorderRadius.circular(30),
-//               ),
-//               child: TextField(
-//                 decoration: InputDecoration(
-//                   hintText: 'Search',
-//                   prefixIcon: Icon(Icons.search),
-//                   border: InputBorder.none,
-//                   contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-//                 ),
-//               ),
-//             ),
-//             SizedBox(height: 16),
-//             Expanded(
-//               child: ListView.builder(
-//                 controller: _scrollController,
-//                 itemCount: 10, // Replace 10 with the actual number of items
-//                 itemBuilder: (context, index) {
-//                   final title = 'Vendor News ${index + 1}';
-//                   final details = 'Details about Vendor News ${index + 1}';
-//                   return GestureDetector(
-//                     onTap: () {
-//                       widget.onVendorNewsClicked(title, details);
-//                     },
-//                     child: Card(
-//                       color: Colors.white,
-//                       margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-//                       child: ListTile(
-//                         title: Text(
-//                           title,
-//                           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-//                         ),
-//                         subtitle: Text(
-//                           details,
-//                           style: TextStyle(color: Colors.black),
-//                         ),
-//                       ),
-//                     ),
-//                   );
+//     return StreamBuilder<QuerySnapshot>(
+//       stream: FirebaseFirestore.instance.collection('newsUpdates').snapshots(),
+//       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+//         if (snapshot.hasError) {
+//           return Center(
+//             child: Text('Error: ${snapshot.error}'),
+//           );
+//         }
+
+//         if (snapshot.connectionState == ConnectionState.waiting) {
+//           return Center(
+//             child: CircularProgressIndicator(),
+//           );
+//         }
+
+//         if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+//           return Center(
+//             child: Text('No vendor news available'),
+//           );
+//         }
+
+//         return RefreshIndicator(
+//           onRefresh: () async {
+//             print('Refreshing...');
+//             setState(() {});
+//           },
+//           child: ListView.builder(
+//             controller: _scrollController,
+//             itemCount: snapshot.data!.docs.length,
+//             itemBuilder: (context, index) {
+//               final title = snapshot.data!.docs[index]['title'];
+//               final details = snapshot.data!.docs[index]['content']; // Assuming content field in Firestore contains details
+//               return GestureDetector(
+//                 onTap: () {
+//                   widget.onVendorNewsClicked(title, details);
 //                 },
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
+//                 child: Card(
+//                   color: Colors.white,
+//                   margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+//                   child: ListTile(
+//                     title: Text(
+//                       title,
+//                       style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+//                     ),
+//                     subtitle: Text(
+//                       details,
+//                       style: TextStyle(color: Colors.black),
+//                     ),
+//                   ),
+//                 ),
+//               );
+//             },
+//           ),
+//         );
+//       },
 //     );
 //   }
 // }
@@ -329,7 +296,6 @@ import 'paymentInfo.dart';
 import 'notifications.dart';
 import 'privacy.dart';
 import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore package
-
 
 class CustomerHome extends StatefulWidget {
   const CustomerHome({Key? key}) : super(key: key);
@@ -369,102 +335,119 @@ class _CustomerHomeState extends State<CustomerHome> {
               fontWeight: FontWeight.bold,
             ),
           ),
+actions: [
+  if (_selectedIndex == 0) // Only show the refresh button on the home page
+    IconButton(
+      onPressed: () {
+        // Implement your refresh logic here
+        print('Refreshing vendor news...');
+        setState(() {});
+      },
+      icon: Icon(
+        Icons.refresh,
+        color: Colors.white, // Set the color of the refresh button to white
+      ),
+    ),
+],
+
         ),
-        body: _selectedIndex == 0
-            ? HomeListView(onVendorNewsClicked: (title, details) {
-                // Navigate to VendorNewsPage when a vendor news item is clicked
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => VendorNewsPage(title: title, details: details),
-                  ),
-                );
-              })
-            : _selectedIndex == 1 // Check if Vendor Radar tab is active
-                ? Vardar() // Replace Container with Vardar widget
-                : _selectedIndex == 2 // Check if Order tab is active
-                    ? Container(
-                        color: const Color(0xFFDEAD00), // Set background color for Order page
-                      )
-                    : _selectedIndex == 3 // Check if Profile tab is active
-                        ? Container(
-                            color: Color(0xFFDEAD00), // Set the background color of the body
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => ManageAccountPage()),
-                                      );
-                                    },
-                                    child: Text('Manage Account', style: TextStyle(color: Colors.white)),
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: Color(0xFFFFB200),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(30),
+        body: Container(
+          color: Color(0xFFDEAD00),
+          child: _selectedIndex == 0
+              ? HomeListView(onVendorNewsClicked: (title, details) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => VendorNewsPage(title: title, details: details),
+                    ),
+                  );
+                })
+              : _selectedIndex == 1
+                  ? Vardar()
+                  : _selectedIndex == 2
+                      ? Container(
+                          color: const Color(0xFFDEAD00),
+                        )
+                      : _selectedIndex == 3
+                          ? Container(
+                              color: Color(0xFFDEAD00),
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => ManageAccountPage()),
+                                        );
+                                      },
+                                      child: Text('Manage Account', style: TextStyle(color: Colors.white)),
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Color(0xFFFFB200),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(30),
+                                        ),
+                                        minimumSize: Size(200, 50),
                                       ),
-                                      minimumSize: Size(200, 50),
                                     ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => PaymentInformationPage()),
-                                      );
-                                    },
-                                    child: Text('Payment Information', style: TextStyle(color: Colors.white)),
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: Color(0xFFFFB200),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(30),
+                                    SizedBox(height: 20),
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => PaymentInformationPage()),
+                                        );
+                                      },
+                                      child: Text('Payment Information', style: TextStyle(color: Colors.white)),
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Color(0xFFFFB200),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(30),
+                                        ),
+                                        minimumSize: Size(200, 50),
                                       ),
-                                      minimumSize: Size(200, 50),
                                     ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => NotificationsPage()),
-                                      );
-                                    },
-                                    child: Text('Notifications', style: TextStyle(color: Colors.white)),
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: Color(0xFFFFB200),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(30),
+                                    SizedBox(height: 20),
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => NotificationsPage()),
+                                        );
+                                      },
+                                      child: Text('Notifications', style: TextStyle(color: Colors.white)),
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Color(0xFFFFB200),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(30),
+                                        ),
+                                        minimumSize: Size(200, 50),
                                       ),
-                                      minimumSize: Size(200, 50),
                                     ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => PrivacyPage()),
-                                      );
-                                    },
-                                    child: Text('Privacy', style: TextStyle(color: Colors.white)),
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: Color(0xFFFFB200),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(30),
+                                    SizedBox(height: 20),
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => PrivacyPage()),
+                                        );
+                                      },
+                                      child: Text('Privacy', style: TextStyle(color: Colors.white)),
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: Color(0xFFFFB200),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(30),
+                                        ),
+                                        minimumSize: Size(200, 50),
                                       ),
-                                      minimumSize: Size(200, 50),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                          )
-                        : Container(), // If another tab is selected, show an empty container
+                            )
+                          : Container(),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
@@ -524,7 +507,6 @@ class _CustomerHomeState extends State<CustomerHome> {
     );
   }
 
-  // Navigate to map page
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -548,7 +530,7 @@ class _HomeListViewState extends State<HomeListView> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: FirebaseFirestore.instance.collection('vendor_news').snapshots(),
+      stream: FirebaseFirestore.instance.collection('newsUpdates').snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) {
           return Center(
@@ -570,14 +552,15 @@ class _HomeListViewState extends State<HomeListView> {
 
         return RefreshIndicator(
           onRefresh: () async {
-            // Implement your refresh logic here
+            print('Refreshing...');
+            setState(() {});
           },
           child: ListView.builder(
             controller: _scrollController,
             itemCount: snapshot.data!.docs.length,
             itemBuilder: (context, index) {
               final title = snapshot.data!.docs[index]['title'];
-              final details = snapshot.data!.docs[index]['details'];
+              final details = snapshot.data!.docs[index]['content']; // Assuming content field in Firestore contains details
               return GestureDetector(
                 onTap: () {
                   widget.onVendorNewsClicked(title, details);
@@ -604,4 +587,3 @@ class _HomeListViewState extends State<HomeListView> {
     );
   }
 }
-
