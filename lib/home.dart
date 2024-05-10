@@ -39,13 +39,15 @@ class _HomeState extends State<Home> {
           child: Text(
             _tabTitles[_selectedIndex],
             style: TextStyle(
-              color: Colors.white, // Set the text color to white
+              color: Colors.black,
+              fontFamily: 'BalooBhai2',
+              fontSize: 30 // Set the text color to white
             ),
           ),
         ),
-        backgroundColor: Color(0xFF0F8B7C),
+        backgroundColor: Color(0xFFC39ADC),
       ),
-      backgroundColor: Color(0xFF0F8B7C),
+      backgroundColor: Color(0xFFC39ADC),
       body: Stack(
         children: [
           Column(
@@ -56,7 +58,8 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.only(top: 40),
                   child: Text(
                     'Item Availability',
-                    style: TextStyle(color: Colors.white, fontSize: 24),
+                    style: TextStyle(color: Colors.black, fontSize: 24 ,fontFamily: 'BalooBhai2',
+                  ),
                   ),
                 ),
               SizedBox(height: 10),
@@ -122,10 +125,11 @@ class _HomeState extends State<Home> {
                                         },
                                         child: Text(
                                           'Manage Account',
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2',
+                  fontSize: 20),
                                         ),
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: Color(0xFF0BC2AC),
+                                          backgroundColor: Color(0xFF91E1DB),
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(30),
                                           ),
@@ -143,10 +147,11 @@ class _HomeState extends State<Home> {
                                         },
                                         child: Text(
                                           'Payment Information',
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2',
+                  fontSize: 20),
                                         ),
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: Color(0xFF0BC2AC),
+                                          backgroundColor: Color(0xFF91E1DB),
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(30),
                                           ),
@@ -165,10 +170,11 @@ class _HomeState extends State<Home> {
                                         },
                                         child: Text(
                                           'Notifications',
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2',
+                  fontSize: 20),
                                         ),
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: Color(0xFF0BC2AC),
+                                          backgroundColor: Color(0xFF91E1DB),
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(30),
                                           ),
@@ -186,10 +192,11 @@ class _HomeState extends State<Home> {
                                         },
                                         child: Text(
                                           'Privacy',
-                                          style: TextStyle(color: Colors.white),
+                                          style: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2',
+                  fontSize: 20),
                                         ),
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: Color(0xFF0BC2AC),
+                                          backgroundColor: Color(0xFF91E1DB),
                                           shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(30),
                                           ),
@@ -209,7 +216,8 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Color.fromARGB(255, 0, 122, 252), // Light blue color for selected item
+        selectedFontSize: 15,
+        selectedItemColor: Color(0xFFC39ADC), // Light blue color for selected item
         unselectedItemColor: Colors.grey, // Gray color for unselected item
         items: const [
           BottomNavigationBarItem(
@@ -256,7 +264,8 @@ class _HomeState extends State<Home> {
                         ),
                         child: const Text(
                           'Log out',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2',
+                  fontSize: 20),
                         ),
                       ),
                       const Spacer(),
@@ -273,7 +282,7 @@ class _HomeState extends State<Home> {
                       MaterialPageRoute(builder: (context) => AddItemPage()), // Navigate to AddItemPage
                     );
                   },
-                  backgroundColor: Colors.green, // Set button background color
+                  backgroundColor: Color(0xFFEADDFF), // Set button background color
                   child: Icon(Icons.add), // Add icon to button
                 )
               : SizedBox(), // Placeholder to maintain layout when add item button is not visible

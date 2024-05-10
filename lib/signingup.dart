@@ -16,7 +16,7 @@ class SigningUpPage extends StatelessWidget {
     });
 
     return Scaffold(
-      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
+      backgroundColor: Color(0xFFF6E8B6), // Set the background color
       body: SafeArea(
         child: Center(
           child: Column(

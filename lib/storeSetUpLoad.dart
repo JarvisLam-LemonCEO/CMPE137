@@ -24,14 +24,14 @@ class _StoreSetUpLoadState extends State<StoreSetUpLoad> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
+      backgroundColor: Color(0xFFFF9DD7), // Set the background color to DEAD00
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(
-                Color.fromARGB(255, 14, 122, 254),
+                Color(0xFF91E1DB),
               ),
             ),
             SizedBox(height: 16),
@@ -40,7 +40,7 @@ class _StoreSetUpLoadState extends State<StoreSetUpLoad> {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 14, 122, 254),
+                color: Color(0xFF91E1DB),
               ),
             ),
           ],

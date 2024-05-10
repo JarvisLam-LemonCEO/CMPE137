@@ -14,11 +14,13 @@ class _NotificationsPageState extends State<NotificationsPage> {
       appBar: AppBar(
         title: Text(
           'Notifications',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black,
+          fontFamily: 'BalooBhai2',
+          fontSize: 30),
         ),
-        backgroundColor: const Color(0xFF0F8B7C), // Set background color of the app bar
+        backgroundColor: const Color(0xFFC39ADC), // Set background color of the app bar
       ),
-      backgroundColor: const Color(0xFF0F8B7C), // Set background color of the scaffold body
+      backgroundColor: const Color(0xFFC39ADC), // Set background color of the scaffold body
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -29,7 +31,8 @@ class _NotificationsPageState extends State<NotificationsPage> {
               children: [
                 Text(
                   'Notifications',
-                  style: TextStyle(fontSize: 18, color: Colors.white),
+                  style: TextStyle(fontSize: 20, color: Colors.black,
+                  fontFamily: 'BalooBhai2'),
                 ),
                 Switch(
                   value: _notificationsEnabled,

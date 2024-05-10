@@ -7,11 +7,13 @@ class ChangePasswordPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Change Password',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black,
+          fontFamily: 'BalooBhai2',
+          fontSize: 30),
         ),
-        backgroundColor: const Color(0xFF0F8B7C), // Set background color of the app bar
+        backgroundColor: const Color(0xFFC39ADC), // Set background color of the app bar
       ),
-      backgroundColor: const Color(0xFF0F8B7C), // Set background color of the scaffold body
+      backgroundColor: const Color(0xFFC39ADC), // Set background color of the scaffold body
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -20,20 +22,20 @@ class ChangePasswordPage extends StatelessWidget {
             TextFormField(
               decoration: InputDecoration(
                 labelText: 'Current Password',
-                labelStyle: TextStyle(color: Colors.white),
-                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+                labelStyle: TextStyle(color: Colors.black),
+                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
               obscureText: true,
             ),
             SizedBox(height: 20),
             TextFormField(
               decoration: InputDecoration(
                 labelText: 'New Password',
-                labelStyle: TextStyle(color: Colors.white),
-                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+                labelStyle: TextStyle(color: Colors.black),
+                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
               ),
               style: TextStyle(color: Colors.white),
               obscureText: true,
@@ -42,11 +44,11 @@ class ChangePasswordPage extends StatelessWidget {
             TextFormField(
               decoration: InputDecoration(
                 labelText: 'Confirm New Password',
-                labelStyle: TextStyle(color: Colors.white),
-                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-                focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+                labelStyle: TextStyle(color: Colors.black),
+                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
               obscureText: true,
             ),
             SizedBox(height: 20),
@@ -54,9 +56,11 @@ class ChangePasswordPage extends StatelessWidget {
               onPressed: () {
                 // Implement logic to change password
               },
-              child: Text('Submit', style: TextStyle(color: Colors.white)),
+              child: Text('Submit', style: TextStyle(color: Colors.black,
+              fontFamily: 'BalooBhai2',
+              fontSize: 20)),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF0BC2AC), // Set button background color to match app bar
+                backgroundColor: const Color(0xFF91E1DB), // Set button background color to match app bar
               ),
             ),
           ],

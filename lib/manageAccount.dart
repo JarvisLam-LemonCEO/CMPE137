@@ -11,11 +11,13 @@ class ManageAccountPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Manage Account',
-          style: TextStyle(color: Colors.white), // Set title text color to white
+          style: TextStyle(color: Colors.black,
+          fontFamily: 'BalooBhai2',
+          fontSize: 30), // Set title text color to white
         ),
-        backgroundColor: const Color(0xFFDEAD00), // Set background color of the app bar
+        backgroundColor: const Color(0xFF91E1DB), // Set background color of the app bar
       ),
-      backgroundColor: const Color(0xFFDEAD00), // Set background color of the scaffold body
+      backgroundColor: const Color(0xFF91E1DB), // Set background color of the scaffold body
       body: Align(
         alignment: Alignment.topCenter,
         child: Padding(
@@ -31,12 +33,12 @@ class ManageAccountPage extends StatelessWidget {
               SizedBox(height: 20),
               Text(
                 'John Doe',
-                style: TextStyle(fontSize: 24, color: Colors.white),
+                style: TextStyle(fontSize: 24, color: Colors.black),
               ),
               SizedBox(height: 10),
               Text(
                 'john.doe@example.com',
-                style: TextStyle(fontSize: 18, color: Colors.white),
+                style: TextStyle(fontSize: 18, color: Colors.black),
               ),
               SizedBox(height: 20),
               SizedBox(
@@ -49,9 +51,10 @@ class ManageAccountPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => ChangePasswordPage()),
                     );
                   },
-                  child: Text('Change Password', style: TextStyle(color: Colors.white)),
+                  child: Text('Change Password', style: TextStyle(color: Colors.black, fontFamily: 'BallBhai2',
+                  fontSize: 20)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFFB200), // Set button background color to match app bar
+                    backgroundColor: const Color(0xFFFFFFFF), // Set button background color to match app bar
                   ),
                 ),
               ),
@@ -66,9 +69,11 @@ class ManageAccountPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => EditProfilePage()),
                     );
                   },
-                  child: Text('Change Profile Details', style: TextStyle(color: Colors.white)),
+                  child: Text('Change Profile Details', style: TextStyle(color: Colors.black,
+                  fontFamily: 'BallBhai2',
+                  fontSize: 20)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFFB200), // Set button background color to match app bar
+                    backgroundColor: const Color(0xFFFFFFFF), // Set button background color to match app bar
                   ),
                 ),
               ),

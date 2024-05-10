@@ -6,14 +6,16 @@ class PaymentInformationPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Payment Information',
-        style: TextStyle(color: Colors.white),),
-        backgroundColor: const Color(0xFF0F8B7C), // Set background color of the app bar
+        style: TextStyle(color: Colors.black,
+        fontFamily: 'BalooBhai2', fontSize: 30)),
+        backgroundColor: const Color(0xFFC39ADC), // Set background color of the app bar
       ),
-      backgroundColor: const Color(0xFF0F8B7C), // Set background color of the scaffold body
+      backgroundColor: const Color(0xFFC39ADC), // Set background color of the scaffold body
       body: Center(
         child: Text(
           'This is the Payment Information Page',
-          style: TextStyle(fontSize: 24, color: Colors.white),
+          style: TextStyle(fontSize: 24, color: Colors.black,
+          fontFamily: 'BalooBhai2'),
         ),
       ),
     );

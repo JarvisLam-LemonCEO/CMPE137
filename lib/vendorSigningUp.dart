@@ -18,7 +18,7 @@ class VendorSigningUpPage extends StatelessWidget {
     });
 
     return Scaffold(
-      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
+      backgroundColor: Color(0xFFFF9DD7), // Set the background color to DEAD00
       body: SafeArea(
         child: Center(
           child: Column(
@@ -26,13 +26,13 @@ class VendorSigningUpPage extends StatelessWidget {
             children: [
               CircularProgressIndicator(
                 valueColor: AlwaysStoppedAnimation<Color>(
-                  Color.fromARGB(255, 14, 122, 254),
+                  Color(0xFF91E1DB),
                 ),
               ), // Display the loading indicator
               SizedBox(height: 16), // Add some space
               Text(
                 'Signing Up...',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Color.fromARGB(255, 14, 122, 254)),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Color(0xFF91E1DB), fontFamily: 'BalooBhai'),
               ),
             ],
           ),

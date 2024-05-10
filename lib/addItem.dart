@@ -55,11 +55,11 @@ class AddItemPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Add Item',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2', fontSize: 30)
         ),
-        backgroundColor: Color(0xFF0F8B7C),
+        backgroundColor: Color(0xFFC39ADC), 
       ),
-      backgroundColor: Color(0xFF0F8B7C),
+      backgroundColor: Color(0xFFC39ADC),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -87,7 +87,7 @@ class AddItemPage extends StatelessWidget {
               controller: itemNameController,
               decoration: InputDecoration(
                 labelText: 'Item Name',
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
               ),
               style: TextStyle(color: Colors.white),
             ),
@@ -95,7 +95,7 @@ class AddItemPage extends StatelessWidget {
               controller: priceController,
               decoration: InputDecoration(
                 labelText: 'Price',
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
               ),
               style: TextStyle(color: Colors.white),
             ),
@@ -103,7 +103,7 @@ class AddItemPage extends StatelessWidget {
               controller: quantityController,
               decoration: InputDecoration(
                 labelText: 'Quantity',
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
               ),
               style: TextStyle(color: Colors.white),
             ),
@@ -111,7 +111,7 @@ class AddItemPage extends StatelessWidget {
               controller: descriptionController,
               decoration: InputDecoration(
                 labelText: 'Item Description',
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
               ),
               maxLines: null,
               style: TextStyle(color: Colors.white),
@@ -121,11 +121,11 @@ class AddItemPage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: submitItem,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF0BC2AC),
+                  backgroundColor: Color(0xFF91E1DB),
                 ),
                 child: Text(
                   'Submit',
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2', fontSize: 20),
                 ),
               ),
             ),

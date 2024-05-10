@@ -19,7 +19,7 @@ class VendorStoreSetUpPage extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Color(0xFFDEAD00),
+      backgroundColor: Color(0xFFFF9DD7),
       appBar: AppBar(
         title: Text(
           'Vendor Store Setup',
@@ -27,7 +27,7 @@ class VendorStoreSetUpPage extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        backgroundColor: Color(0xFFDEAD00),
+        backgroundColor: Color(0xFFFF9DD7),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -173,10 +173,11 @@ class VendorStoreSetUpPage extends StatelessWidget {
                   },
                   child: Text(
                     'Done',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white,
+                    fontFamily: 'BalooBhai2', fontSize: 20),
                   ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 14, 122, 254),
+                    backgroundColor: Color.fromARGB(255, 181, 156, 196),
                     minimumSize: Size(screenSize.width * 0.85, 46),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),

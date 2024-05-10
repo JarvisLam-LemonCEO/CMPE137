@@ -14,7 +14,7 @@ class _NewsUpdatesViewState extends State<NewsUpdatesView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xFF0F8B7C), // Set the background color
+        color: Color(0xFFC39ADC), // Set the background color
         child: ListView.builder(
           itemCount: newsUpdates.length,
           itemBuilder: (context, index) {
@@ -86,12 +86,20 @@ class _NewsUpdatesViewState extends State<NewsUpdatesView> {
     );
   }
 
-  void _deleteNewsUpdate(BuildContext context, String newsUpdate) {
-    // Implement your delete logic here
+void _deleteNewsUpdate(BuildContext context, String documentId) {
+  // Delete the news update document from Firestore directly using its document ID
+  _firestore.collection('newsUpdates').doc(documentId).delete().then((_) {
+    // Once deletion is done, update the local state
     setState(() {
-      newsUpdates.remove(newsUpdate);
+      newsUpdates.remove(documentId);
     });
-  }
+  }).catchError((error) {
+    print("Error deleting document: $error");
+  });
+}
+
+
+
 
   void _navigateToAddNewsUpdate(BuildContext context) async {
     final result = await Navigator.push(
@@ -127,9 +135,9 @@ class AddNewsUpdate extends StatelessWidget {
           'Add News Update',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: const Color(0xFF0F8B7C), // Set background color of the app bar
+        backgroundColor: const Color(0xFFC39ADC), // Set background color of the app bar
       ),
-      backgroundColor: const Color(0xFF0F8B7C), // Set background color of the scaffold body
+      backgroundColor: const Color(0xFFC39ADC), // Set background color of the scaffold body
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -179,7 +187,7 @@ class AddNewsUpdate extends StatelessWidget {
                 },
                 child: Text('Update News', style: TextStyle(color: Colors.black)),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF0BC2AC),
+                  backgroundColor: Color(0xFF91E1DB),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -268,3 +276,4 @@ void main() {
     home: NewsUpdatesView(),
   ));
 }
+

@@ -90,7 +90,7 @@ class CustomerRegisterPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
+      backgroundColor: Color(0xFFF6E8B6), // Set the background color to DEAD00
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(
@@ -101,13 +101,13 @@ class CustomerRegisterPage extends StatelessWidget {
             Navigator.pop(context); // Navigate back to the previous page (Role)
           },
         ),
-        title: Text(
-          'Explore as a Customer',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
+        // title: Text(
+        //   'Explore as a Customer',
+        //   style: TextStyle(
+        //     color: Colors.white,
+        //   ),
+        // ),
+        backgroundColor: Color(0xFFF6E8B6), // Set the background color 
       ),
       body: SingleChildScrollView(
         child: Padding(

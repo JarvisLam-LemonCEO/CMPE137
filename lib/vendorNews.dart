@@ -13,11 +13,13 @@ class VendorNewsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           title,
-          style: TextStyle(color: Colors.white), // Set title color to white
+          style: TextStyle(color: Colors.white, 
+          fontFamily: 'BalooBhai2',
+          fontSize: 30), // Set title color to white
         ),
-        backgroundColor: const Color(0xFFDEAD00), // Set background color of the app bar
+        backgroundColor: const Color(0xFF91E1DB), // Set background color of the app bar
       ),
-      backgroundColor: const Color(0xFFDEAD00), // Set background color of the scaffold body
+      backgroundColor: const Color(0xFF91E1DB), // Set background color of the scaffold body
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

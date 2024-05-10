@@ -18,7 +18,7 @@ class VendorRegisterPage extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
+      backgroundColor: Color(0xFFFF9DD7), // Set the background color to DEAD00
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(
@@ -29,13 +29,14 @@ class VendorRegisterPage extends StatelessWidget {
             Navigator.pop(context); // Navigate back to the previous page (HelloPage)
           },
         ),
-        title: Text(
-          'Join as a Vendor',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
+        // title: Text(
+        //   'Join as a Vendor',
+        //   style: TextStyle(
+        //     color: Colors.white,
+        //     fontFamily: 'BalooBhai2',
+        //   ),
+        // ),
+        backgroundColor: Color(0xFFFF9DD7), // Set the background color to DEAD00
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -205,10 +206,12 @@ class VendorRegisterPage extends StatelessWidget {
                   'Sign Up',
                   style: TextStyle(
                     color: Colors.white,
+                    fontFamily: 'BalooBhai2',
+                    fontSize: 20,
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 14, 122, 254),
+                  backgroundColor: Color.fromARGB(255, 181, 156, 196),
                   minimumSize: Size(171, 46),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),

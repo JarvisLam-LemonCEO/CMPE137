@@ -42,11 +42,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
       appBar: AppBar(
         title: Text(
           'Edit Profile',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black,
+          fontFamily: 'BalooBhai',
+          fontSize: 30),
         ),
-        backgroundColor: const Color(0xFF0F8B7C),
+        backgroundColor: const Color(0xFFC39ADC),
       ),
-      backgroundColor: const Color(0xFF0F8B7C),
+      backgroundColor: const Color(0xFFC39ADC),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -64,39 +66,39 @@ class _EditProfilePageState extends State<EditProfilePage> {
               controller: _nameController,
               decoration: InputDecoration(
                 labelText: 'Name',
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.black),
                 enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: BorderSide(color: Colors.black),
                 ),
                 focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: BorderSide(color: Colors.black),
                 ),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             SizedBox(height: 20),
             TextFormField(
               controller: _emailController,
               decoration: InputDecoration(
                 labelText: 'Email',
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.black),
                 enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: BorderSide(color: Colors.black),
                 ),
                 focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: BorderSide(color: Colors.black),
                 ),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Save changes
               },
-              child: Text('Save Changes', style: TextStyle(color: Colors.white)),
+              child: Text('Save Changes', style: TextStyle(color: Colors.black)),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF0BC2AC),
+                backgroundColor: const Color(0xFF91E1DB),
               ),
             ),
           ],

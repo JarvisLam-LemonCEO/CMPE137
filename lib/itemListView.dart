@@ -1,145 +1,4 @@
 
-// import 'package:flutter/material.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-
-// class ItemListView extends StatelessWidget {
-//   final DocumentSnapshot item;
-
-//   const ItemListView({Key? key, required this.item}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(
-//           'Item Detail',
-//           style: TextStyle(color: Colors.white),
-//         ),
-//         backgroundColor: Color(0xFF0F8B7C),
-//       ),
-//       backgroundColor: Color(0xFF0F8B7C),
-//       body: Padding(
-//         padding: const EdgeInsets.all(20.0),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             Container(
-//               width: double.infinity,
-//               height: 200,
-//               decoration: BoxDecoration(
-//                 color: Colors.grey[300],
-//                 borderRadius: BorderRadius.circular(10),
-//               ),
-//               child: Center(
-//                 child: Icon(
-//                   Icons.image,
-//                   size: 50,
-//                   color: Colors.white,
-//                 ),
-//               ),
-//             ),
-//             SizedBox(height: 20),
-//             TextFormField(
-//               decoration: InputDecoration(
-//                 labelText: 'Item Name',
-//                 labelStyle: TextStyle(color: Colors.white),
-//               ),
-//               initialValue: item['itemName'],
-//               style: TextStyle(color: Colors.white),
-//             ),
-//             TextFormField(
-//               decoration: InputDecoration(
-//                 labelText: 'Price',
-//                 labelStyle: TextStyle(color: Colors.white),
-//               ),
-//               initialValue: item['price'],
-//               style: TextStyle(color: Colors.white),
-//             ),
-//             TextFormField(
-//               decoration: InputDecoration(
-//                 labelText: 'Quantity',
-//                 labelStyle: TextStyle(color: Colors.white),
-//               ),
-//               initialValue: item['quantity'],
-//               style: TextStyle(color: Colors.white),
-//             ),
-//             TextFormField(
-//               decoration: InputDecoration(
-//                 labelText: 'Item Description',
-//                 labelStyle: TextStyle(color: Colors.white),
-//               ),
-//               initialValue: item['description'],
-//               maxLines: null,
-//               style: TextStyle(color: Colors.white),
-//             ),
-//             SizedBox(height: 20),
-//             Row(
-//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//               children: [
-//                 ElevatedButton(
-//                   onPressed: () {
-//                     // Implement save functionality here
-//                   },
-//                   style: ElevatedButton.styleFrom(
-//                     backgroundColor: Color(0xFF0BC2AC),
-//                   ),
-//                   child: Text(
-//                     'Save',
-//                     style: TextStyle(color: Colors.black),
-//                   ),
-//                 ),
-//                 ElevatedButton(
-//                   onPressed: () {
-//                     // Show delete confirmation dialog
-//                     showDialog(
-//                       context: context,
-//                       builder: (BuildContext context) {
-//                         return AlertDialog(
-//                           title: Text('Confirm Delete'),
-//                           content: Text('Are you sure you want to delete this item?'),
-//                           actions: <Widget>[
-//                             TextButton(
-//                               onPressed: () {
-//                                 Navigator.of(context).pop(); // Close dialog
-//                               },
-//                               child: Text(
-//                                 'Cancel',
-//                                 style: TextStyle(color: Colors.blue),
-//                               ),
-//                             ),
-//                             TextButton(
-//                               onPressed: () {
-//                                 // Implement delete functionality here
-//                                 FirebaseFirestore.instance.collection('items').doc(item.id).delete();
-//                                 // Close dialog
-//                                 Navigator.of(context).pop();
-//                               },
-//                               child: Text(
-//                                 'Delete',
-//                                 style: TextStyle(color: Colors.red),
-//                               ),
-//                             ),
-//                           ],
-//                         );
-//                       },
-//                     );
-//                   },
-//                   style: ElevatedButton.styleFrom(
-//                     backgroundColor: Colors.red,
-//                   ),
-//                   child: Text(
-//                     'Delete',
-//                     style: TextStyle(color: Colors.white),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -183,11 +42,12 @@ class _ItemListViewState extends State<ItemListView> {
       appBar: AppBar(
         title: Text(
           'Item Detail',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, 
+          fontFamily: 'BalooBhai2', fontSize: 30),
         ),
-        backgroundColor: Color(0xFF0F8B7C),
+        backgroundColor: Color(0xFFC39ADC),
       ),
-      backgroundColor: Color(0xFF0F8B7C),
+      backgroundColor: Color(0xFFC39ADC),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -213,7 +73,7 @@ class _ItemListViewState extends State<ItemListView> {
               controller: _itemNameController,
               decoration: InputDecoration(
                 labelText: 'Item Name',
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
               ),
               style: TextStyle(color: Colors.white),
             ),
@@ -221,7 +81,7 @@ class _ItemListViewState extends State<ItemListView> {
               controller: _priceController,
               decoration: InputDecoration(
                 labelText: 'Price',
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
               ),
               style: TextStyle(color: Colors.white),
             ),
@@ -229,7 +89,7 @@ class _ItemListViewState extends State<ItemListView> {
               controller: _quantityController,
               decoration: InputDecoration(
                 labelText: 'Quantity',
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
               ),
               style: TextStyle(color: Colors.white),
             ),
@@ -237,7 +97,7 @@ class _ItemListViewState extends State<ItemListView> {
               controller: _descriptionController,
               decoration: InputDecoration(
                 labelText: 'Item Description',
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
               ),
               maxLines: null,
               style: TextStyle(color: Colors.white),
@@ -251,11 +111,11 @@ class _ItemListViewState extends State<ItemListView> {
                     _updateItem();
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF0BC2AC),
+                    backgroundColor: Color(0xFF91E1DB),
                   ),
                   child: Text(
                     'Save',
-                    style: TextStyle(color: Colors.black),
+                    style: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2' ,fontSize: 20),
                   ),
                 ),
                 ElevatedButton(
@@ -267,7 +127,7 @@ class _ItemListViewState extends State<ItemListView> {
                   ),
                   child: Text(
                     'Delete',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2', fontSize: 20),
                   ),
                 ),
               ],

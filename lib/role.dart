@@ -76,15 +76,27 @@ class Role extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
+      backgroundColor: Color(0xFFFF9DD7), // Set the background color to DEAD00
       appBar: AppBar(
-        title: Text(
-          'Select Role',
-          style: TextStyle(
-            color: Colors.white, // Title text color
-          ),
-        ),
-        backgroundColor: Color(0xFFDEAD00), // Set the background color to DEAD00
+title: Text(
+  'Welcome to StreetEats',
+  style: TextStyle(
+    color: Color(0xFF91e1DB),
+    fontFamily: 'BalooBhai',
+    fontSize: 30,
+    shadows: [
+      Shadow(
+        // Same color as text color for solid stroke
+        blurRadius: 4,
+        color: Colors.black,
+        offset: Offset(0, 0),
+      ),
+    ],
+  ),
+),
+
+
+        backgroundColor: Color(0xFFFF9DD7), // Set the background color to DEAD00
       ),
       body: Center(
         child: Padding(
@@ -95,8 +107,9 @@ class Role extends StatelessWidget {
               Text(
                 'Join our vibrant community of street vendors and customers. Whether you\'re looking to sell your unique creations or discover local treasures, choose your role below and start your journey today!',
                 style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white, // Description text color
+                  fontSize: 20,
+                  color: Colors.black, // Description text color
+
                 ),
               ),
               const SizedBox(height: 10),
@@ -109,14 +122,15 @@ class Role extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () => _registerVendor(context),
                       child: Text(
-                        'Register as Vendor',
+                        'Join as a Vendor',
                         style: TextStyle(
                           fontSize: 30, // Set font size to 20
-                          color: Colors.white, // Button text color
+                          fontFamily: 'BalooBhai2',
+                          color: Colors.black, // Button text color
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 14, 122, 254), // Button color
+                        backgroundColor: Color.fromARGB(255, 195, 154, 220), // Button color
                         minimumSize: Size(screenSize.width * 0.85, 200), // Button width and height
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30), // Button border radius
@@ -127,14 +141,15 @@ class Role extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () => _registerCustomer(context),
                       child: Text(
-                        'Register as Customer',
+                        'Explore as a Customer',
                         style: TextStyle(
                           fontSize: 30, // Set font size to 20
-                          color: Colors.white, // Button text color
+                          color: Colors.black, 
+                          fontFamily: 'BalooBhai2'// Button text color
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 14, 122, 254), // Button color
+                        backgroundColor: Color.fromARGB(255, 145, 225, 219), // Button color
                         minimumSize: Size(screenSize.width * 0.85, 200), // Button width and height
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30), // Button border radius

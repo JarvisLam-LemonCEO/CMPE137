@@ -12,11 +12,13 @@ class ManageAccountPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Manage Account',
-          style: TextStyle(color: Colors.white), // Set title text color to white
+          style: TextStyle(color: Colors.black,
+          fontFamily: 'BalooBhai2',
+          fontSize: 30), // Set title text color to white
         ),
-        backgroundColor: const Color(0xFF0F8B7C), // Set background color of the app bar
+        backgroundColor: const Color(0xFFC39ADC), // Set background color of the app bar
       ),
-      backgroundColor: const Color(0xFF0F8B7C), // Set background color of the scaffold body
+      backgroundColor: const Color(0xFFC39ADC), // Set background color of the scaffold body
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -27,18 +29,21 @@ class ManageAccountPage extends StatelessWidget {
               // User Profile Information
               Text(
                 'Vendor Name',
-                style: TextStyle(fontSize: 24, color: Colors.white),
+                style: TextStyle(fontSize: 24, color: Colors.black,
+                fontFamily: 'BalooBhai2'),
               ),
               Text(
                 'vendor@example.com',
-                style: TextStyle(fontSize: 18, color: Colors.white),
+                style: TextStyle(fontSize: 18, color: Colors.black,
+                fontFamily: 'BalooBhai2'),
               ),
               SizedBox(height: 20),
 
               // Business Information
               Text(
                 'Business Information:',
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                style: TextStyle(fontSize: 20, color: Colors.black,
+                fontFamily: 'BalooBhai2'),
               ),
               // Add widgets for displaying store details
               // For example:
@@ -55,19 +60,24 @@ class ManageAccountPage extends StatelessWidget {
               SizedBox(height: 10),
               Text(
                 'Business Name',
-                style: TextStyle(fontSize: 18, color: Colors.white),
+                style: TextStyle(fontSize: 20, color: Colors.black,
+                fontFamily: 'BalooBhai2'),
+      
               ),
               Text(
                 'Address',
-                style: TextStyle(fontSize: 18, color: Colors.white),
+                style: TextStyle(fontSize: 20, color: Colors.black,
+                fontFamily: 'BalooBhai2'),
               ),
               Text(
                 'Type',
-                style: TextStyle(fontSize: 18, color: Colors.white),
+                style: TextStyle(fontSize: 20, color: Colors.black,fontFamily: 'BalooBhai2'),
+                
               ),
               Text(
                 'Description',
-                style: TextStyle(fontSize: 18, color: Colors.white),
+                style: TextStyle(fontSize: 20, color: Colors.black,fontFamily: 'BalooBhai2'
+                ),
               ),
               // Add more widgets for other store details like social links if needed
 
@@ -84,9 +94,11 @@ class ManageAccountPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => ChangePasswordPage()),
                     );
                   },
-                  child: Text('Change Password', style: TextStyle(color: Colors.white)),
+                  child: Text('Change Password', style: TextStyle(color: Colors.black,
+                  fontFamily: 'BalooBhai2',
+                  fontSize: 20)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF0BC2AC), // Set button background color
+                    backgroundColor: const Color(0xFF91E1DB), // Set button background color
                   ),
                 ),
               ),
@@ -101,9 +113,10 @@ class ManageAccountPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => EditProfilePage()),
                     );
                   },
-                  child: Text('Edit Profile', style: TextStyle(color: Colors.white)),
+                  child: Text('Edit Profile', style: TextStyle(color: Colors.black,fontFamily: 'BalooBhai2',
+                  fontSize: 20)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF0BC2AC), // Set button background color
+                    backgroundColor: const Color(0xFF91E1DB), // Set button background color
                   ),
                 ),
               ),
@@ -118,9 +131,10 @@ class ManageAccountPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => EditStorePage()),
                     );
                   },
-                  child: Text('Edit Store', style: TextStyle(color: Colors.white)),
+                  child: Text('Edit Store', style: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2',
+                  fontSize: 20)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF0BC2AC), // Set button background color
+                    backgroundColor: const Color(0xFF91E1DB), // Set button background color
                   ),
                 ),
               ),
