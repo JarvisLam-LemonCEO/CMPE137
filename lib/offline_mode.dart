@@ -12,20 +12,24 @@ class OfflineDetector extends StatefulWidget {
 
 class _OfflineDetectorState extends State<OfflineDetector> {
   late Connectivity _connectivity;
+  late Stream<List<ConnectivityResult>> _connectivityStream;
   late bool isOffline;
 
   @override
   void initState() {
     super.initState();
     _connectivity = Connectivity();
-    _connectivity.onConnectivityChanged.listen(_updateConnectionStatus as void Function(List<ConnectivityResult> event)?);
+    _connectivityStream = _connectivity.onConnectivityChanged;
     _updateConnectionStatus();
   }
 
-  Future<void> _updateConnectionStatus([ConnectivityResult? result]) async {
-    if (result == null) {
-      result = (await _connectivity.checkConnectivity()) as ConnectivityResult?;
-    }
+  Future<void> _updateConnectionStatus() async {
+    var result = await _connectivity.checkConnectivity();
+    _handleConnectivityResult(result);
+  }
+
+  void _handleConnectivityResult(List<ConnectivityResult> results) {
+    var result = results.isNotEmpty ? results.first : ConnectivityResult.none;
     setState(() {
       isOffline = result != ConnectivityResult.wifi && result != ConnectivityResult.mobile;
     });
@@ -33,7 +37,15 @@ class _OfflineDetectorState extends State<OfflineDetector> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.child;
+    return StreamBuilder<List<ConnectivityResult>>(
+      stream: _connectivityStream,
+      initialData: [ConnectivityResult.none],
+      builder: (context, snapshot) {
+        var results = snapshot.data!;
+        _handleConnectivityResult(results); // Update connection status whenever stream emits a new result
+        return widget.child;
+      },
+    );
   }
 }
 
@@ -65,23 +77,6 @@ class MyApp extends StatelessWidget {
 class _MyAppBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<bool>(
-      future: _getIsOffline(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator(); // Loading indicator while checking connectivity
-        } else if (snapshot.hasError) {
-          return Text('Error: ${snapshot.error}');
-        } else {
-          final bool isOffline = snapshot.data!;
-          return isOffline ? Text('You are offline') : Text('Your main content');
-        }
-      },
-    );
-  }
-
-  Future<bool> _getIsOffline() async {
-    ConnectivityResult connectivityResult = (await (Connectivity().checkConnectivity())) as ConnectivityResult;
-    return connectivityResult != ConnectivityResult.wifi && connectivityResult != ConnectivityResult.mobile;
+    return Text('Your main content');
   }
 }

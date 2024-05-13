@@ -8,34 +8,35 @@ class NetworkController extends GetxController {
   @override 
   void onInit() {
     super.onInit();
-    _connectivity.onConnectivityChanged.listen((List<ConnectivityResult> connectivityResultList) {
-      // Check the first item in the list, as it represents the current connectivity status
-      _updateConnectionStatus(connectivityResultList.first);
+    _connectivity.onConnectivityChanged.listen((dynamic event) {
+      if (event is List<ConnectivityResult>) {
+        _updateConnectionStatus(event);
+      }
     });
   }
 
-  void _updateConnectionStatus(ConnectivityResult connectivityResult) {
-      
-      if (connectivityResult == ConnectivityResult.none) {
-        Get.rawSnackbar(
-          messageText: const Text(
-            'PLEASE CONNECT TO THE INTERNET',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 14
-            )
-          ),
-          isDismissible: false,
-          duration: const Duration(days: 1),
-          backgroundColor: Colors.red[400]!,
-          icon : const Icon(Icons.wifi_off, color: Colors.white, size: 35,),
-          margin: EdgeInsets.zero,
-          snackStyle: SnackStyle.GROUNDED
-        );
-      } else {
-        if (Get.isSnackbarOpen) {
-          Get.closeCurrentSnackbar();
-        }
+  void _updateConnectionStatus(List<ConnectivityResult> connectivityResults) {
+    final connectivityResult = connectivityResults.isNotEmpty ? connectivityResults.first : ConnectivityResult.none;
+    if (connectivityResult == ConnectivityResult.none) {
+      Get.rawSnackbar(
+        messageText: const Text(
+          'PLEASE CONNECT TO THE INTERNET',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 14
+          )
+        ),
+        isDismissible: false,
+        duration: const Duration(days: 1),
+        backgroundColor: Colors.red[400]!,
+        icon : const Icon(Icons.wifi_off, color: Colors.white, size: 35,),
+        margin: EdgeInsets.zero,
+        snackStyle: SnackStyle.GROUNDED
+      );
+    } else {
+      if (Get.isSnackbarOpen) {
+        Get.closeCurrentSnackbar();
       }
+    }
   }
 }
