@@ -1,3 +1,8 @@
+import 'dart:async';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+
 import 'package:flutter/material.dart';
 import 'hello.dart'; // Import your hello.dart file
 import 'vendorManageAccount.dart';
@@ -19,6 +24,37 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
+
+  late StreamSubscription subscription;
+  bool isDeviceConnected = false;
+  bool isAlertSet = false;
+
+  @override
+  void initState() {
+    getConnectivity();
+    super.initState();
+    _fetchItems();
+  }
+
+getConnectivity() =>
+  subscription = Connectivity().onConnectivityChanged.listen(
+    (List<ConnectivityResult> results) async {
+      ConnectivityResult connectivityResult = results.last;
+      isDeviceConnected = await InternetConnectionChecker().hasConnection;
+      if (!isDeviceConnected && isAlertSet == false) {
+        showDialogBox();
+        setState(() => isAlertSet = true);
+      }
+    },
+  );
+
+
+  @override
+  void dispose() {
+    subscription.cancel();
+    super.dispose();
+  }
+
 
   final List<String> _tabTitles = [
     'Home',
@@ -291,11 +327,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  @override
-  void initState() {
-    super.initState();
-    _fetchItems();
-  }
+
 
   Future<void> _fetchItems() async {
     final QuerySnapshot snapshot = await FirebaseFirestore.instance.collection('items').get();
@@ -310,4 +342,28 @@ class _HomeState extends State<Home> {
       _isLogoutVisible = index == 3;
     });
   }
+
+  showDialogBox() => showCupertinoDialog<String>(
+      context: context,
+      builder: (BuildContext context) => CupertinoAlertDialog(
+        title: const Text('No Connection'),
+        content: const Text('Please check your internet connectivity'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () async {
+              Navigator.pop(context, 'Cancel');
+              setState(() => isAlertSet = false);
+              isDeviceConnected =
+                  await InternetConnectionChecker().hasConnection;
+              if (!isDeviceConnected && isAlertSet == false) {
+                showDialogBox();
+                setState(() => isAlertSet = true);
+              }
+            },
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+
 }
