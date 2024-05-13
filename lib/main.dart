@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'splash_screen.dart'; // Import your splash screen widget
 import 'role.dart';
+import 'home.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'dependencyInjection.dart';
 
 void main() {
@@ -32,6 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
         '/': (context) => SplashScreen(),
@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'SF Pro Display', // Set the default font family to SF Pro Display
       ),
+      home: const Home(),
     );
   }
 }

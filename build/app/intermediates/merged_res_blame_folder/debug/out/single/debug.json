@@ -4,10 +4,6 @@
         "source": "com.example.flutter_tut.app-main-20:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.flutter_tut.app-merged_res-26:/drawable_launch_background.xml.flat",
-        "source": "com.example.flutter_tut.app-main-20:/drawable/launch_background.xml"
-    },
-    {
         "merged": "com.example.flutter_tut.app-merged_res-26:/mipmap-hdpi_ic_launcher.png.flat",
         "source": "com.example.flutter_tut.app-main-20:/mipmap-hdpi/ic_launcher.png"
     },
