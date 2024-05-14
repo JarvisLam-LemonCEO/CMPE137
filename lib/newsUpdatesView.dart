@@ -29,10 +29,10 @@ class _NewsUpdatesViewState extends State<NewsUpdatesView> {
               child: ListTile(
                 title: Text(
                   newsUpdate,
-                  style: TextStyle(color: Colors.white), // Set text color to white
+                  style: TextStyle(color: Colors.black), // Set text color to white
                 ),
                 trailing: IconButton(
-                  icon: Icon(Icons.delete, color: Colors.white), // Delete icon
+                  icon: Icon(Icons.delete, color: Colors.black), // Delete icon
                   onPressed: () {
                     _showDeleteConfirmationDialog(context, newsUpdate);
                   },
@@ -240,11 +240,11 @@ class NewsUpdateDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('News Update Details', style: TextStyle(color: Colors.white),),
-        backgroundColor: Color(0xFF0F8B7C), // Set background color of the app bar
+        title: Text('News Update Details', style: TextStyle(color: Colors.black),),
+        backgroundColor: Color(0xFFC39ADC), // Set background color of the app bar
       ),
       body: Container(
-        color: Color(0xFF0F8B7C), // Set background color
+        color: Color(0xFFC39ADC), // Set background color
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
@@ -254,12 +254,12 @@ class NewsUpdateDetailsPage extends StatelessWidget {
               children: [
                 Text(
                   'News Title', // Replace with your news title if needed
-                  style: TextStyle(fontSize: 20, color: Colors.white), // Change text color to white
+                  style: TextStyle(fontSize: 20, color: Colors.black), // Change text color to white
                 ),
                 SizedBox(height: 10), // Add some space between title and content
                 Text(
                   newsUpdate,
-                  style: TextStyle(fontSize: 20, color: Colors.white), // Change text color to white
+                  style: TextStyle(fontSize: 20, color: Colors.black), // Change text color to white
                   textAlign: TextAlign.center, // Center align content text
                 ),
               ],

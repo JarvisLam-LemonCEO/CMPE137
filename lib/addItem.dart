@@ -55,7 +55,7 @@ class AddItemPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Add Item',
-          style: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2', fontSize: 30)
+          style: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2', fontSize: 30)
         ),
         backgroundColor: Color(0xFFC39ADC), 
       ),
@@ -77,7 +77,7 @@ class AddItemPage extends StatelessWidget {
                   child: Icon(
                     Icons.add_photo_alternate,
                     size: 50,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -87,34 +87,34 @@ class AddItemPage extends StatelessWidget {
               controller: itemNameController,
               decoration: InputDecoration(
                 labelText: 'Item Name',
-                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
+                labelStyle: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2'),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             TextFormField(
               controller: priceController,
               decoration: InputDecoration(
                 labelText: 'Price',
-                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
+                labelStyle: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2'),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             TextFormField(
               controller: quantityController,
               decoration: InputDecoration(
                 labelText: 'Quantity',
-                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
+                labelStyle: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2'),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             TextFormField(
               controller: descriptionController,
               decoration: InputDecoration(
                 labelText: 'Item Description',
-                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
+                labelStyle: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2'),
               ),
               maxLines: null,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             SizedBox(height: 20),
             Center(

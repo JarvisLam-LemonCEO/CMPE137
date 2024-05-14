@@ -42,7 +42,7 @@ class _ItemListViewState extends State<ItemListView> {
       appBar: AppBar(
         title: Text(
           'Item Detail',
-          style: TextStyle(color: Colors.white, 
+          style: TextStyle(color: Colors.black, 
           fontFamily: 'BalooBhai2', fontSize: 30),
         ),
         backgroundColor: Color(0xFFC39ADC),
@@ -73,34 +73,34 @@ class _ItemListViewState extends State<ItemListView> {
               controller: _itemNameController,
               decoration: InputDecoration(
                 labelText: 'Item Name',
-                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
+                labelStyle: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2'),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             TextFormField(
               controller: _priceController,
               decoration: InputDecoration(
                 labelText: 'Price',
-                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
+                labelStyle: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2'),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             TextFormField(
               controller: _quantityController,
               decoration: InputDecoration(
                 labelText: 'Quantity',
-                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
+                labelStyle: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2'),
               ),
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             TextFormField(
               controller: _descriptionController,
               decoration: InputDecoration(
                 labelText: 'Item Description',
-                labelStyle: TextStyle(color: Colors.white, fontFamily: 'BalooBhai2'),
+                labelStyle: TextStyle(color: Colors.black, fontFamily: 'BalooBhai2'),
               ),
               maxLines: null,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
             ),
             SizedBox(height: 20),
             Row(

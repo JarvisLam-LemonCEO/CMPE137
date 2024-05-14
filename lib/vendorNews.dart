@@ -13,7 +13,7 @@ class VendorNewsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           title,
-          style: TextStyle(color: Colors.white, 
+          style: TextStyle(color: Colors.black, 
           fontFamily: 'BalooBhai2',
           fontSize: 30), // Set title color to white
         ),
@@ -27,12 +27,12 @@ class VendorNewsPage extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white), // Set text color
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black), // Set text color
             ),
             SizedBox(height: 16),
             Text(
               details,
-              style: TextStyle(fontSize: 18, color: Colors.white), // Set text color
+              style: TextStyle(fontSize: 18, color: Colors.black), // Set text color
             ),
           ],
         ),

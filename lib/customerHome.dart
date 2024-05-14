@@ -58,7 +58,7 @@ actions: [
       },
       icon: Icon(
         Icons.refresh,
-        color: Colors.white, // Set the color of the refresh button to white
+        color: Colors.black, // Set the color of the refresh button to white
       ),
     ),
 ],
