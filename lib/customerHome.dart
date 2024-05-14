@@ -7,7 +7,7 @@ import 'manageAccount.dart';
 import 'paymentInfo.dart';
 import 'notifications.dart';
 import 'privacy.dart';
-import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore package
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CustomerHome extends StatefulWidget {
   const CustomerHome({Key? key}) : super(key: key);
