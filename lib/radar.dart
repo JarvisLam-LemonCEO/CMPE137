@@ -48,6 +48,7 @@ class _VardarState extends State<Vardar> {
         myLocationEnabled: true, // Enable current location button
         myLocationButtonEnabled: true, // Enable current location button
         onTap: _onMapTapped, // Handle map tap events
+        onCameraMove: _onCameraMove, // Handle camera movement
       ),
     );
   }
@@ -60,5 +61,9 @@ class _VardarState extends State<Vardar> {
 
   void _onMapTapped(LatLng latLng) {
     // Handle tap events on the map
+  }
+
+  void _onCameraMove(CameraPosition position) {
+    // Handle camera movement
   }
 }
