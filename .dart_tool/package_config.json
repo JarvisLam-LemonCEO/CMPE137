@@ -20,6 +20,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "awesome_notifications",
+      "rootUri": "file:///Users/jarvislam/.pub-cache/hosted/pub.dev/awesome_notifications-0.9.3+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/jarvislam/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1",
       "packageUri": "lib/",
@@ -764,7 +770,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-05-09T21:53:47.812188Z",
+  "generated": "2024-05-15T21:10:08.566773Z",
   "generator": "pub",
   "generatorVersion": "3.3.1"
 }
