@@ -11,7 +11,7 @@ class AddNewsUpdate extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Add News Update',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ),
         backgroundColor: const Color(0xFF0F8B7C), // Set background color of the app bar
       ),
@@ -23,14 +23,14 @@ class AddNewsUpdate extends StatelessWidget {
           children: [
             Text(
               'Title:',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.black, fontSize: 18),
             ),
             TextFormField(
               controller: titleController,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
               decoration: InputDecoration(
                 hintText: 'Enter title',
-                hintStyle: TextStyle(color: Colors.white),
+                hintStyle: TextStyle(color: Colors.black),
                 fillColor: Colors.white.withOpacity(0.1),
                 filled: true,
                 border: OutlineInputBorder(
@@ -41,15 +41,15 @@ class AddNewsUpdate extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               'Content:',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.black, fontSize: 18),
             ),
             TextFormField(
               controller: contentController,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.black),
               maxLines: 5,
               decoration: InputDecoration(
                 hintText: 'Enter content',
-                hintStyle: TextStyle(color: Colors.white),
+                hintStyle: TextStyle(color: Colors.black),
                 fillColor: Colors.white.withOpacity(0.1),
                 filled: true,
                 border: OutlineInputBorder(
