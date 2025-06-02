@@ -6,6 +6,7 @@ CMPE 137 Group 8 Hybird/Cross <br>
 3. Ruben Martinez-Martinez
 4. Marco Munoz Gil<br>
 
+## App testing requirements
 Platform: iOS APP<br>
 Cross-platform tool: flutter<br>
 IDE: Visucal Studio Code<br>
