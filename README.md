@@ -1,6 +1,11 @@
 # CMPE 137 Mobile Software Engineering
 CMPE 137 Group 8 Hybird/Cross <br>
-Members: Hei Lam, Jacob Culaton, Ruben Martinez-Martinez, Marco Munoz Gil<br>
+## Group Members
+1. Hei Lam
+2. Jacob Culaton
+3. Ruben Martinez-Martinez
+4. Marco Munoz Gil<br>
+
 Platform: iOS APP<br>
 Cross-platform tool: flutter<br>
 IDE: Visucal Studio Code<br>
